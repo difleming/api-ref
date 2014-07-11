@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>    API Documentation &raquo; \Magento\Customer\Model\Config\Share
+</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+            <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+            <!--[if lt IE 9]>
+        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+        <![endif]-->
+        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
+        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
+        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
+        <script src="../js/bootstrap.js" type="text/javascript"></script>
+        <script src="../js/template.js" type="text/javascript"></script>
+        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
+    
+            <link rel="shortcut icon" href="../img/favicon.ico"/>
+        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
+        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
+        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
+    </head>
+<body>
+
+        <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> </a>
+                <a class="brand" href="../index.html">API Documentation</a>
+
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                API Documentation <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                                                    <li><a>Namespaces</a></li>
+                                                                        <li><a href="../namespaces/Magento.html">Magento</a></li>
+                                                                                                                                </ul>
+                        </li>
+                        <li class="dropdown" id="charts-menu">
+                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                Charts <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../graph_class.html">
+                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="reports-menu">
+                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                Reports <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../errors.html">
+                                        <i class="icon-list-alt"></i>&#160;Errors
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../markers.html">
+                                        <i class="icon-list-alt"></i>&#160;Markers
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../deprecated.html">
+                                        <i class="icon-list-alt"></i>&#160;Deprecated
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="go_to_top">
+            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
+        </div>
+    </div>
+    
+    <div id="___" class="container">
+        <noscript>
+            <div class="alert alert-warning">
+                Javascript is disabled; several features are only available if Javascript is enabled.
+            </div>
+        </noscript>
+
+        
+            <style>
+        .deprecated h2 {
+            text-decoration: line-through;
+        }
+    </style>
+    <div class="row">
+        <div class="span4">
+                    <div class="btn-group view pull-right" data-toggle="buttons-radio">
+        <button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button>
+        <button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+    </div>
+    <div class="btn-group visibility" data-toggle="buttons-checkbox">
+        <button class="btn public active" title="Show public elements">Public</button>
+        <button class="btn protected" title="Show protected elements">Protected</button>
+        <button class="btn private" title="Show private elements">Private</button>
+        <button class="btn inherited active" title="Show inherited elements">Inherited</button>
+    </div>
+
+        <ul class="side-nav nav nav-list">
+        <li class="nav-header">
+            <i class="icon-custom icon-method"></i> Methods
+            <ul>
+                                                                                                    <li class="method public">
+        <a href="#method___construct" title="__construct :: Constructor">
+            <span class="description">Constructor</span><pre>__construct</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_isGlobalScope" title="isGlobalScope :: Check whether current customers sharing scope is global">
+            <span class="description">Check whether current customers sharing scope is global</span><pre>isGlobalScope</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_isWebsiteScope" title="isWebsiteScope :: Check whether current customers sharing scope is website">
+            <span class="description">Check whether current customers sharing scope is website</span><pre>isWebsiteScope</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_toOptionArray" title="toOptionArray :: Get possible sharing configuration options">
+            <span class="description">Get possible sharing configuration options</span><pre>toOptionArray</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method__beforeSave" title="_beforeSave :: Check for email duplicates before saving customers sharing options">
+            <span class="description">Check for email duplicates before saving customers sharing options</span><pre>_beforeSave</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getSharedWebsiteIds" title="getSharedWebsiteIds :: Returns shared website Ids.">
+            <span class="description">Returns shared website Ids.</span><pre>getSharedWebsiteIds</pre>
+        </a>
+    </li>
+
+                                                </ul>
+        </li>
+        <li class="nav-header protected">» Protected
+            <ul>
+                                                                                                                                                                                                                                                                    </ul>
+        </li>
+        <li class="nav-header private">» Private
+            <ul>
+                                                                                                                                                                                                                                                                    </ul>
+        </li>
+        <li class="nav-header">
+            <i class="icon-custom icon-constant"></i> Constants
+            <ul>
+                                <li class="constant ">
+                    <a href="#constant_XML_PATH_CUSTOMER_ACCOUNT_SHARE" title="XML_PATH_CUSTOMER_ACCOUNT_SHARE :: Xml config path to customers sharing scope value">
+                        <span class="description">Xml config path to customers sharing scope value</span><pre>XML_PATH_CUSTOMER_ACCOUNT_SHARE</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_SHARE_GLOBAL" title="SHARE_GLOBAL :: Possible customer sharing scopes">
+                        <span class="description">Possible customer sharing scopes</span><pre>SHARE_GLOBAL</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_SHARE_WEBSITE" title="SHARE_WEBSITE :: ">
+                        <span class="description"></span><pre>SHARE_WEBSITE</pre>
+                    </a>
+                </li>
+                            </ul>
+        </li>
+    </ul>
+
+
+        </div>
+
+        <div class="span8">
+            <div class="element class">
+                <h1>Share</h1>
+                <small style="display: block; text-align: right">
+                                            Extends \Magento\Framework\App\Config\Value
+                                                                Implements \Magento\Framework\Option\ArrayInterface
+                                    </small>
+                <p class="short_description">Customer sharing config model</p>
+                <div class="details">
+                    <div class="long_description">
+                        
+                    </div>
+                    <table class="table table-bordered">
+                                                                                    <tr>
+                                    <th>
+                                        author
+                                                                            </th>
+                                    <td>
+                                                                                    
+                                                                                <p>Magento Core Team <a href="mailto:core@magentocommerce.com">core@magentocommerce.com</a></p>
+                                    </td>
+                                </tr>
+                                                                                                                <tr>
+                                    <th>
+                                        package
+                                                                            </th>
+                                    <td>
+                                                                                    
+                                                                                <p>Default</p>
+                                    </td>
+                                </tr>
+                                                                                                                                                                                </table>
+
+                    <h3><i class="icon-custom icon-method"></i> Methods</h3>
+                                                                <a id="method___construct"></a>
+                        <div class="element clickable method public  method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+                            <h2>Constructor</h2>
+                            <pre>__construct(\Magento\Framework\Model\Context $context, \Magento\Framework\Registry $registry, \Magento\Framework\App\Config\ScopeConfigInterface $config, \Magento\Store\Model\StoreManagerInterface $storeManager, \Magento\Customer\Model\Resource\Customer $customerResource, \Magento\Framework\Model\Resource\AbstractResource $resource = null, \Magento\Framework\Data\Collection\Db $resourceCollection = null, array $data = array()) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$context</h4>
+                                                <code>\Magento\Framework\Model\Context</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$registry</h4>
+                                                <code>\Magento\Framework\Registry</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$config</h4>
+                                                <code>\Magento\Framework\App\Config\ScopeConfigInterface</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$storeManager</h4>
+                                                <code>\Magento\Store\Model\StoreManagerInterface</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$customerResource</h4>
+                                                <code><a href="../classes/Magento.Customer.Model.Resource.Customer.html">\Magento\Customer\Model\Resource\Customer</a></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$resource</h4>
+                                                <code>\Magento\Framework\Model\Resource\AbstractResource</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$resourceCollection</h4>
+                                                <code>\Magento\Framework\Data\Collection\Db</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$data</h4>
+                                                <code>array</code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method_isGlobalScope"></a>
+                        <div class="element clickable method public  method_isGlobalScope" data-toggle="collapse" data-target=".method_isGlobalScope .collapse">
+                            <h2>Check whether current customers sharing scope is global</h2>
+                            <pre>isGlobalScope() : boolean</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method_isWebsiteScope"></a>
+                        <div class="element clickable method public  method_isWebsiteScope" data-toggle="collapse" data-target=".method_isWebsiteScope .collapse">
+                            <h2>Check whether current customers sharing scope is website</h2>
+                            <pre>isWebsiteScope() : boolean</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method_toOptionArray"></a>
+                        <div class="element clickable method public  method_toOptionArray" data-toggle="collapse" data-target=".method_toOptionArray .collapse">
+                            <h2>Get possible sharing configuration options</h2>
+                            <pre>toOptionArray() : array</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>array</code><p></p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method__beforeSave"></a>
+                        <div class="element clickable method public  method__beforeSave" data-toggle="collapse" data-target=".method__beforeSave .collapse">
+                            <h2>Check for email duplicates before saving customers sharing options</h2>
+                            <pre>_beforeSave() : $this</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    throws
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>$this</code><p></p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method_getSharedWebsiteIds"></a>
+                        <div class="element clickable method public  method_getSharedWebsiteIds" data-toggle="collapse" data-target=".method_getSharedWebsiteIds .collapse">
+                            <h2>Returns shared website Ids.</h2>
+                            <pre>getSharedWebsiteIds(integer $websiteId) : array&lt;mixed,integer&gt;</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$websiteId</h4>
+                                                <code>integer</code><p><p>the ID to use if website scope is on</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>array&lt;mixed,integer&gt;</code><p></p>
+                                                                    </div>
+                            </div>
+                        </div>
+                    
+                                            <h3><i class="icon-custom icon-constant"></i> Constants</h3>
+                                                    <a id="constant_XML_PATH_CUSTOMER_ACCOUNT_SHARE"> </a>
+                            <div class="element clickable constant  constant_XML_PATH_CUSTOMER_ACCOUNT_SHARE" data-toggle="collapse" data-target=".constant_XML_PATH_CUSTOMER_ACCOUNT_SHARE .collapse">
+                                <h2>Xml config path to customers sharing scope value</h2>
+                                <pre>XML_PATH_CUSTOMER_ACCOUNT_SHARE</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_SHARE_GLOBAL"> </a>
+                            <div class="element clickable constant  constant_SHARE_GLOBAL" data-toggle="collapse" data-target=".constant_SHARE_GLOBAL .collapse">
+                                <h2>Possible customer sharing scopes</h2>
+                                <pre>SHARE_GLOBAL</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_SHARE_WEBSITE"> </a>
+                            <div class="element clickable constant  constant_SHARE_WEBSITE" data-toggle="collapse" data-target=".constant_SHARE_WEBSITE .collapse">
+                                <h2>SHARE_WEBSITE</h2>
+                                <pre>SHARE_WEBSITE</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                            
+                                                                <h3><i class="icon-custom icon-property"></i> Properties</h3>
+                                                    <a id="property__customerResource"> </a>
+                            <div class="element clickable property  protected property__customerResource" data-toggle="collapse" data-target=".property__customerResource .collapse">
+                                <h2>_customerResource</h2>
+                                <pre>_customerResource : \Magento\Customer\Model\Resource\Customer</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code><a href="../classes/Magento.Customer.Model.Resource.Customer.html">\Magento\Customer\Model\Resource\Customer</a></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property__storeManager"> </a>
+                            <div class="element clickable property  protected property__storeManager" data-toggle="collapse" data-target=".property__storeManager .collapse">
+                                <h2>_storeManager</h2>
+                                <pre>_storeManager : \Magento\Store\Model\StoreManagerInterface</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>\Magento\Store\Model\StoreManagerInterface</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                            </div>
+            </div>
+            <a id="\Magento\Customer\Model\Config\Share"></a>
+            <ul class="breadcrumb">
+                <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
+                    
+    
+    <li><span class="divider">\</span><a href="../namespaces/Magento.Customer.Model.Config.html">Config</a></li>
+
+                <li class="active"><span class="divider">\</span><a href="../classes/Magento.Customer.Model.Config.Share.html">Share</a></li>
+            </ul>
+        </div>
+    </div>
+
+    </div>
+
+        <footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
+            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
+            generated on 
+Warning: date_default_timezone_get(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in /Users/difleming/pear/share/pear/phpDocumentor/vendor/twig/twig/lib/Twig/Extension/Core.php on line 89
+Fri, 11 Jul 2014 15:30:09 +0000.<br/>
+    </footer>
+    </body>
+</html>
