@@ -1,0 +1,2628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>API Documentation</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+    <!--[if lt IE 9]>
+    <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+    <script type="text/javascript">
+    function loadExternalCodeSnippets() {
+        Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
+            var src = pre.getAttribute('data-src');
+            var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+            var language = 'php';
+
+            var code = document.createElement('code');
+            code.className = 'language-' + language;
+
+            pre.textContent = '';
+
+            code.textContent = 'Loading…';
+
+            pre.appendChild(code);
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('GET', src, true);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+
+                    if (xhr.status < 400 && xhr.responseText) {
+                        code.textContent = xhr.responseText;
+
+                        Prism.highlightElement(code);
+                    }
+                    else if (xhr.status >= 400) {
+                        code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                    }
+                    else {
+                        code.textContent = '✖ Error: File does not exist or is empty';
+                    }
+                }
+            };
+
+            xhr.send(null);
+        });
+    }
+
+    $(document).ready(function(){
+        loadExternalCodeSnippets();
+    });
+    $('#source-view').on('shown', function () {
+        loadExternalCodeSnippets();
+    })
+</script>
+
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">API Documentation</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                                        <li class="dropdown">
+                        <a href="../index.html" class="dropdown-toggle" data-toggle="dropdown">
+                            API Documentation <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                                                        <li><a href="../namespaces/Magento.html">\Magento</a></li>
+                                                    </ul>
+                    </li>
+                                        <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">695</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">151</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/deprecated.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">7</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">
+        <section class="row-fluid">
+        <div class="span2 sidebar">
+                                <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1588807091"></a>
+                                <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
+            </div>
+            <div id="namespace-1588807091" class="accordion-body collapse in">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-53575721"></a>
+                                <a href="../namespaces/Magento.html" style="margin-left: 30px; padding-left: 0">Magento</a>
+            </div>
+            <div id="namespace-53575721" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-2085404185"></a>
+                                <a href="../namespaces/Magento.Customer.html" style="margin-left: 30px; padding-left: 0">Customer</a>
+            </div>
+            <div id="namespace-2085404185" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-526515589"></a>
+                                <a href="../namespaces/Magento.Customer.Block.html" style="margin-left: 30px; padding-left: 0">Block</a>
+            </div>
+            <div id="namespace-526515589" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-355871689"></a>
+                                <a href="../namespaces/Magento.Customer.Block.Account.html" style="margin-left: 30px; padding-left: 0">Account</a>
+            </div>
+            <div id="namespace-355871689" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1769063059"></a>
+                                <a href="../namespaces/Magento.Customer.Block.Account.Dashboard.html" style="margin-left: 30px; padding-left: 0">Dashboard</a>
+            </div>
+            <div id="namespace-1769063059" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Account.Dashboard.Address.html">Address</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Account.Dashboard.Block.html">Block</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Account.Dashboard.Hello.html">Hello</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Account.Dashboard.Info.html">Info</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Account.Dashboard.Newsletter.html">Newsletter</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Account.Dashboard.Sidebar.html">Sidebar</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Account.AuthorizationLink.html">AuthorizationLink</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Account.Customer.html">Customer</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Account.Dashboard.html">Dashboard</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Account.Forgotpassword.html">Forgotpassword</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Account.Link.html">Link</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Account.RegisterLink.html">RegisterLink</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Account.Resetpassword.html">Resetpassword</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-888009223"></a>
+                                <a href="../namespaces/Magento.Customer.Block.Address.html" style="margin-left: 30px; padding-left: 0">Address</a>
+            </div>
+            <div id="namespace-888009223" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1293457973"></a>
+                                <a href="../namespaces/Magento.Customer.Block.Address.Renderer.html" style="margin-left: 30px; padding-left: 0">Renderer</a>
+            </div>
+            <div id="namespace-1293457973" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Magento.Customer.Block.Address.Renderer.RendererInterface.html">RendererInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Address.Renderer.DefaultRenderer.html">DefaultRenderer</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Address.Book.html">Book</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Address.Edit.html">Edit</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1627703351"></a>
+                                <a href="../namespaces/Magento.Customer.Block.Adminhtml.html" style="margin-left: 30px; padding-left: 0">Adminhtml</a>
+            </div>
+            <div id="namespace-1627703351" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1135349580"></a>
+                                <a href="../namespaces/Magento.Customer.Block.Adminhtml.Edit.html" style="margin-left: 30px; padding-left: 0">Edit</a>
+            </div>
+            <div id="namespace-1135349580" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1708802020"></a>
+                                <a href="../namespaces/Magento.Customer.Block.Adminhtml.Edit.Renderer.html" style="margin-left: 30px; padding-left: 0">Renderer</a>
+            </div>
+            <div id="namespace-1708802020" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-111888460"></a>
+                                <a href="../namespaces/Magento.Customer.Block.Adminhtml.Edit.Renderer.Attribute.html" style="margin-left: 30px; padding-left: 0">Attribute</a>
+            </div>
+            <div id="namespace-111888460" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Adminhtml.Edit.Renderer.Attribute.Group.html">Group</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Adminhtml.Edit.Renderer.Attribute.Sendemail.html">Sendemail</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Adminhtml.Edit.Renderer.Newpass.html">Newpass</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Adminhtml.Edit.Renderer.Region.html">Region</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1253933496"></a>
+                                <a href="../namespaces/Magento.Customer.Block.Adminhtml.Edit.Tab.html" style="margin-left: 30px; padding-left: 0">Tab</a>
+            </div>
+            <div id="namespace-1253933496" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-589080335"></a>
+                                <a href="../namespaces/Magento.Customer.Block.Adminhtml.Edit.Tab.Newsletter.html" style="margin-left: 30px; padding-left: 0">Newsletter</a>
+            </div>
+            <div id="namespace-589080335" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-131771932"></a>
+                                <a href="../namespaces/Magento.Customer.Block.Adminhtml.Edit.Tab.Newsletter.Grid.html" style="margin-left: 30px; padding-left: 0">Grid</a>
+            </div>
+            <div id="namespace-131771932" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-2053951202"></a>
+                                <a href="../namespaces/Magento.Customer.Block.Adminhtml.Edit.Tab.Newsletter.Grid.Filter.html" style="margin-left: 30px; padding-left: 0">Filter</a>
+            </div>
+            <div id="namespace-2053951202" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Adminhtml.Edit.Tab.Newsletter.Grid.Filter.Status.html">Status</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-20832784"></a>
+                                <a href="../namespaces/Magento.Customer.Block.Adminhtml.Edit.Tab.Newsletter.Grid.Renderer.html" style="margin-left: 30px; padding-left: 0">Renderer</a>
+            </div>
+            <div id="namespace-20832784" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Adminhtml.Edit.Tab.Newsletter.Grid.Renderer.Action.html">Action</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Adminhtml.Edit.Tab.Newsletter.Grid.Renderer.Status.html">Status</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Adminhtml.Edit.Tab.Newsletter.Grid.html">Grid</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-201277695"></a>
+                                <a href="../namespaces/Magento.Customer.Block.Adminhtml.Edit.Tab.View.html" style="margin-left: 30px; padding-left: 0">View</a>
+            </div>
+            <div id="namespace-201277695" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-726784502"></a>
+                                <a href="../namespaces/Magento.Customer.Block.Adminhtml.Edit.Tab.View.Grid.html" style="margin-left: 30px; padding-left: 0">Grid</a>
+            </div>
+            <div id="namespace-726784502" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1869568354"></a>
+                                <a href="../namespaces/Magento.Customer.Block.Adminhtml.Edit.Tab.View.Grid.Renderer.html" style="margin-left: 30px; padding-left: 0">Renderer</a>
+            </div>
+            <div id="namespace-1869568354" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Adminhtml.Edit.Tab.View.Grid.Renderer.Item.html">Item</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Adminhtml.Edit.Tab.View.Accordion.html">Accordion</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Adminhtml.Edit.Tab.View.Cart.html">Cart</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Adminhtml.Edit.Tab.View.Orders.html">Orders</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Adminhtml.Edit.Tab.View.Sales.html">Sales</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Adminhtml.Edit.Tab.View.Wishlist.html">Wishlist</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1794467161"></a>
+                                <a href="../namespaces/Magento.Customer.Block.Adminhtml.Edit.Tab.Wishlist.html" style="margin-left: 30px; padding-left: 0">Wishlist</a>
+            </div>
+            <div id="namespace-1794467161" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-905804299"></a>
+                                <a href="../namespaces/Magento.Customer.Block.Adminhtml.Edit.Tab.Wishlist.Grid.html" style="margin-left: 30px; padding-left: 0">Grid</a>
+            </div>
+            <div id="namespace-905804299" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1001487751"></a>
+                                <a href="../namespaces/Magento.Customer.Block.Adminhtml.Edit.Tab.Wishlist.Grid.Renderer.html" style="margin-left: 30px; padding-left: 0">Renderer</a>
+            </div>
+            <div id="namespace-1001487751" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Adminhtml.Edit.Tab.Wishlist.Grid.Renderer.Description.html">Description</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Adminhtml.Edit.Tab.Account.html">Account</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Adminhtml.Edit.Tab.Addresses.html">Addresses</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Adminhtml.Edit.Tab.Cart.html">Cart</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Adminhtml.Edit.Tab.Carts.html">Carts</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Adminhtml.Edit.Tab.GenericMetadata.html">GenericMetadata</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Adminhtml.Edit.Tab.Newsletter.html">Newsletter</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Adminhtml.Edit.Tab.Orders.html">Orders</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Adminhtml.Edit.Tab.Reviews.html">Reviews</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Adminhtml.Edit.Tab.View.html">View</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Adminhtml.Edit.Form.html">Form</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Adminhtml.Edit.Tabs.html">Tabs</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-820315791"></a>
+                                <a href="../namespaces/Magento.Customer.Block.Adminhtml.Form.html" style="margin-left: 30px; padding-left: 0">Form</a>
+            </div>
+            <div id="namespace-820315791" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-2081029449"></a>
+                                <a href="../namespaces/Magento.Customer.Block.Adminhtml.Form.Element.html" style="margin-left: 30px; padding-left: 0">Element</a>
+            </div>
+            <div id="namespace-2081029449" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Adminhtml.Form.Element.Boolean.html">Boolean</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Adminhtml.Form.Element.File.html">File</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Adminhtml.Form.Element.Image.html">Image</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1408525904"></a>
+                                <a href="../namespaces/Magento.Customer.Block.Adminhtml.Grid.html" style="margin-left: 30px; padding-left: 0">Grid</a>
+            </div>
+            <div id="namespace-1408525904" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1656885465"></a>
+                                <a href="../namespaces/Magento.Customer.Block.Adminhtml.Grid.Filter.html" style="margin-left: 30px; padding-left: 0">Filter</a>
+            </div>
+            <div id="namespace-1656885465" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Adminhtml.Grid.Filter.Country.html">Country</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-701298124"></a>
+                                <a href="../namespaces/Magento.Customer.Block.Adminhtml.Grid.Renderer.html" style="margin-left: 30px; padding-left: 0">Renderer</a>
+            </div>
+            <div id="namespace-701298124" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Adminhtml.Grid.Renderer.Multiaction.html">Multiaction</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-515684399"></a>
+                                <a href="../namespaces/Magento.Customer.Block.Adminhtml.Group.html" style="margin-left: 30px; padding-left: 0">Group</a>
+            </div>
+            <div id="namespace-515684399" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1564476028"></a>
+                                <a href="../namespaces/Magento.Customer.Block.Adminhtml.Group.Edit.html" style="margin-left: 30px; padding-left: 0">Edit</a>
+            </div>
+            <div id="namespace-1564476028" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Adminhtml.Group.Edit.Form.html">Form</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Adminhtml.Group.Edit.html">Edit</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-552465314"></a>
+                                <a href="../namespaces/Magento.Customer.Block.Adminhtml.Online.html" style="margin-left: 30px; padding-left: 0">Online</a>
+            </div>
+            <div id="namespace-552465314" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-369043474"></a>
+                                <a href="../namespaces/Magento.Customer.Block.Adminhtml.Online.Grid.html" style="margin-left: 30px; padding-left: 0">Grid</a>
+            </div>
+            <div id="namespace-369043474" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-393242788"></a>
+                                <a href="../namespaces/Magento.Customer.Block.Adminhtml.Online.Grid.Renderer.html" style="margin-left: 30px; padding-left: 0">Renderer</a>
+            </div>
+            <div id="namespace-393242788" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Adminhtml.Online.Grid.Renderer.Ip.html">Ip</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Adminhtml.Online.Grid.Renderer.Type.html">Type</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Adminhtml.Online.Grid.Renderer.Url.html">Url</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Adminhtml.Online.Filter.html">Filter</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1530787917"></a>
+                                <a href="../namespaces/Magento.Customer.Block.Adminhtml.Sales.html" style="margin-left: 30px; padding-left: 0">Sales</a>
+            </div>
+            <div id="namespace-1530787917" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-2003203600"></a>
+                                <a href="../namespaces/Magento.Customer.Block.Adminhtml.Sales.Order.html" style="margin-left: 30px; padding-left: 0">Order</a>
+            </div>
+            <div id="namespace-2003203600" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-731986832"></a>
+                                <a href="../namespaces/Magento.Customer.Block.Adminhtml.Sales.Order.Address.html" style="margin-left: 30px; padding-left: 0">Address</a>
+            </div>
+            <div id="namespace-731986832" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-504177027"></a>
+                                <a href="../namespaces/Magento.Customer.Block.Adminhtml.Sales.Order.Address.Form.html" style="margin-left: 30px; padding-left: 0">Form</a>
+            </div>
+            <div id="namespace-504177027" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-433135383"></a>
+                                <a href="../namespaces/Magento.Customer.Block.Adminhtml.Sales.Order.Address.Form.Renderer.html" style="margin-left: 30px; padding-left: 0">Renderer</a>
+            </div>
+            <div id="namespace-433135383" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Adminhtml.Sales.Order.Address.Form.Renderer.Vat.html">Vat</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1366813199"></a>
+                                <a href="../namespaces/Magento.Customer.Block.Adminhtml.System.html" style="margin-left: 30px; padding-left: 0">System</a>
+            </div>
+            <div id="namespace-1366813199" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1073875667"></a>
+                                <a href="../namespaces/Magento.Customer.Block.Adminhtml.System.Config.html" style="margin-left: 30px; padding-left: 0">Config</a>
+            </div>
+            <div id="namespace-1073875667" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Adminhtml.System.Config.Validatevat.html">Validatevat</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Adminhtml.Customer.html">Customer</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Adminhtml.Edit.html">Edit</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Adminhtml.Group.html">Group</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Adminhtml.Online.html">Online</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-290844111"></a>
+                                <a href="../namespaces/Magento.Customer.Block.Form.html" style="margin-left: 30px; padding-left: 0">Form</a>
+            </div>
+            <div id="namespace-290844111" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Form.Edit.html">Edit</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Form.Login.html">Login</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Form.Register.html">Register</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-325221687"></a>
+                                <a href="../namespaces/Magento.Customer.Block.Widget.html" style="margin-left: 30px; padding-left: 0">Widget</a>
+            </div>
+            <div id="namespace-325221687" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Widget.AbstractWidget.html">AbstractWidget</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Widget.Dob.html">Dob</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Widget.Gender.html">Gender</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Widget.Name.html">Name</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Widget.Taxvat.html">Taxvat</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Block.Newsletter.html">Newsletter</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1544086882"></a>
+                                <a href="../namespaces/Magento.Customer.Controller.html" style="margin-left: 30px; padding-left: 0">Controller</a>
+            </div>
+            <div id="namespace-1544086882" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-520688717"></a>
+                                <a href="../namespaces/Magento.Customer.Controller.Adminhtml.html" style="margin-left: 30px; padding-left: 0">Adminhtml</a>
+            </div>
+            <div id="namespace-520688717" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1220702888"></a>
+                                <a href="../namespaces/Magento.Customer.Controller.Adminhtml.Cart.html" style="margin-left: 30px; padding-left: 0">Cart</a>
+            </div>
+            <div id="namespace-1220702888" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-222752660"></a>
+                                <a href="../namespaces/Magento.Customer.Controller.Adminhtml.Cart.Product.html" style="margin-left: 30px; padding-left: 0">Product</a>
+            </div>
+            <div id="namespace-222752660" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1095162230"></a>
+                                <a href="../namespaces/Magento.Customer.Controller.Adminhtml.Cart.Product.Composite.html" style="margin-left: 30px; padding-left: 0">Composite</a>
+            </div>
+            <div id="namespace-1095162230" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Controller.Adminhtml.Cart.Product.Composite.Cart.html">Cart</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1821295586"></a>
+                                <a href="../namespaces/Magento.Customer.Controller.Adminhtml.System.html" style="margin-left: 30px; padding-left: 0">System</a>
+            </div>
+            <div id="namespace-1821295586" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1750201452"></a>
+                                <a href="../namespaces/Magento.Customer.Controller.Adminhtml.System.Config.html" style="margin-left: 30px; padding-left: 0">Config</a>
+            </div>
+            <div id="namespace-1750201452" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Controller.Adminhtml.System.Config.Validatevat.html">Validatevat</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-485609438"></a>
+                                <a href="../namespaces/Magento.Customer.Controller.Adminhtml.Wishlist.html" style="margin-left: 30px; padding-left: 0">Wishlist</a>
+            </div>
+            <div id="namespace-485609438" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-782909668"></a>
+                                <a href="../namespaces/Magento.Customer.Controller.Adminhtml.Wishlist.Product.html" style="margin-left: 30px; padding-left: 0">Product</a>
+            </div>
+            <div id="namespace-782909668" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-403130327"></a>
+                                <a href="../namespaces/Magento.Customer.Controller.Adminhtml.Wishlist.Product.Composite.html" style="margin-left: 30px; padding-left: 0">Composite</a>
+            </div>
+            <div id="namespace-403130327" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Controller.Adminhtml.Wishlist.Product.Composite.Wishlist.html">Wishlist</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Controller.Adminhtml.Group.html">Group</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Controller.Adminhtml.Index.html">Index</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Controller.Adminhtml.Online.html">Online</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Controller.Account.html">Account</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Controller.Address.html">Address</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Controller.RegistryConstants.html">RegistryConstants</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Controller.Review.html">Review</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-602015693"></a>
+                                <a href="../namespaces/Magento.Customer.Helper.html" style="margin-left: 30px; padding-left: 0">Helper</a>
+            </div>
+            <div id="namespace-602015693" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1497121532"></a>
+                                <a href="../namespaces/Magento.Customer.Helper.Session.html" style="margin-left: 30px; padding-left: 0">Session</a>
+            </div>
+            <div id="namespace-1497121532" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Helper.Session.CurrentCustomer.html">CurrentCustomer</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Helper.Session.CurrentCustomerAddress.html">CurrentCustomerAddress</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Helper.Address.html">Address</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Helper.Data.html">Data</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Helper.View.html">View</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1005320827"></a>
+                                <a href="../namespaces/Magento.Customer.Model.html" style="margin-left: 30px; padding-left: 0">Model</a>
+            </div>
+            <div id="namespace-1005320827" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-695161888"></a>
+                                <a href="../namespaces/Magento.Customer.Model.Address.html" style="margin-left: 30px; padding-left: 0">Address</a>
+            </div>
+            <div id="namespace-695161888" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-89344923"></a>
+                                <a href="../namespaces/Magento.Customer.Model.Address.Config.html" style="margin-left: 30px; padding-left: 0">Config</a>
+            </div>
+            <div id="namespace-89344923" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Address.Config.Converter.html">Converter</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Address.Config.Reader.html">Reader</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Address.Config.SchemaLocator.html">SchemaLocator</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Address.AbstractAddress.html">AbstractAddress</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Address.Config.html">Config</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Address.Converter.html">Converter</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Address.Form.html">Form</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1323268604"></a>
+                                <a href="../namespaces/Magento.Customer.Model.App.html" style="margin-left: 30px; padding-left: 0">App</a>
+            </div>
+            <div id="namespace-1323268604" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-722936996"></a>
+                                <a href="../namespaces/Magento.Customer.Model.App.Action.html" style="margin-left: 30px; padding-left: 0">Action</a>
+            </div>
+            <div id="namespace-722936996" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Model.App.Action.ContextPlugin.html">ContextPlugin</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-509730437"></a>
+                                <a href="../namespaces/Magento.Customer.Model.Attribute.html" style="margin-left: 30px; padding-left: 0">Attribute</a>
+            </div>
+            <div id="namespace-509730437" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1705171267"></a>
+                                <a href="../namespaces/Magento.Customer.Model.Attribute.Backend.html" style="margin-left: 30px; padding-left: 0">Backend</a>
+            </div>
+            <div id="namespace-1705171267" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-830289746"></a>
+                                <a href="../namespaces/Magento.Customer.Model.Attribute.Backend.Data.html" style="margin-left: 30px; padding-left: 0">Data</a>
+            </div>
+            <div id="namespace-830289746" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Attribute.Backend.Data.Boolean.html">Boolean</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-854852410"></a>
+                                <a href="../namespaces/Magento.Customer.Model.Attribute.Data.html" style="margin-left: 30px; padding-left: 0">Data</a>
+            </div>
+            <div id="namespace-854852410" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Attribute.Data.AbstractData.html">AbstractData</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Attribute.Data.Boolean.html">Boolean</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Attribute.Data.Date.html">Date</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Attribute.Data.File.html">File</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Attribute.Data.Hidden.html">Hidden</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Attribute.Data.Image.html">Image</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Attribute.Data.Multiline.html">Multiline</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Attribute.Data.Multiselect.html">Multiselect</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Attribute.Data.Postcode.html">Postcode</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Attribute.Data.Select.html">Select</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Attribute.Data.Text.html">Text</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Attribute.Data.Textarea.html">Textarea</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1814000951"></a>
+                                <a href="../namespaces/Magento.Customer.Model.Backend.html" style="margin-left: 30px; padding-left: 0">Backend</a>
+            </div>
+            <div id="namespace-1814000951" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Backend.Customer.html">Customer</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1367175208"></a>
+                                <a href="../namespaces/Magento.Customer.Model.Config.html" style="margin-left: 30px; padding-left: 0">Config</a>
+            </div>
+            <div id="namespace-1367175208" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-106391447"></a>
+                                <a href="../namespaces/Magento.Customer.Model.Config.Backend.html" style="margin-left: 30px; padding-left: 0">Backend</a>
+            </div>
+            <div id="namespace-106391447" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1552180980"></a>
+                                <a href="../namespaces/Magento.Customer.Model.Config.Backend.Address.html" style="margin-left: 30px; padding-left: 0">Address</a>
+            </div>
+            <div id="namespace-1552180980" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Config.Backend.Address.Street.html">Street</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1707402759"></a>
+                                <a href="../namespaces/Magento.Customer.Model.Config.Backend.Password.html" style="margin-left: 30px; padding-left: 0">Password</a>
+            </div>
+            <div id="namespace-1707402759" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1466802128"></a>
+                                <a href="../namespaces/Magento.Customer.Model.Config.Backend.Password.Link.html" style="margin-left: 30px; padding-left: 0">Link</a>
+            </div>
+            <div id="namespace-1466802128" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Config.Backend.Password.Link.Expirationperiod.html">Expirationperiod</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1999111915"></a>
+                                <a href="../namespaces/Magento.Customer.Model.Config.Backend.Show.html" style="margin-left: 30px; padding-left: 0">Show</a>
+            </div>
+            <div id="namespace-1999111915" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Config.Backend.Show.Address.html">Address</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Config.Backend.Show.Customer.html">Customer</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1075552209"></a>
+                                <a href="../namespaces/Magento.Customer.Model.Config.Source.html" style="margin-left: 30px; padding-left: 0">Source</a>
+            </div>
+            <div id="namespace-1075552209" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1359023914"></a>
+                                <a href="../namespaces/Magento.Customer.Model.Config.Source.Address.html" style="margin-left: 30px; padding-left: 0">Address</a>
+            </div>
+            <div id="namespace-1359023914" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Config.Source.Address.Type.html">Type</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-638937234"></a>
+                                <a href="../namespaces/Magento.Customer.Model.Config.Source.Group.html" style="margin-left: 30px; padding-left: 0">Group</a>
+            </div>
+            <div id="namespace-638937234" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Config.Source.Group.Multiselect.html">Multiselect</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Config.Source.Group.html">Group</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Config.Share.html">Share</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-957000280"></a>
+                                <a href="../namespaces/Magento.Customer.Model.Customer.html" style="margin-left: 30px; padding-left: 0">Customer</a>
+            </div>
+            <div id="namespace-957000280" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-70893020"></a>
+                                <a href="../namespaces/Magento.Customer.Model.Customer.Attribute.html" style="margin-left: 30px; padding-left: 0">Attribute</a>
+            </div>
+            <div id="namespace-70893020" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-913213785"></a>
+                                <a href="../namespaces/Magento.Customer.Model.Customer.Attribute.Backend.html" style="margin-left: 30px; padding-left: 0">Backend</a>
+            </div>
+            <div id="namespace-913213785" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Customer.Attribute.Backend.Billing.html">Billing</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Customer.Attribute.Backend.Password.html">Password</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Customer.Attribute.Backend.Shipping.html">Shipping</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Customer.Attribute.Backend.Store.html">Store</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Customer.Attribute.Backend.Website.html">Website</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1862909878"></a>
+                                <a href="../namespaces/Magento.Customer.Model.Customer.Attribute.Source.html" style="margin-left: 30px; padding-left: 0">Source</a>
+            </div>
+            <div id="namespace-1862909878" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Customer.Attribute.Source.Group.html">Group</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Customer.Attribute.Source.Store.html">Store</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Customer.Attribute.Source.Website.html">Website</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1494755732"></a>
+                                <a href="../namespaces/Magento.Customer.Model.Layout.html" style="margin-left: 30px; padding-left: 0">Layout</a>
+            </div>
+            <div id="namespace-1494755732" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Layout.DepersonalizePlugin.html">DepersonalizePlugin</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1916445563"></a>
+                                <a href="../namespaces/Magento.Customer.Model.Metadata.html" style="margin-left: 30px; padding-left: 0">Metadata</a>
+            </div>
+            <div id="namespace-1916445563" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1863398306"></a>
+                                <a href="../namespaces/Magento.Customer.Model.Metadata.Form.html" style="margin-left: 30px; padding-left: 0">Form</a>
+            </div>
+            <div id="namespace-1863398306" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Metadata.Form.AbstractData.html">AbstractData</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Metadata.Form.Boolean.html">Boolean</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Metadata.Form.Date.html">Date</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Metadata.Form.File.html">File</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Metadata.Form.Hidden.html">Hidden</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Metadata.Form.Image.html">Image</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Metadata.Form.Multiline.html">Multiline</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Metadata.Form.Multiselect.html">Multiselect</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Metadata.Form.Select.html">Select</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Metadata.Form.Text.html">Text</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Metadata.Form.Textarea.html">Textarea</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Metadata.ElementFactory.html">ElementFactory</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Metadata.Form.html">Form</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Metadata.FormFactory.html">FormFactory</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Metadata.Validator.html">Validator</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-483429923"></a>
+                                <a href="../namespaces/Magento.Customer.Model.Renderer.html" style="margin-left: 30px; padding-left: 0">Renderer</a>
+            </div>
+            <div id="namespace-483429923" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Renderer.Region.html">Region</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-660166785"></a>
+                                <a href="../namespaces/Magento.Customer.Model.Resource.html" style="margin-left: 30px; padding-left: 0">Resource</a>
+            </div>
+            <div id="namespace-660166785" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1522645534"></a>
+                                <a href="../namespaces/Magento.Customer.Model.Resource.Address.html" style="margin-left: 30px; padding-left: 0">Address</a>
+            </div>
+            <div id="namespace-1522645534" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1081627945"></a>
+                                <a href="../namespaces/Magento.Customer.Model.Resource.Address.Attribute.html" style="margin-left: 30px; padding-left: 0">Attribute</a>
+            </div>
+            <div id="namespace-1081627945" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1748331062"></a>
+                                <a href="../namespaces/Magento.Customer.Model.Resource.Address.Attribute.Backend.html" style="margin-left: 30px; padding-left: 0">Backend</a>
+            </div>
+            <div id="namespace-1748331062" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Resource.Address.Attribute.Backend.Region.html">Region</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-796756768"></a>
+                                <a href="../namespaces/Magento.Customer.Model.Resource.Address.Attribute.Source.html" style="margin-left: 30px; padding-left: 0">Source</a>
+            </div>
+            <div id="namespace-796756768" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Resource.Address.Attribute.Source.Country.html">Country</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Resource.Address.Attribute.Source.Region.html">Region</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Resource.Address.Attribute.Collection.html">Collection</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Resource.Address.Collection.html">Collection</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1767756101"></a>
+                                <a href="../namespaces/Magento.Customer.Model.Resource.Attribute.html" style="margin-left: 30px; padding-left: 0">Attribute</a>
+            </div>
+            <div id="namespace-1767756101" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Resource.Attribute.Collection.html">Collection</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1480032565"></a>
+                                <a href="../namespaces/Magento.Customer.Model.Resource.Customer.html" style="margin-left: 30px; padding-left: 0">Customer</a>
+            </div>
+            <div id="namespace-1480032565" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1301019293"></a>
+                                <a href="../namespaces/Magento.Customer.Model.Resource.Customer.Grid.html" style="margin-left: 30px; padding-left: 0">Grid</a>
+            </div>
+            <div id="namespace-1301019293" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Resource.Customer.Grid.ServiceCollection.html">ServiceCollection</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Resource.Customer.Collection.html">Collection</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Resource.Customer.CustomersTypeOptions.html">CustomersTypeOptions</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-970477869"></a>
+                                <a href="../namespaces/Magento.Customer.Model.Resource.Form.html" style="margin-left: 30px; padding-left: 0">Form</a>
+            </div>
+            <div id="namespace-970477869" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-160162779"></a>
+                                <a href="../namespaces/Magento.Customer.Model.Resource.Form.Attribute.html" style="margin-left: 30px; padding-left: 0">Attribute</a>
+            </div>
+            <div id="namespace-160162779" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Resource.Form.Attribute.Collection.html">Collection</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Resource.Form.Attribute.CollectionFactory.html">CollectionFactory</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Resource.Form.Attribute.html">Attribute</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1078464827"></a>
+                                <a href="../namespaces/Magento.Customer.Model.Resource.Group.html" style="margin-left: 30px; padding-left: 0">Group</a>
+            </div>
+            <div id="namespace-1078464827" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1918600708"></a>
+                                <a href="../namespaces/Magento.Customer.Model.Resource.Group.Grid.html" style="margin-left: 30px; padding-left: 0">Grid</a>
+            </div>
+            <div id="namespace-1918600708" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Resource.Group.Grid.Collection.html">Collection</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Resource.Group.Grid.ServiceCollection.html">ServiceCollection</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Resource.Group.Collection.html">Collection</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1527286371"></a>
+                                <a href="../namespaces/Magento.Customer.Model.Resource.Setup.html" style="margin-left: 30px; padding-left: 0">Setup</a>
+            </div>
+            <div id="namespace-1527286371" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Resource.Setup.PropertyMapper.html">PropertyMapper</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Resource.AbstractServiceCollection.html">AbstractServiceCollection</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Resource.Address.html">Address</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Resource.Attribute.html">Attribute</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Resource.Customer.html">Customer</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Resource.Group.html">Group</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Resource.Setup.html">Setup</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-408267406"></a>
+                                <a href="../namespaces/Magento.Customer.Model.Session.html" style="margin-left: 30px; padding-left: 0">Session</a>
+            </div>
+            <div id="namespace-408267406" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Session.Storage.html">Storage</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Address.html">Address</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Model.AddressRegistry.html">AddressRegistry</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Attribute.html">Attribute</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Converter.html">Converter</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Customer.html">Customer</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Model.CustomerRegistry.html">CustomerRegistry</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Form.html">Form</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Group.html">Group</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Model.GroupRegistry.html">GroupRegistry</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Observer.html">Observer</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Model.Session.html">Session</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-138938409"></a>
+                                <a href="../namespaces/Magento.Customer.Service.html" style="margin-left: 30px; padding-left: 0">Service</a>
+            </div>
+            <div id="namespace-138938409" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-159963070"></a>
+                                <a href="../namespaces/Magento.Customer.Service.V1.html" style="margin-left: 30px; padding-left: 0">V1</a>
+            </div>
+            <div id="namespace-159963070" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-333434356"></a>
+                                <a href="../namespaces/Magento.Customer.Service.V1.Data.html" style="margin-left: 30px; padding-left: 0">Data</a>
+            </div>
+            <div id="namespace-333434356" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-2114788723"></a>
+                                <a href="../namespaces/Magento.Customer.Service.V1.Data.Eav.html" style="margin-left: 30px; padding-left: 0">Eav</a>
+            </div>
+            <div id="namespace-2114788723" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Service.V1.Data.Eav.AttributeMetadata.html">AttributeMetadata</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Service.V1.Data.Eav.AttributeMetadataBuilder.html">AttributeMetadataBuilder</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Service.V1.Data.Eav.Option.html">Option</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Service.V1.Data.Eav.OptionBuilder.html">OptionBuilder</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Service.V1.Data.Eav.ValidationRule.html">ValidationRule</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Service.V1.Data.Eav.ValidationRuleBuilder.html">ValidationRuleBuilder</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Service.V1.Data.Address.html">Address</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Service.V1.Data.AddressBuilder.html">AddressBuilder</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Service.V1.Data.AddressConverter.html">AddressConverter</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Service.V1.Data.Customer.html">Customer</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Service.V1.Data.CustomerBuilder.html">CustomerBuilder</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Service.V1.Data.CustomerDetails.html">CustomerDetails</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Service.V1.Data.CustomerDetailsBuilder.html">CustomerDetailsBuilder</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Service.V1.Data.CustomerGroup.html">CustomerGroup</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Service.V1.Data.CustomerGroupBuilder.html">CustomerGroupBuilder</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Service.V1.Data.CustomerValidationResults.html">CustomerValidationResults</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Service.V1.Data.CustomerValidationResultsBuilder.html">CustomerValidationResultsBuilder</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Service.V1.Data.Region.html">Region</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Service.V1.Data.RegionBuilder.html">RegionBuilder</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Service.V1.Data.SearchResults.html">SearchResults</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Service.V1.Data.SearchResultsBuilder.html">SearchResultsBuilder</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Magento.Customer.Service.V1.CustomerAccountServiceInterface.html">CustomerAccountServiceInterface</a></li>
+                                                    <li class="interface"><a href="../classes/Magento.Customer.Service.V1.CustomerAddressServiceInterface.html">CustomerAddressServiceInterface</a></li>
+                                                    <li class="interface"><a href="../classes/Magento.Customer.Service.V1.CustomerGroupServiceInterface.html">CustomerGroupServiceInterface</a></li>
+                                                    <li class="interface"><a href="../classes/Magento.Customer.Service.V1.CustomerMetadataServiceInterface.html">CustomerMetadataServiceInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Service.V1.CustomerAccountService.html">CustomerAccountService</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Service.V1.CustomerAddressService.html">CustomerAddressService</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Service.V1.CustomerGroupService.html">CustomerGroupService</a></li>
+                                                    <li class="class"><a href="../classes/Magento.Customer.Service.V1.CustomerMetadataService.html">CustomerMetadataService</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Magento.Customer.Exception.html">Exception</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </section>
+    <section class="row-fluid">
+        <div class="span10 offset2">
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <nav>
+                                                <a href="../namespaces/Magento.Customer.Block.Form.html">\Magento\Customer\Block\Form</a> <i class="icon-level-up"></i>
+                                            </nav>
+                    <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
+
+                    <h1><small>\Magento\Customer\Block\Form</small>Register</h1>
+                    <p><em>Customer register form block</em></p>
+                    
+
+                    <section id="summary">
+                        <h2>Summary</h2>
+                        <section class="row-fluid heading">
+                            <section class="span4">
+                                <a href="#methods">Methods</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#properties">Properties</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#constants">Constants</a>
+                            </section>
+                        </section>
+                        <section class="row-fluid public">
+                            <section class="span4">
+                                                                    <a href="../classes/Magento.Customer.Block.Form.Register.html#method___construct" class="">__construct()</a><br />
+                                                                    <a href="../classes/Magento.Customer.Block.Form.Register.html#method_getConfig" class="">getConfig()</a><br />
+                                                                    <a href="../classes/Magento.Customer.Block.Form.Register.html#method_getPostActionUrl" class="">getPostActionUrl()</a><br />
+                                                                    <a href="../classes/Magento.Customer.Block.Form.Register.html#method_getBackUrl" class="">getBackUrl()</a><br />
+                                                                    <a href="../classes/Magento.Customer.Block.Form.Register.html#method_getFormData" class="">getFormData()</a><br />
+                                                                    <a href="../classes/Magento.Customer.Block.Form.Register.html#method_getCountryId" class="">getCountryId()</a><br />
+                                                                    <a href="../classes/Magento.Customer.Block.Form.Register.html#method_getRegion" class="">getRegion()</a><br />
+                                                                    <a href="../classes/Magento.Customer.Block.Form.Register.html#method_isNewsletterEnabled" class="">isNewsletterEnabled()</a><br />
+                                                                    <a href="../classes/Magento.Customer.Block.Form.Register.html#method_restoreSessionData" class="">restoreSessionData()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No public properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No constants found</em>
+                                                            </section>
+                        </section>
+                        <section class="row-fluid protected">
+                            <section class="span4">
+                                                                    <a href="../classes/Magento.Customer.Block.Form.Register.html#method__prepareLayout" class="">_prepareLayout()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <a href="../classes/Magento.Customer.Block.Form.Register.html#property__customerSession" class="">$_customerSession</a><br />
+                                                                    <a href="../classes/Magento.Customer.Block.Form.Register.html#property__moduleManager" class="">$_moduleManager</a><br />
+                                                                    <a href="../classes/Magento.Customer.Block.Form.Register.html#property__customerHelper" class="">$_customerHelper</a><br />
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                        <section class="row-fluid private">
+                            <section class="span4">
+                                                                    <em>No private methods found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No private properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                    </section>
+                </div>
+                <aside class="span4 detailsbar">
+                                        
+                    
+                    <dl>
+                        <dt>File</dt>
+                            <dd><a href="../files/Block.Form.Register.html"><div class="path-wrapper">Block/Form/Register.php</div></a></dd>
+                                                <dt>Package</dt>
+                            <dd><div class="namespace-wrapper">\Default</div></dd>
+                                                <dt>Class hierarchy</dt>
+                            <dd class="hierarchy">
+                                                                                                                                                                                                                                                                                                
+                                        <div class="namespace-wrapper">\Magento\Directory\Block\Data</div>
+                                                                                                    <div class="namespace-wrapper">\Magento\Customer\Block\Form\Register</div>
+                            </dd>
+
+                        
+                        
+                        
+                        
+                                                                        </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                                            <tr><td colspan="2"><em>None found</em></td></tr>
+                                        </table>
+                </aside>
+            </div>
+
+                        
+                                    <a id="properties" name="properties"></a>
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <h2>Properties</h2>
+                </div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property__customerSession" name="property__customerSession" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$_customerSession</h3>
+                <pre class="signature">$_customerSession : \Magento\Customer\Model\Session</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                <a href="../classes/Magento.Customer.Model.Session.html">\Magento\Customer\Model\Session</a>
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property__moduleManager" name="property__moduleManager" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$_moduleManager</h3>
+                <pre class="signature">$_moduleManager : \Magento\Framework\Module\Manager</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                \Magento\Framework\Module\Manager
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property__customerHelper" name="property__customerHelper" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$_customerHelper</h3>
+                <pre class="signature">$_customerHelper : \Magento\Customer\Helper\Data</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                <a href="../classes/Magento.Customer.Helper.Data.html">\Magento\Customer\Helper\Data</a>
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                            
+                                    <a id="methods" name="methods"></a>
+            <div class="row-fluid">
+                <div class="span8 content class"><h2>Methods</h2></div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method___construct" name="method___construct" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">__construct()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">__construct(\Magento\Framework\View\Element\Template\Context <span class="argument">$context</span>, \Magento\Core\Helper\Data <span class="argument">$coreData</span>, \Magento\Framework\Json\EncoderInterface <span class="argument">$jsonEncoder</span>, \Magento\Framework\App\Cache\Type\Config <span class="argument">$configCacheType</span>, \Magento\Directory\Model\Resource\Region\CollectionFactory <span class="argument">$regionCollectionFactory</span>, \Magento\Directory\Model\Resource\Country\CollectionFactory <span class="argument">$countryCollectionFactory</span>, \Magento\Framework\Module\Manager <span class="argument">$moduleManager</span>, \Magento\Customer\Model\Session <span class="argument">$customerSession</span>, \Magento\Customer\Helper\Data <span class="argument">$customerHelper</span>, array <span class="argument">$data</span>)</pre>
+                <p><em></em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\Magento\Framework\View\Element\Template\Context</td>
+                                <td>$context </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>\Magento\Core\Helper\Data</td>
+                                <td>$coreData </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>\Magento\Framework\Json\EncoderInterface</td>
+                                <td>$jsonEncoder </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>\Magento\Framework\App\Cache\Type\Config</td>
+                                <td>$configCacheType </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>\Magento\Directory\Model\Resource\Region\CollectionFactory</td>
+                                <td>$regionCollectionFactory </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>\Magento\Directory\Model\Resource\Country\CollectionFactory</td>
+                                <td>$countryCollectionFactory </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>\Magento\Framework\Module\Manager</td>
+                                <td>$moduleManager </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td><a href="../classes/Magento.Customer.Model.Session.html">\Magento\Customer\Model\Session</a></td>
+                                <td>$customerSession </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td><a href="../classes/Magento.Customer.Helper.Data.html">\Magento\Customer\Helper\Data</a></td>
+                                <td>$customerHelper </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>array</td>
+                                <td>$data </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            SuppressWarnings
+                        </th>
+                        <td>
+                                                                                            <p>(PHPMD.ExcessiveParameterList)</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getConfig" name="method_getConfig" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getConfig()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getConfig(string <span class="argument">$path</span>) : string|null</pre>
+                <p><em>Get config</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$path </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    string|null
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getPostActionUrl" name="method_getPostActionUrl" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getPostActionUrl()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getPostActionUrl() : string</pre>
+                <p><em>Retrieve form posting url</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getBackUrl" name="method_getBackUrl" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getBackUrl()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getBackUrl() : string</pre>
+                <p><em>Retrieve back url</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getFormData" name="method_getFormData" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getFormData()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getFormData() : mixed</pre>
+                <p><em>Retrieve form data</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    mixed
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getCountryId" name="method_getCountryId" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getCountryId()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getCountryId() : integer</pre>
+                <p><em>Retrieve customer country identifier</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    integer
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getRegion" name="method_getRegion" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getRegion()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getRegion() : mixed</pre>
+                <p><em>Retrieve customer region identifier</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    mixed
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_isNewsletterEnabled" name="method_isNewsletterEnabled" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">isNewsletterEnabled()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">isNewsletterEnabled() : boolean</pre>
+                <p><em>Newsletter module availability</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_restoreSessionData" name="method_restoreSessionData" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">restoreSessionData()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">restoreSessionData(\Magento\Customer\Model\Metadata\Form <span class="argument">$form</span>, string|null <span class="argument">$scope</span>) : $this</pre>
+                <p><em>Restore entity data from session
+Entity and form code must be defined for the form</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td><a href="../classes/Magento.Customer.Model.Metadata.Form.html">\Magento\Customer\Model\Metadata\Form</a></td>
+                                <td>$form </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>string|null</td>
+                                <td>$scope </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    $this
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method__prepareLayout" name="method__prepareLayout" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">_prepareLayout()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">_prepareLayout() : $this</pre>
+                <p><em></em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    $this
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                    </div>
+    </section>
+
+    <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="source-view-label">Register.php</h3>
+        </div>
+        <div class="modal-body">
+            <pre data-src="../files/Block/Form/Register.php.txt" class="language-php line-numbers"></pre>
+        </div>
+    </div>
+
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">
+                                                        <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>
+                                                                            <li><a href="../namespaces/Magento.html">\Magento</a></li>
+                                                                    </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    on 
+Warning: date_default_timezone_get(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in /Users/difleming/pear/share/pear/phpDocumentor/vendor/twig/twig/lib/Twig/Extension/Core.php on line 89
+July 11th, 2014 at 15:37.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>

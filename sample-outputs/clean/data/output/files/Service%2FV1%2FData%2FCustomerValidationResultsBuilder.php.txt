@@ -1,0 +1,37 @@
+<?php
+/**
+ * {license_notice}
+ *
+ * @copyright   {copyright}
+ * @license     {license_link}
+ */
+namespace Magento\Customer\Service\V1\Data;
+
+/**
+ *  Builder for CustomerValidationResults
+ */
+class CustomerValidationResultsBuilder extends \Magento\Framework\Service\Data\AbstractObjectBuilder
+{
+    /**
+     * Set if customer data is valid
+     *
+     * @param bool $isValid
+     * @return $this
+     */
+    public function setIsValid($isValid)
+    {
+        return $this->_set(CustomerValidationResults::VALID, $isValid);
+    }
+
+    /**
+     * Set error messages
+     *
+     * @param string[] $messages
+     * @return $this
+     */
+    public function setMessages($messages)
+    {
+        return $this->_set(CustomerValidationResults::MESSAGES, $messages);
+    }
+}
+
