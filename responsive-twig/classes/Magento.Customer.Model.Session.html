@@ -1,0 +1,1504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>    API Documentation &raquo; \Magento\Customer\Model\Session
+</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+            <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+            <!--[if lt IE 9]>
+        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+        <![endif]-->
+        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
+        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
+        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
+        <script src="../js/bootstrap.js" type="text/javascript"></script>
+        <script src="../js/template.js" type="text/javascript"></script>
+        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
+    
+            <link rel="shortcut icon" href="../img/favicon.ico"/>
+        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
+        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
+        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
+    </head>
+<body>
+
+        <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> </a>
+                <a class="brand" href="../index.html">API Documentation</a>
+
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                API Documentation <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                                                    <li><a>Namespaces</a></li>
+                                                                        <li><a href="../namespaces/Magento.html">Magento</a></li>
+                                                                                                                                </ul>
+                        </li>
+                        <li class="dropdown" id="charts-menu">
+                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                Charts <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../graph_class.html">
+                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="reports-menu">
+                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                Reports <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../errors.html">
+                                        <i class="icon-list-alt"></i>&#160;Errors
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../markers.html">
+                                        <i class="icon-list-alt"></i>&#160;Markers
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../deprecated.html">
+                                        <i class="icon-list-alt"></i>&#160;Deprecated
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="go_to_top">
+            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
+        </div>
+    </div>
+    
+    <div id="___" class="container">
+        <noscript>
+            <div class="alert alert-warning">
+                Javascript is disabled; several features are only available if Javascript is enabled.
+            </div>
+        </noscript>
+
+        
+            <style>
+        .deprecated h2 {
+            text-decoration: line-through;
+        }
+    </style>
+    <div class="row">
+        <div class="span4">
+                    <div class="btn-group view pull-right" data-toggle="buttons-radio">
+        <button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button>
+        <button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+    </div>
+    <div class="btn-group visibility" data-toggle="buttons-checkbox">
+        <button class="btn public active" title="Show public elements">Public</button>
+        <button class="btn protected" title="Show protected elements">Protected</button>
+        <button class="btn private" title="Show private elements">Private</button>
+        <button class="btn inherited active" title="Show inherited elements">Inherited</button>
+    </div>
+
+        <ul class="side-nav nav nav-list">
+        <li class="nav-header">
+            <i class="icon-custom icon-method"></i> Methods
+            <ul>
+                                                                                                    <li class="method public">
+        <a href="#method___construct" title="__construct :: ">
+            <span class="description"></span><pre>__construct</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getCustomerConfigShare" title="getCustomerConfigShare :: Retrieve customer sharing configuration model">
+            <span class="description">Retrieve customer sharing configuration model</span><pre>getCustomerConfigShare</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_setCustomerData" title="setCustomerData :: Set customer object and setting customer id in session">
+            <span class="description">Set customer object and setting customer id in session</span><pre>setCustomerData</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getCustomerData" title="getCustomerData :: Retrieve customer model object">
+            <span class="description">Retrieve customer model object</span><pre>getCustomerData</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getCustomerDataObject" title="getCustomerDataObject :: Returns Customer data object with the customer information">
+            <span class="description">Returns Customer data object with the customer information</span><pre>getCustomerDataObject</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_setCustomerDataObject" title="setCustomerDataObject :: Set Customer data object with the customer information">
+            <span class="description">Set Customer data object with the customer information</span><pre>setCustomerDataObject</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_setCustomer" title="setCustomer :: Set customer model and the customer id in session">
+            <span class="description">Set customer model and the customer id in session</span><pre>setCustomer</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getCustomer" title="getCustomer :: Retrieve customer model object">
+            <span class="description">Retrieve customer model object</span><pre>getCustomer</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_setCustomerId" title="setCustomerId :: Set customer id">
+            <span class="description">Set customer id</span><pre>setCustomerId</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getCustomerId" title="getCustomerId :: Retrieve customer id from current session">
+            <span class="description">Retrieve customer id from current session</span><pre>getCustomerId</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getId" title="getId :: Retrieve customer id from current session">
+            <span class="description">Retrieve customer id from current session</span><pre>getId</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_setId" title="setId :: Set customer id">
+            <span class="description">Set customer id</span><pre>setId</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_setCustomerGroupId" title="setCustomerGroupId :: Set customer group id">
+            <span class="description">Set customer group id</span><pre>setCustomerGroupId</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getCustomerGroupId" title="getCustomerGroupId :: Get customer group id
+If customer is not logged in system, &#039;not logged in&#039; group id will be returned">
+            <span class="description">Get customer group id
+If customer is not logged in system, &#039;not logged in&#039; group id will be returned</span><pre>getCustomerGroupId</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_isLoggedIn" title="isLoggedIn :: Checking customer login status">
+            <span class="description">Checking customer login status</span><pre>isLoggedIn</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_checkCustomerId" title="checkCustomerId :: Check exists customer (light check)">
+            <span class="description">Check exists customer (light check)</span><pre>checkCustomerId</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_login" title="login :: Customer authorization">
+            <span class="description">Customer authorization</span><pre>login</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_setCustomerAsLoggedIn" title="setCustomerAsLoggedIn :: ">
+            <span class="description"></span><pre>setCustomerAsLoggedIn</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_setCustomerDataAsLoggedIn" title="setCustomerDataAsLoggedIn :: ">
+            <span class="description"></span><pre>setCustomerDataAsLoggedIn</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_loginById" title="loginById :: Authorization customer by identifier">
+            <span class="description">Authorization customer by identifier</span><pre>loginById</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_logout" title="logout :: Logout customer">
+            <span class="description">Logout customer</span><pre>logout</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_authenticate" title="authenticate :: Authenticate controller action by login customer">
+            <span class="description">Authenticate controller action by login customer</span><pre>authenticate</pre>
+        </a>
+    </li>
+
+                                                                                                                                                                                                                        <li class="method public">
+        <a href="#method_setBeforeAuthUrl" title="setBeforeAuthUrl :: Set Before auth url">
+            <span class="description">Set Before auth url</span><pre>setBeforeAuthUrl</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_setAfterAuthUrl" title="setAfterAuthUrl :: Set After auth url">
+            <span class="description">Set After auth url</span><pre>setAfterAuthUrl</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_regenerateId" title="regenerateId :: Reset core session hosts after reseting session ID">
+            <span class="description">Reset core session hosts after reseting session ID</span><pre>regenerateId</pre>
+        </a>
+    </li>
+
+                                                                                                        </ul>
+        </li>
+        <li class="nav-header protected">» Protected
+            <ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <li class="method protected">
+                            <a href="#method__setAuthUrl" title="_setAuthUrl :: Set auth url">
+                                <span class="description">Set auth url</span><pre>_setAuthUrl</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method protected">
+                            <a href="#method__logout" title="_logout :: Logout without dispatching event">
+                                <span class="description">Logout without dispatching event</span><pre>_logout</pre>
+                            </a>
+                        </li>
+                                                                                                                                                                                            <li class="method protected">
+                            <a href="#method__createUrl" title="_createUrl :: ">
+                                <span class="description"></span><pre>_createUrl</pre>
+                            </a>
+                        </li>
+                                                </ul>
+        </li>
+        <li class="nav-header private">» Private
+            <ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </ul>
+        </li>
+        <li class="nav-header">
+            <i class="icon-custom icon-constant"></i> Constants
+            <ul>
+                            </ul>
+        </li>
+    </ul>
+
+
+        </div>
+
+        <div class="span8">
+            <div class="element class">
+                <h1>Session</h1>
+                <small style="display: block; text-align: right">
+                                            Extends \Magento\Framework\Session\SessionManager
+                                                        </small>
+                <p class="short_description">Customer session model</p>
+                <div class="details">
+                    <div class="long_description">
+                        
+                    </div>
+                    <table class="table table-bordered">
+                                                                                    <tr>
+                                    <th>
+                                        package
+                                                                            </th>
+                                    <td>
+                                                                                    
+                                                                                <p>Default</p>
+                                    </td>
+                                </tr>
+                                                                                                                                                                                </table>
+
+                    <h3><i class="icon-custom icon-method"></i> Methods</h3>
+                                                                <a id="method___construct"></a>
+                        <div class="element clickable method public  method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+                            <h2>__construct</h2>
+                            <pre>__construct(\Magento\Framework\App\Request\Http $request, \Magento\Framework\Session\SidResolverInterface $sidResolver, \Magento\Framework\Session\Config\ConfigInterface $sessionConfig, \Magento\Framework\Session\SaveHandlerInterface $saveHandler, \Magento\Framework\Session\ValidatorInterface $validator, \Magento\Framework\Session\StorageInterface $storage, \Magento\Customer\Model\Config\Share $configShare, \Magento\Core\Helper\Url $coreUrl, \Magento\Customer\Helper\Data $customerData, \Magento\Customer\Model\Resource\Customer $customerResource, \Magento\Customer\Model\CustomerFactory $customerFactory, \Magento\Framework\UrlFactory $urlFactory, \Magento\Framework\Session\Generic $session, \Magento\Framework\Event\ManagerInterface $eventManager, \Magento\Framework\App\Http\Context $httpContext, \Magento\Customer\Model\Converter $converter, \Magento\Customer\Service\V1\CustomerAccountServiceInterface $customerAccountService, null $sessionName = null) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$request</h4>
+                                                <code>\Magento\Framework\App\Request\Http</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$sidResolver</h4>
+                                                <code>\Magento\Framework\Session\SidResolverInterface</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$sessionConfig</h4>
+                                                <code>\Magento\Framework\Session\Config\ConfigInterface</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$saveHandler</h4>
+                                                <code>\Magento\Framework\Session\SaveHandlerInterface</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$validator</h4>
+                                                <code>\Magento\Framework\Session\ValidatorInterface</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$storage</h4>
+                                                <code>\Magento\Framework\Session\StorageInterface</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$configShare</h4>
+                                                <code><a href="../classes/Magento.Customer.Model.Config.Share.html">\Magento\Customer\Model\Config\Share</a></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$coreUrl</h4>
+                                                <code>\Magento\Core\Helper\Url</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$customerData</h4>
+                                                <code><a href="../classes/Magento.Customer.Helper.Data.html">\Magento\Customer\Helper\Data</a></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$customerResource</h4>
+                                                <code><a href="../classes/Magento.Customer.Model.Resource.Customer.html">\Magento\Customer\Model\Resource\Customer</a></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$customerFactory</h4>
+                                                <code>\Magento\Customer\Model\CustomerFactory</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$urlFactory</h4>
+                                                <code>\Magento\Framework\UrlFactory</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$session</h4>
+                                                <code>\Magento\Framework\Session\Generic</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$eventManager</h4>
+                                                <code>\Magento\Framework\Event\ManagerInterface</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$httpContext</h4>
+                                                <code>\Magento\Framework\App\Http\Context</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$converter</h4>
+                                                <code><a href="../classes/Magento.Customer.Model.Converter.html">\Magento\Customer\Model\Converter</a></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$customerAccountService</h4>
+                                                <code><a href="../classes/Magento.Customer.Service.V1.CustomerAccountServiceInterface.html">\Magento\Customer\Service\V1\CustomerAccountServiceInterface</a></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$sessionName</h4>
+                                                <code>null</code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method_getCustomerConfigShare"></a>
+                        <div class="element clickable method public  method_getCustomerConfigShare" data-toggle="collapse" data-target=".method_getCustomerConfigShare .collapse">
+                            <h2>Retrieve customer sharing configuration model</h2>
+                            <pre>getCustomerConfigShare() : \Magento\Customer\Model\Config\Share</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/Magento.Customer.Model.Config.Share.html">\Magento\Customer\Model\Config\Share</a></code><p></p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method_setCustomerData"></a>
+                        <div class="element clickable method public  method_setCustomerData" data-toggle="collapse" data-target=".method_setCustomerData .collapse">
+                            <h2>Set customer object and setting customer id in session</h2>
+                            <pre>setCustomerData(\Magento\Customer\Service\V1\Data\Customer $customer) : $this</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$customer</h4>
+                                                <code><a href="../classes/Magento.Customer.Service.V1.Data.Customer.html">\Magento\Customer\Service\V1\Data\Customer</a></code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>$this</code><p></p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method_getCustomerData"></a>
+                        <div class="element clickable method public deprecated method_getCustomerData" data-toggle="collapse" data-target=".method_getCustomerData .collapse">
+                            <h2>Retrieve customer model object</h2>
+                            <pre>getCustomerData() : \Magento\Customer\Service\V1\Data\Customer</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    deprecated
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/Magento.Customer.Service.V1.Data.Customer.html">\Magento\Customer\Service\V1\Data\Customer</a></code><p></p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method_getCustomerDataObject"></a>
+                        <div class="element clickable method public  method_getCustomerDataObject" data-toggle="collapse" data-target=".method_getCustomerDataObject .collapse">
+                            <h2>Returns Customer data object with the customer information</h2>
+                            <pre>getCustomerDataObject() : \Magento\Customer\Service\V1\Data\Customer</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/Magento.Customer.Service.V1.Data.Customer.html">\Magento\Customer\Service\V1\Data\Customer</a></code><p></p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method_setCustomerDataObject"></a>
+                        <div class="element clickable method public  method_setCustomerDataObject" data-toggle="collapse" data-target=".method_setCustomerDataObject .collapse">
+                            <h2>Set Customer data object with the customer information</h2>
+                            <pre>setCustomerDataObject(\Magento\Customer\Service\V1\Data\Customer $customerData) : $this</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$customerData</h4>
+                                                <code><a href="../classes/Magento.Customer.Service.V1.Data.Customer.html">\Magento\Customer\Service\V1\Data\Customer</a></code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>$this</code><p></p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method_setCustomer"></a>
+                        <div class="element clickable method public deprecated method_setCustomer" data-toggle="collapse" data-target=".method_setCustomer .collapse">
+                            <h2>Set customer model and the customer id in session</h2>
+                            <pre>setCustomer(\Magento\Customer\Model\Customer $customerModel) : $this</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    deprecated
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>use setCustomerId() instead</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$customerModel</h4>
+                                                <code><a href="../classes/Magento.Customer.Model.Customer.html">\Magento\Customer\Model\Customer</a></code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>$this</code><p></p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method_getCustomer"></a>
+                        <div class="element clickable method public deprecated method_getCustomer" data-toggle="collapse" data-target=".method_getCustomer .collapse">
+                            <h2>Retrieve customer model object</h2>
+                            <pre>getCustomer() : \Magento\Customer\Model\Customer</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    deprecated
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>use getCustomerId() instead</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/Magento.Customer.Model.Customer.html">\Magento\Customer\Model\Customer</a></code><p></p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method_setCustomerId"></a>
+                        <div class="element clickable method public  method_setCustomerId" data-toggle="collapse" data-target=".method_setCustomerId .collapse">
+                            <h2>Set customer id</h2>
+                            <pre>setCustomerId(integer|null $id) : $this</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$id</h4>
+                                                <code>integer|null</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>$this</code><p></p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method_getCustomerId"></a>
+                        <div class="element clickable method public  method_getCustomerId" data-toggle="collapse" data-target=".method_getCustomerId .collapse">
+                            <h2>Retrieve customer id from current session</h2>
+                            <pre>getCustomerId() : integer|null</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>integer|null</code><p></p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method_getId"></a>
+                        <div class="element clickable method public  method_getId" data-toggle="collapse" data-target=".method_getId .collapse">
+                            <h2>Retrieve customer id from current session</h2>
+                            <pre>getId() : integer|null</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>integer|null</code><p></p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method_setId"></a>
+                        <div class="element clickable method public  method_setId" data-toggle="collapse" data-target=".method_setId .collapse">
+                            <h2>Set customer id</h2>
+                            <pre>setId(integer|null $customerId) : $this</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$customerId</h4>
+                                                <code>integer|null</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>$this</code><p></p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method_setCustomerGroupId"></a>
+                        <div class="element clickable method public  method_setCustomerGroupId" data-toggle="collapse" data-target=".method_setCustomerGroupId .collapse">
+                            <h2>Set customer group id</h2>
+                            <pre>setCustomerGroupId(integer|null $id) : $this</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$id</h4>
+                                                <code>integer|null</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>$this</code><p></p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method_getCustomerGroupId"></a>
+                        <div class="element clickable method public  method_getCustomerGroupId" data-toggle="collapse" data-target=".method_getCustomerGroupId .collapse">
+                            <h2>Get customer group id
+If customer is not logged in system, &#039;not logged in&#039; group id will be returned</h2>
+                            <pre>getCustomerGroupId() : integer</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>integer</code><p></p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method_isLoggedIn"></a>
+                        <div class="element clickable method public  method_isLoggedIn" data-toggle="collapse" data-target=".method_isLoggedIn .collapse">
+                            <h2>Checking customer login status</h2>
+                            <pre>isLoggedIn() : boolean</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method_checkCustomerId"></a>
+                        <div class="element clickable method public  method_checkCustomerId" data-toggle="collapse" data-target=".method_checkCustomerId .collapse">
+                            <h2>Check exists customer (light check)</h2>
+                            <pre>checkCustomerId(integer $customerId) : boolean</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$customerId</h4>
+                                                <code>integer</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method_login"></a>
+                        <div class="element clickable method public  method_login" data-toggle="collapse" data-target=".method_login .collapse">
+                            <h2>Customer authorization</h2>
+                            <pre>login(string $username, string $password) : boolean</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$username</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$password</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method_setCustomerAsLoggedIn"></a>
+                        <div class="element clickable method public  method_setCustomerAsLoggedIn" data-toggle="collapse" data-target=".method_setCustomerAsLoggedIn .collapse">
+                            <h2>setCustomerAsLoggedIn</h2>
+                            <pre>setCustomerAsLoggedIn(\Magento\Customer\Model\Customer $customer) : $this</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$customer</h4>
+                                                <code><a href="../classes/Magento.Customer.Model.Customer.html">\Magento\Customer\Model\Customer</a></code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>$this</code><p></p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method_setCustomerDataAsLoggedIn"></a>
+                        <div class="element clickable method public  method_setCustomerDataAsLoggedIn" data-toggle="collapse" data-target=".method_setCustomerDataAsLoggedIn .collapse">
+                            <h2>setCustomerDataAsLoggedIn</h2>
+                            <pre>setCustomerDataAsLoggedIn(\Magento\Customer\Service\V1\Data\Customer $customer) : $this</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$customer</h4>
+                                                <code><a href="../classes/Magento.Customer.Service.V1.Data.Customer.html">\Magento\Customer\Service\V1\Data\Customer</a></code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>$this</code><p></p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method_loginById"></a>
+                        <div class="element clickable method public  method_loginById" data-toggle="collapse" data-target=".method_loginById .collapse">
+                            <h2>Authorization customer by identifier</h2>
+                            <pre>loginById(integer $customerId) : boolean</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$customerId</h4>
+                                                <code>integer</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method_logout"></a>
+                        <div class="element clickable method public  method_logout" data-toggle="collapse" data-target=".method_logout .collapse">
+                            <h2>Logout customer</h2>
+                            <pre>logout() : $this</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>$this</code><p></p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method_authenticate"></a>
+                        <div class="element clickable method public  method_authenticate" data-toggle="collapse" data-target=".method_authenticate .collapse">
+                            <h2>Authenticate controller action by login customer</h2>
+                            <pre>authenticate(\Magento\Framework\App\Action\Action $action, boolean|null $loginUrl = null) : boolean</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$action</h4>
+                                                <code>\Magento\Framework\App\Action\Action</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$loginUrl</h4>
+                                                <code>boolean|null</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method__setAuthUrl"></a>
+                        <div class="element clickable method protected  method__setAuthUrl" data-toggle="collapse" data-target=".method__setAuthUrl .collapse">
+                            <h2>Set auth url</h2>
+                            <pre>_setAuthUrl(string $key, string $url) : $this</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$key</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$url</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>$this</code><p></p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method__logout"></a>
+                        <div class="element clickable method protected  method__logout" data-toggle="collapse" data-target=".method__logout .collapse">
+                            <h2>Logout without dispatching event</h2>
+                            <pre>_logout() : $this</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>$this</code><p></p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method_setBeforeAuthUrl"></a>
+                        <div class="element clickable method public  method_setBeforeAuthUrl" data-toggle="collapse" data-target=".method_setBeforeAuthUrl .collapse">
+                            <h2>Set Before auth url</h2>
+                            <pre>setBeforeAuthUrl(string $url) : $this</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$url</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>$this</code><p></p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method_setAfterAuthUrl"></a>
+                        <div class="element clickable method public  method_setAfterAuthUrl" data-toggle="collapse" data-target=".method_setAfterAuthUrl .collapse">
+                            <h2>Set After auth url</h2>
+                            <pre>setAfterAuthUrl(string $url) : $this</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$url</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>$this</code><p></p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method_regenerateId"></a>
+                        <div class="element clickable method public  method_regenerateId" data-toggle="collapse" data-target=".method_regenerateId .collapse">
+                            <h2>Reset core session hosts after reseting session ID</h2>
+                            <pre>regenerateId(boolean $deleteOldSession = true) : $this</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$deleteOldSession</h4>
+                                                <code>boolean</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>$this</code><p></p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method__createUrl"></a>
+                        <div class="element clickable method protected  method__createUrl" data-toggle="collapse" data-target=".method__createUrl .collapse">
+                            <h2>_createUrl</h2>
+                            <pre>_createUrl() : \Magento\Framework\UrlInterface</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>\Magento\Framework\UrlInterface</code><p></p>
+                                                                    </div>
+                            </div>
+                        </div>
+                    
+                    
+                                                                <h3><i class="icon-custom icon-property"></i> Properties</h3>
+                                                    <a id="property__customer"> </a>
+                            <div class="element clickable property  protected property__customer" data-toggle="collapse" data-target=".property__customer .collapse">
+                                <h2>Customer object</h2>
+                                <pre>_customer : \Magento\Customer\Service\V1\Data\Customer</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code><a href="../classes/Magento.Customer.Service.V1.Data.Customer.html">\Magento\Customer\Service\V1\Data\Customer</a></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property__customerModel"> </a>
+                            <div class="element clickable property  protected property__customerModel" data-toggle="collapse" data-target=".property__customerModel .collapse">
+                                <h2>Customer model</h2>
+                                <pre>_customerModel : \Magento\Customer\Model\Customer</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code><a href="../classes/Magento.Customer.Model.Customer.html">\Magento\Customer\Model\Customer</a></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property__isCustomerIdChecked"> </a>
+                            <div class="element clickable property  protected property__isCustomerIdChecked" data-toggle="collapse" data-target=".property__isCustomerIdChecked .collapse">
+                                <h2>Flag with customer id validations result</h2>
+                                <pre>_isCustomerIdChecked : boolean|null</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>boolean|null</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property__customerData"> </a>
+                            <div class="element clickable property  protected property__customerData" data-toggle="collapse" data-target=".property__customerData .collapse">
+                                <h2>Customer data</h2>
+                                <pre>_customerData : \Magento\Customer\Helper\Data|null</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code><a href="../classes/Magento.Customer.Helper.Data.html">\Magento\Customer\Helper\Data</a>|null</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property__coreUrl"> </a>
+                            <div class="element clickable property  protected property__coreUrl" data-toggle="collapse" data-target=".property__coreUrl .collapse">
+                                <h2>Core url</h2>
+                                <pre>_coreUrl : \Magento\Core\Helper\Url|null</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>\Magento\Core\Helper\Url|null</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property__configShare"> </a>
+                            <div class="element clickable property  protected property__configShare" data-toggle="collapse" data-target=".property__configShare .collapse">
+                                <h2>_configShare</h2>
+                                <pre>_configShare : \Magento\Customer\Model\Config\Share</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code><a href="../classes/Magento.Customer.Model.Config.Share.html">\Magento\Customer\Model\Config\Share</a></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property__session"> </a>
+                            <div class="element clickable property  protected property__session" data-toggle="collapse" data-target=".property__session .collapse">
+                                <h2>_session</h2>
+                                <pre>_session : \Magento\Framework\Session\Generic</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>\Magento\Framework\Session\Generic</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property__customerAccountService"> </a>
+                            <div class="element clickable property  protected property__customerAccountService" data-toggle="collapse" data-target=".property__customerAccountService .collapse">
+                                <h2>_customerAccountService</h2>
+                                <pre>_customerAccountService : \Magento\Customer\Service\V1\CustomerAccountServiceInterface</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code><a href="../classes/Magento.Customer.Service.V1.CustomerAccountServiceInterface.html">\Magento\Customer\Service\V1\CustomerAccountServiceInterface</a></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property__customerFactory"> </a>
+                            <div class="element clickable property  protected property__customerFactory" data-toggle="collapse" data-target=".property__customerFactory .collapse">
+                                <h2>_customerFactory</h2>
+                                <pre>_customerFactory : \Magento\Customer\Model\CustomerFactory</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>\Magento\Customer\Model\CustomerFactory</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property__urlFactory"> </a>
+                            <div class="element clickable property  protected property__urlFactory" data-toggle="collapse" data-target=".property__urlFactory .collapse">
+                                <h2>_urlFactory</h2>
+                                <pre>_urlFactory : \Magento\Framework\UrlFactory</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>\Magento\Framework\UrlFactory</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property__eventManager"> </a>
+                            <div class="element clickable property  protected property__eventManager" data-toggle="collapse" data-target=".property__eventManager .collapse">
+                                <h2>_eventManager</h2>
+                                <pre>_eventManager : \Magento\Framework\Event\ManagerInterface</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>\Magento\Framework\Event\ManagerInterface</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property__httpContext"> </a>
+                            <div class="element clickable property  protected property__httpContext" data-toggle="collapse" data-target=".property__httpContext .collapse">
+                                <h2>_httpContext</h2>
+                                <pre>_httpContext : \Magento\Framework\App\Http\Context</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>\Magento\Framework\App\Http\Context</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property__converter"> </a>
+                            <div class="element clickable property  protected property__converter" data-toggle="collapse" data-target=".property__converter .collapse">
+                                <h2>_converter</h2>
+                                <pre>_converter : \Magento\Customer\Model\Converter</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code><a href="../classes/Magento.Customer.Model.Converter.html">\Magento\Customer\Model\Converter</a></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                            </div>
+            </div>
+            <a id="\Magento\Customer\Model\Session"></a>
+            <ul class="breadcrumb">
+                <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
+                    
+    
+    <li><span class="divider">\</span><a href="../namespaces/Magento.Customer.Model.html">Model</a></li>
+
+                <li class="active"><span class="divider">\</span><a href="../classes/Magento.Customer.Model.Session.html">Session</a></li>
+            </ul>
+        </div>
+    </div>
+
+    </div>
+
+        <footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
+            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
+            generated on Fri, 18 Jul 2014 12:02:55 -0500.<br/>
+    </footer>
+    </body>
+</html>

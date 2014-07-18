@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>    API Documentation &raquo; \Magento\Customer\Block\Account\Dashboard\Sidebar
+</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+            <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+            <!--[if lt IE 9]>
+        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+        <![endif]-->
+        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
+        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
+        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
+        <script src="../js/bootstrap.js" type="text/javascript"></script>
+        <script src="../js/template.js" type="text/javascript"></script>
+        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
+    
+            <link rel="shortcut icon" href="../img/favicon.ico"/>
+        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
+        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
+        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
+    </head>
+<body>
+
+        <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> </a>
+                <a class="brand" href="../index.html">API Documentation</a>
+
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                API Documentation <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                                                    <li><a>Namespaces</a></li>
+                                                                        <li><a href="../namespaces/Magento.html">Magento</a></li>
+                                                                                                                                </ul>
+                        </li>
+                        <li class="dropdown" id="charts-menu">
+                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                Charts <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../graph_class.html">
+                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="reports-menu">
+                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                Reports <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../errors.html">
+                                        <i class="icon-list-alt"></i>&#160;Errors
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../markers.html">
+                                        <i class="icon-list-alt"></i>&#160;Markers
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../deprecated.html">
+                                        <i class="icon-list-alt"></i>&#160;Deprecated
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="go_to_top">
+            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
+        </div>
+    </div>
+    
+    <div id="___" class="container">
+        <noscript>
+            <div class="alert alert-warning">
+                Javascript is disabled; several features are only available if Javascript is enabled.
+            </div>
+        </noscript>
+
+        
+            <style>
+        .deprecated h2 {
+            text-decoration: line-through;
+        }
+    </style>
+    <div class="row">
+        <div class="span4">
+                    <div class="btn-group view pull-right" data-toggle="buttons-radio">
+        <button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button>
+        <button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+    </div>
+    <div class="btn-group visibility" data-toggle="buttons-checkbox">
+        <button class="btn public active" title="Show public elements">Public</button>
+        <button class="btn protected" title="Show protected elements">Protected</button>
+        <button class="btn private" title="Show private elements">Private</button>
+        <button class="btn inherited active" title="Show inherited elements">Inherited</button>
+    </div>
+
+        <ul class="side-nav nav nav-list">
+        <li class="nav-header">
+            <i class="icon-custom icon-method"></i> Methods
+            <ul>
+                                                                                                    <li class="method public">
+        <a href="#method___construct" title="__construct :: ">
+            <span class="description"></span><pre>__construct</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getShoppingCartUrl" title="getShoppingCartUrl :: ">
+            <span class="description"></span><pre>getShoppingCartUrl</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getCartItemsCount" title="getCartItemsCount :: ">
+            <span class="description"></span><pre>getCartItemsCount</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getWishlist" title="getWishlist :: ">
+            <span class="description"></span><pre>getWishlist</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getWishlistCount" title="getWishlistCount :: ">
+            <span class="description"></span><pre>getWishlistCount</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getWishlistAddToCartLink" title="getWishlistAddToCartLink :: ">
+            <span class="description"></span><pre>getWishlistAddToCartLink</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getCompareItems" title="getCompareItems :: ">
+            <span class="description"></span><pre>getCompareItems</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getCompareJsObjectName" title="getCompareJsObjectName :: ">
+            <span class="description"></span><pre>getCompareJsObjectName</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getCompareRemoveUrlTemplate" title="getCompareRemoveUrlTemplate :: ">
+            <span class="description"></span><pre>getCompareRemoveUrlTemplate</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getCompareAddUrlTemplate" title="getCompareAddUrlTemplate :: ">
+            <span class="description"></span><pre>getCompareAddUrlTemplate</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getCompareUrl" title="getCompareUrl :: ">
+            <span class="description"></span><pre>getCompareUrl</pre>
+        </a>
+    </li>
+
+                                                                                                                                                                                                                        </ul>
+        </li>
+        <li class="nav-header protected">» Protected
+            <ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <li class="method protected">
+                            <a href="#method__createQuote" title="_createQuote :: ">
+                                <span class="description"></span><pre>_createQuote</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method protected">
+                            <a href="#method__createWishList" title="_createWishList :: ">
+                                <span class="description"></span><pre>_createWishList</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method protected">
+                            <a href="#method__createProductCompareCollection" title="_createProductCompareCollection :: ">
+                                <span class="description"></span><pre>_createProductCompareCollection</pre>
+                            </a>
+                        </li>
+                                                </ul>
+        </li>
+        <li class="nav-header private">» Private
+            <ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </ul>
+        </li>
+        <li class="nav-header">
+            <i class="icon-custom icon-constant"></i> Constants
+            <ul>
+                            </ul>
+        </li>
+    </ul>
+
+
+        </div>
+
+        <div class="span8">
+            <div class="element class">
+                <h1>Sidebar</h1>
+                <small style="display: block; text-align: right">
+                                            Extends \Magento\Framework\View\Element\Template
+                                                        </small>
+                <p class="short_description">Account dashboard sidebar</p>
+                <div class="details">
+                    <div class="long_description">
+                        
+                    </div>
+                    <table class="table table-bordered">
+                                                                                    <tr>
+                                    <th>
+                                        package
+                                                                            </th>
+                                    <td>
+                                                                                    
+                                                                                <p>Default</p>
+                                    </td>
+                                </tr>
+                                                                                                                                                                                </table>
+
+                    <h3><i class="icon-custom icon-method"></i> Methods</h3>
+                                                                <a id="method___construct"></a>
+                        <div class="element clickable method public  method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+                            <h2>__construct</h2>
+                            <pre>__construct(\Magento\Framework\View\Element\Template\Context $context, \Magento\Customer\Model\Session $customerSession, \Magento\Checkout\Model\Session $checkoutSession, \Magento\Sales\Model\QuoteFactory $quoteFactory, \Magento\Wishlist\Model\WishlistFactory $wishListFactory, \Magento\Catalog\Model\Resource\Product\Compare\Item\CollectionFactory $itemsCompareFactory, \Magento\Customer\Helper\Session\CurrentCustomer $currentCustomer, array $data = array()) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$context</h4>
+                                                <code>\Magento\Framework\View\Element\Template\Context</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$customerSession</h4>
+                                                <code><a href="../classes/Magento.Customer.Model.Session.html">\Magento\Customer\Model\Session</a></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$checkoutSession</h4>
+                                                <code>\Magento\Checkout\Model\Session</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$quoteFactory</h4>
+                                                <code>\Magento\Sales\Model\QuoteFactory</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$wishListFactory</h4>
+                                                <code>\Magento\Wishlist\Model\WishlistFactory</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$itemsCompareFactory</h4>
+                                                <code>\Magento\Catalog\Model\Resource\Product\Compare\Item\CollectionFactory</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$currentCustomer</h4>
+                                                <code><a href="../classes/Magento.Customer.Helper.Session.CurrentCustomer.html">\Magento\Customer\Helper\Session\CurrentCustomer</a></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$data</h4>
+                                                <code>array</code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method_getShoppingCartUrl"></a>
+                        <div class="element clickable method public  method_getShoppingCartUrl" data-toggle="collapse" data-target=".method_getShoppingCartUrl .collapse">
+                            <h2>getShoppingCartUrl</h2>
+                            <pre>getShoppingCartUrl() : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p></p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method_getCartItemsCount"></a>
+                        <div class="element clickable method public  method_getCartItemsCount" data-toggle="collapse" data-target=".method_getCartItemsCount .collapse">
+                            <h2>getCartItemsCount</h2>
+                            <pre>getCartItemsCount() : integer</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>integer</code><p></p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method_getWishlist"></a>
+                        <div class="element clickable method public  method_getWishlist" data-toggle="collapse" data-target=".method_getWishlist .collapse">
+                            <h2>getWishlist</h2>
+                            <pre>getWishlist() : \Magento\Wishlist\Model\Resource\Item\Collection</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>\Magento\Wishlist\Model\Resource\Item\Collection</code><p></p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method_getWishlistCount"></a>
+                        <div class="element clickable method public  method_getWishlistCount" data-toggle="collapse" data-target=".method_getWishlistCount .collapse">
+                            <h2>getWishlistCount</h2>
+                            <pre>getWishlistCount() : integer</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>integer</code><p></p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method_getWishlistAddToCartLink"></a>
+                        <div class="element clickable method public  method_getWishlistAddToCartLink" data-toggle="collapse" data-target=".method_getWishlistAddToCartLink .collapse">
+                            <h2>getWishlistAddToCartLink</h2>
+                            <pre>getWishlistAddToCartLink(\Magento\Wishlist\Model\Wishlist $wishlistItem) : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$wishlistItem</h4>
+                                                <code>\Magento\Wishlist\Model\Wishlist</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p></p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method_getCompareItems"></a>
+                        <div class="element clickable method public  method_getCompareItems" data-toggle="collapse" data-target=".method_getCompareItems .collapse">
+                            <h2>getCompareItems</h2>
+                            <pre>getCompareItems() : integer</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>integer</code><p></p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method_getCompareJsObjectName"></a>
+                        <div class="element clickable method public  method_getCompareJsObjectName" data-toggle="collapse" data-target=".method_getCompareJsObjectName .collapse">
+                            <h2>getCompareJsObjectName</h2>
+                            <pre>getCompareJsObjectName() : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p></p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method_getCompareRemoveUrlTemplate"></a>
+                        <div class="element clickable method public  method_getCompareRemoveUrlTemplate" data-toggle="collapse" data-target=".method_getCompareRemoveUrlTemplate .collapse">
+                            <h2>getCompareRemoveUrlTemplate</h2>
+                            <pre>getCompareRemoveUrlTemplate() : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p></p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method_getCompareAddUrlTemplate"></a>
+                        <div class="element clickable method public  method_getCompareAddUrlTemplate" data-toggle="collapse" data-target=".method_getCompareAddUrlTemplate .collapse">
+                            <h2>getCompareAddUrlTemplate</h2>
+                            <pre>getCompareAddUrlTemplate() : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p></p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method_getCompareUrl"></a>
+                        <div class="element clickable method public  method_getCompareUrl" data-toggle="collapse" data-target=".method_getCompareUrl .collapse">
+                            <h2>getCompareUrl</h2>
+                            <pre>getCompareUrl() : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p></p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method__createQuote"></a>
+                        <div class="element clickable method protected  method__createQuote" data-toggle="collapse" data-target=".method__createQuote .collapse">
+                            <h2>_createQuote</h2>
+                            <pre>_createQuote() : \Magento\Sales\Model\Quote</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>\Magento\Sales\Model\Quote</code><p></p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method__createWishList"></a>
+                        <div class="element clickable method protected  method__createWishList" data-toggle="collapse" data-target=".method__createWishList .collapse">
+                            <h2>_createWishList</h2>
+                            <pre>_createWishList() : \Magento\Wishlist\Model\Wishlist</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>\Magento\Wishlist\Model\Wishlist</code><p></p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method__createProductCompareCollection"></a>
+                        <div class="element clickable method protected  method__createProductCompareCollection" data-toggle="collapse" data-target=".method__createProductCompareCollection .collapse">
+                            <h2>_createProductCompareCollection</h2>
+                            <pre>_createProductCompareCollection() : \Magento\Catalog\Model\Resource\Product\Compare\Item\Collection</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>\Magento\Catalog\Model\Resource\Product\Compare\Item\Collection</code><p></p>
+                                                                    </div>
+                            </div>
+                        </div>
+                    
+                    
+                                                                <h3><i class="icon-custom icon-property"></i> Properties</h3>
+                                                    <a id="property__cartItemsCount"> </a>
+                            <div class="element clickable property  protected property__cartItemsCount" data-toggle="collapse" data-target=".property__cartItemsCount .collapse">
+                                <h2>_cartItemsCount</h2>
+                                <pre>_cartItemsCount : integer</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>integer</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property__wishlist"> </a>
+                            <div class="element clickable property  protected property__wishlist" data-toggle="collapse" data-target=".property__wishlist .collapse">
+                                <h2>Enter description here.</h2>
+                                <pre>_wishlist : \Magento\Wishlist\Model\Wishlist</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"><p>..</p></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>\Magento\Wishlist\Model\Wishlist</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property__compareItems"> </a>
+                            <div class="element clickable property  protected property__compareItems" data-toggle="collapse" data-target=".property__compareItems .collapse">
+                                <h2>_compareItems</h2>
+                                <pre>_compareItems : integer</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>integer</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property__customerSession"> </a>
+                            <div class="element clickable property  protected property__customerSession" data-toggle="collapse" data-target=".property__customerSession .collapse">
+                                <h2>_customerSession</h2>
+                                <pre>_customerSession : \Magento\Customer\Model\Session</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code><a href="../classes/Magento.Customer.Model.Session.html">\Magento\Customer\Model\Session</a></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property__checkoutSession"> </a>
+                            <div class="element clickable property  protected property__checkoutSession" data-toggle="collapse" data-target=".property__checkoutSession .collapse">
+                                <h2>_checkoutSession</h2>
+                                <pre>_checkoutSession : \Magento\Checkout\Model\Session</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>\Magento\Checkout\Model\Session</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property__quoteFactory"> </a>
+                            <div class="element clickable property  protected property__quoteFactory" data-toggle="collapse" data-target=".property__quoteFactory .collapse">
+                                <h2>_quoteFactory</h2>
+                                <pre>_quoteFactory : \Magento\Sales\Model\QuoteFactory</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>\Magento\Sales\Model\QuoteFactory</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property__wishListFactory"> </a>
+                            <div class="element clickable property  protected property__wishListFactory" data-toggle="collapse" data-target=".property__wishListFactory .collapse">
+                                <h2>_wishListFactory</h2>
+                                <pre>_wishListFactory : \Magento\Wishlist\Model\WishlistFactory</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>\Magento\Wishlist\Model\WishlistFactory</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property__itemsCompareFactory"> </a>
+                            <div class="element clickable property  protected property__itemsCompareFactory" data-toggle="collapse" data-target=".property__itemsCompareFactory .collapse">
+                                <h2>_itemsCompareFactory</h2>
+                                <pre>_itemsCompareFactory : \Magento\Catalog\Model\Resource\Product\Compare\Item\CollectionFactory</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>\Magento\Catalog\Model\Resource\Product\Compare\Item\CollectionFactory</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_currentCustomer"> </a>
+                            <div class="element clickable property  protected property_currentCustomer" data-toggle="collapse" data-target=".property_currentCustomer .collapse">
+                                <h2>currentCustomer</h2>
+                                <pre>currentCustomer : \Magento\Customer\Helper\Session\CurrentCustomer</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code><a href="../classes/Magento.Customer.Helper.Session.CurrentCustomer.html">\Magento\Customer\Helper\Session\CurrentCustomer</a></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                            </div>
+            </div>
+            <a id="\Magento\Customer\Block\Account\Dashboard\Sidebar"></a>
+            <ul class="breadcrumb">
+                <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
+                    
+    
+    <li><span class="divider">\</span><a href="../namespaces/Magento.Customer.Block.Account.Dashboard.html">Dashboard</a></li>
+
+                <li class="active"><span class="divider">\</span><a href="../classes/Magento.Customer.Block.Account.Dashboard.Sidebar.html">Sidebar</a></li>
+            </ul>
+        </div>
+    </div>
+
+    </div>
+
+        <footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
+            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
+            generated on Fri, 18 Jul 2014 12:02:54 -0500.<br/>
+    </footer>
+    </body>
+</html>
