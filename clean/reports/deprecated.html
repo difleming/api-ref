@@ -97,12 +97,12 @@
         <div class="span2 sidebar">
             <ul class="side-nav nav nav-list">
                 <li class="nav-header">Navigation</li>
-                                                            <li><a href="#Block/Address/Renderer/DefaultRenderer.php"><i class="icon-file"></i> Block/Address/Renderer/DefaultRenderer.php</a></li>
-                                                                                                    <li><a href="#Block/Address/Renderer/RendererInterface.php"><i class="icon-file"></i> Block/Address/Renderer/RendererInterface.php</a></li>
-                                                                                                    <li><a href="#Model/Address/AbstractAddress.php"><i class="icon-file"></i> Model/Address/AbstractAddress.php</a></li>
-                                                                                                    <li><a href="#Model/Customer.php"><i class="icon-file"></i> Model/Customer.php</a></li>
+                                                            <li><a href="#Block/Address/Renderer/RendererInterface.php"><i class="icon-file"></i> Block/Address/Renderer/RendererInterface.php</a></li>
+                                                                                                    <li><a href="#Block/Address/Renderer/DefaultRenderer.php"><i class="icon-file"></i> Block/Address/Renderer/DefaultRenderer.php</a></li>
                                                                                                     <li><a href="#Model/Session.php"><i class="icon-file"></i> Model/Session.php</a></li>
-                                                                                                                                                                                    </ul>
+                                                                                                                                                                                                                    <li><a href="#Model/Address/AbstractAddress.php"><i class="icon-file"></i> Model/Address/AbstractAddress.php</a></li>
+                                                                                                    <li><a href="#Model/Customer.php"><i class="icon-file"></i> Model/Customer.php</a></li>
+                                                                    </ul>
         </div>
 
         <div class="span10 offset2">
@@ -112,7 +112,27 @@
             </ul>
 
             <div id="marker-accordion">
-                                                                            <a name="Block/Address/Renderer/DefaultRenderer.php" id="Block/Address/Renderer/DefaultRenderer.php"></a>
+                                                                            <a name="Block/Address/Renderer/RendererInterface.php" id="Block/Address/Renderer/RendererInterface.php"></a>
+                    <h3>
+                        <i class="icon-file"></i>
+                        Block/Address/Renderer/RendererInterface.php
+                        <small style="float: right;padding-right: 10px;">1</small>
+                    </h3>
+                    <div>
+                        <table class="table markers table-bordered">
+                            <tr>
+                                <th>Element</th>
+                                <th>Line</th>
+                                <th>Description</th>
+                            </tr>
+                                                                                <tr>
+                                    <td>\Magento\Customer\Block\Address\Renderer\RendererInterface::render()</td>
+                                    <td>42</td>
+                                    <td>All new code should use renderArray based on Metadata service</td>
+                                </tr>
+                                                                                                                                </table>
+                    </div>
+                                        <a name="Block/Address/Renderer/DefaultRenderer.php" id="Block/Address/Renderer/DefaultRenderer.php"></a>
                     <h3>
                         <i class="icon-file"></i>
                         Block/Address/Renderer/DefaultRenderer.php
@@ -132,10 +152,10 @@
                                 </tr>
                                                                                                                                 </table>
                     </div>
-                                        <a name="Block/Address/Renderer/RendererInterface.php" id="Block/Address/Renderer/RendererInterface.php"></a>
+                                        <a name="Model/Session.php" id="Model/Session.php"></a>
                     <h3>
                         <i class="icon-file"></i>
-                        Block/Address/Renderer/RendererInterface.php
+                        Model/Session.php
                         <small style="float: right;padding-right: 10px;">1</small>
                     </h3>
                     <div>
@@ -146,9 +166,19 @@
                                 <th>Description</th>
                             </tr>
                                                                                 <tr>
-                                    <td>\Magento\Customer\Block\Address\Renderer\RendererInterface::render()</td>
-                                    <td>42</td>
-                                    <td>All new code should use renderArray based on Metadata service</td>
+                                    <td>\Magento\Customer\Model\Session::getCustomerData()</td>
+                                    <td>187</td>
+                                    <td></td>
+                                </tr>
+                                                                                                                                                <tr>
+                                    <td>\Magento\Customer\Model\Session::setCustomer()</td>
+                                    <td>227</td>
+                                    <td>use setCustomerId() instead</td>
+                                </tr>
+                                                                                                                                                <tr>
+                                    <td>\Magento\Customer\Model\Session::getCustomer()</td>
+                                    <td>249</td>
+                                    <td>use getCustomerId() instead</td>
                                 </tr>
                                                                                                                                 </table>
                     </div>
@@ -189,36 +219,6 @@
                                     <td>\Magento\Customer\Model\Customer::getSharedStoreIds()</td>
                                     <td>889</td>
                                     <td>Use \Magento\Customer\Helper\Data::getSharedStoreIds</td>
-                                </tr>
-                                                                                                                                </table>
-                    </div>
-                                        <a name="Model/Session.php" id="Model/Session.php"></a>
-                    <h3>
-                        <i class="icon-file"></i>
-                        Model/Session.php
-                        <small style="float: right;padding-right: 10px;">1</small>
-                    </h3>
-                    <div>
-                        <table class="table markers table-bordered">
-                            <tr>
-                                <th>Element</th>
-                                <th>Line</th>
-                                <th>Description</th>
-                            </tr>
-                                                                                <tr>
-                                    <td>\Magento\Customer\Model\Session::getCustomerData()</td>
-                                    <td>187</td>
-                                    <td></td>
-                                </tr>
-                                                                                                                                                <tr>
-                                    <td>\Magento\Customer\Model\Session::setCustomer()</td>
-                                    <td>227</td>
-                                    <td>use setCustomerId() instead</td>
-                                </tr>
-                                                                                                                                                <tr>
-                                    <td>\Magento\Customer\Model\Session::getCustomer()</td>
-                                    <td>249</td>
-                                    <td>use getCustomerId() instead</td>
                                 </tr>
                                                                                     </table>
                 </div>
@@ -263,7 +263,7 @@
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on July 18th, 2014 at 12:06.
+                    on July 23rd, 2014 at 15:37.
                 </section>
             </section>
         </section>

@@ -8,7 +8,18 @@
 namespace Magento\Customer\Service\V1;
 
 /**
- * Defines functions that the CustomerMetadataService class must implement.
+ *
+ * Defines constants and required methods for customer metadata.
+ *
+ * The constants for customer metadata define attribute IDs and
+ * entity types for customer and customer address.
+ *
+ * The methods for customer metadata enable users to:
+ * * Show attribute metadata or custom attribute metadata for a customer or customer address.
+ * * List EAV attribute metadata for a specified entity type.
+ * * List attributes for a specified entity type filtered by a form code.
+ * * List attribute metadata for all customers or customer addresses.
+ *
  */
 interface CustomerMetadataServiceInterface
 {
@@ -21,7 +32,7 @@ interface CustomerMetadataServiceInterface
     const ENTITY_TYPE_ADDRESS = 'customer_address';
 
     /**
-     * Retrieve Attribute Metadata
+     * Shows attribute metadata for a specified entity type and attribute code.
      *
      * @param   string $entityType
      * @param   string $attributeCode
@@ -31,7 +42,7 @@ interface CustomerMetadataServiceInterface
     public function getAttributeMetadata($entityType, $attributeCode);
 
     /**
-     * Returns all known attributes metadata for a given entity type
+     * Lists EAV attribute metadata for a specified entity type.
      *
      * @param string $entityType
      * @param int $attributeSetId
@@ -41,7 +52,7 @@ interface CustomerMetadataServiceInterface
     public function getAllAttributeSetMetadata($entityType, $attributeSetId = 0, $storeId = null);
 
     /**
-     * Retrieve all attributes for entityType filtered by form code
+     * Lists attributes for a specified entity type filtered by a form code.
      *
      * @param string $entityType
      * @param string $formCode
@@ -50,7 +61,7 @@ interface CustomerMetadataServiceInterface
     public function getAttributes($entityType, $formCode);
 
     /**
-     * Retrieve Customer EAV attribute metadata
+     * Shows attribute metadata for a specified customer filtered by an attribute code.
      *
      * @param string $attributeCode
      * @return \Magento\Customer\Service\V1\Data\Eav\AttributeMetadata
@@ -59,21 +70,21 @@ interface CustomerMetadataServiceInterface
     public function getCustomerAttributeMetadata($attributeCode);
 
     /**
-     * Get all attribute metadata for customers
+     * Lists attribute metadata for all customers.
      *
      * @return \Magento\Customer\Service\V1\Data\Eav\AttributeMetadata[]
      */
     public function getAllCustomerAttributeMetadata();
 
     /**
-     * Get custom attribute metadata for customer.
+     * Shows custom attribute metadata for a specified customer.
      *
      * @return \Magento\Customer\Service\V1\Data\Eav\AttributeMetadata[]
      */
     public function getCustomCustomerAttributeMetadata();
 
     /**
-     * Retrieve Customer Addresses EAV attribute metadata
+     * Shows attribute metadata for a specified customer address filtered by an attribute code.
      *
      * @param string $attributeCode
      * @return \Magento\Customer\Service\V1\Data\Eav\AttributeMetadata
@@ -82,14 +93,14 @@ interface CustomerMetadataServiceInterface
     public function getAddressAttributeMetadata($attributeCode);
 
     /**
-     * Get all attribute metadata for Addresses
+     * Lists attribute metadata for all customer addresses.
      *
      * @return \Magento\Customer\Service\V1\Data\Eav\AttributeMetadata[]
      */
     public function getAllAddressAttributeMetadata();
 
     /**
-     * Get custom attribute metadata for customer address.
+     * Shows attribute metadata for a specified customer address.
      *
      * @return \Magento\Customer\Service\V1\Data\Eav\AttributeMetadata[]
      */

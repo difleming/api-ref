@@ -8,7 +8,14 @@
 namespace Magento\Customer\Service\V1;
 
 /**
- * Defines functions that the CustomerAddressService class must implement.
+ *
+ * Defines required methods for customer addresses.
+ *
+ * The methods for customer addresses enable users to:
+ * * Add, update, or validate a set of addresses.
+ * * List, show information for, and delete addresses.
+ * * Show default billing address or shipping address for specified customer.
+ *
  */
 interface CustomerAddressServiceInterface
 {
