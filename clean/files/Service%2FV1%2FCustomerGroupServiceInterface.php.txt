@@ -8,18 +8,41 @@
 namespace Magento\Customer\Service\V1;
 
 /**
- * Defines functions that the CustomerGroupService class must implement.
+ *
+ * Defines constants and required methods for customer groups.
+ *
+ * The constants for customer groups define the default group ID, the maximum number of groups, and
+ * the maximum number of characters in a group name.
+ *
+ * The methods for customer groups enable users to:
+ * * Add, update, list, and delete groups.
+ * * Find groups that match specified search criteria.
+ * * Get the default group in a store, the delete status for a group, and group details.
  */
 interface CustomerGroupServiceInterface
 {
-    const NOT_LOGGED_IN_ID = 0;
-
-    const CUST_GROUP_ALL = 32000;
-
-    const GROUP_CODE_MAX_LENGTH = 32;
+    /**#@+
+     *
+     * Summary description of constants.
+     *#@-
+     */
 
     /**
-     * Retrieve Customer Groups
+     * The default group ID.
+     */
+    const NOT_LOGGED_IN_ID = 0;
+    /**
+     * The maximum number of groups.
+     */
+    const CUST_GROUP_ALL = 32000;
+    /**
+     * The maximum number of characters in a group name.
+     */
+    const GROUP_CODE_MAX_LENGTH = 32;
+
+
+    /**
+     * Lists groups.
      *
      * The list of groups can be filtered to exclude the NOT_LOGGED_IN group using the first parameter and/or it can
      * be filtered by tax class.

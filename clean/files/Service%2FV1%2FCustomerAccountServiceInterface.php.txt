@@ -8,12 +8,23 @@
 namespace Magento\Customer\Service\V1;
 
 /**
- * Defines functions that the CustomerAccountService class must implement.
+ *
+ * Enables creation and management of customer accounts.
+ *
+ * The methods for customer accounts enable users to:
+ * * Create customers with a password or a hashed password.
+ * * Update, show information for, show details for, and delete customer accounts.
+ * * Activate, find, or log in a customer.
+ * * Check email availability or change the password for a customer
+ * * Get customer attributes, such as confirmation status, can update, can delete, and is customer in store.
+ * * Validate a token in a reset passwork link.
+ * * Send or resend email to customer.
+ *
  */
 interface CustomerAccountServiceInterface
 {
-    /**
-     * New account status. Default is registered.
+    /**#@+
+     * Service metadata
      */
     const NEW_ACCOUNT_EMAIL_REGISTERED = 'registered';
 
@@ -50,6 +61,7 @@ interface CustomerAccountServiceInterface
      * Default password length. Default is 6.
      */
     const DEFAULT_PASSWORD_LENGTH = 6;
+    /**#@-*/
 
     /**
      * Creates a customer account.
@@ -61,7 +73,7 @@ interface CustomerAccountServiceInterface
      * @param \Magento\Customer\Service\V1\Data\CustomerDetails $customerDetails Required. Customer details object.
      * @param string $password Optional. Customer password. If null, a random password is assigned. Disregard if $hash is not empty.
      * @param string $redirectUrl Optional. The redirect URL to include in the confirmation email.
-     * @return \Magento\Customer\Service\V1\Data\Customer Customer object.
+     * @return \Magento\Customer\Service\V1\Data\Customer A Customer object.
      * @throws \Magento\Framework\Exception\InputException Input is not valid.
      * @throws \Magento\Framework\Exception\State\InputMismatchException The specified email is in use.
      */
@@ -99,7 +111,7 @@ interface CustomerAccountServiceInterface
      * are to be made to addresses, this array must be present and null.
      *
      * @param \Magento\Customer\Service\V1\Data\CustomerDetails $customerDetails A customerDetails object.
-     * @return bool <ul><li><b>True</b>. Update succeeded.</li><li><b>False</b>. Update failed.</li></ul>
+     * @return bool (True) The operation succeeded. (False) The operation failed.
      * @throws \Magento\Framework\Exception\NoSuchEntityException The customer was not found.
      */
     public function updateCustomer(\Magento\Customer\Service\V1\Data\CustomerDetails $customerDetails);
@@ -108,7 +120,7 @@ interface CustomerAccountServiceInterface
      * Shows details for a specified customer.
      *
      * @param int $customerId
-     * @throws \Magento\Framework\Exception\NoSuchEntityException The customer with customer ID is not found.
+     * @throws \Magento\Framework\Exception\NoSuchEntityException The specified customer was not found.
      * @return \Magento\Customer\Service\V1\Data\Customer
      */
     public function getCustomer($customerId);
@@ -152,7 +164,7 @@ interface CustomerAccountServiceInterface
      * @param int $customerId
      * @param string $currentPassword
      * @param string $newPassword
-     * @return bool <ul><li><b>True</b>. Password change succeeded.</li><li><b>False</b>. Password change failed.</li></ul>
+     * @return bool Password change succeeded (True). Password change failed (False).
      * @throws \Magento\Framework\Exception\NoSuchEntityException If specified customerId is not found.
      * @throws \Magento\Framework\Exception\InvalidEmailOrPasswordException If password is not valid.
      */
@@ -214,7 +226,7 @@ interface CustomerAccountServiceInterface
      * Gets the account confirmation status for a specified customer.
      *
      * @param int $customerId
-     * @return string returns one of the account confirmation statuses
+     * @return string The account confirmation status. The status is xx, xx, or xx.
      * @throws \Magento\Framework\Exception\NoSuchEntityException The customer with customer ID is not found.
      */
     public function getConfirmationStatus($customerId);
@@ -225,9 +237,9 @@ interface CustomerAccountServiceInterface
      * Templates can use the redirect URL to direct the customer to a product that they browsed after
      * they clicked the confirmation link.
      *
-     * @param string $email       Required. The customer email address.
-     * @param string $websiteId   Required. The website ID.
-     * @param string $redirectUrl Optional. The redirect URL to include in the confirmation email.
+     * @param string $email       The customer email address.
+     * @param string $websiteId   The website ID.
+     * @param string $redirectUrl Optional. The redirect URL to include in confirmation email. Default is an empty string.
      * @return void
      */
     public function resendConfirmation($email, $websiteId, $redirectUrl = '');
@@ -249,7 +261,7 @@ interface CustomerAccountServiceInterface
      *
      * @param int $customerId
      * @throws \Magento\Framework\Exception\NoSuchEntityException The customer with customer ID is not found.
-     * @return bool <ul><li><b>True</b>. Modifications are permitted.</li><li><b>False</b>. Read-only.</li></ul>
+     * @return bool Modifications permitted (True). Read-only (False).
      */
     public function canModify($customerId);
 
@@ -258,7 +270,7 @@ interface CustomerAccountServiceInterface
      *
      * @param int $customerId
      * @throws \Magento\Framework\Exception\NoSuchEntityException The customer with customer ID is not found.
-     * @return bool <ul><li><b>True</b>. Customer can be deleted.</li><li><b>False</b>. Read-only.</li></ul>
+     * @return bool Customer can be deleted (True). Read-only (False).
      */
     public function canDelete($customerId);
 
@@ -277,7 +289,7 @@ interface CustomerAccountServiceInterface
      * @param int $customerId
      * @throws \Magento\Customer\Exception Delete failed.
      * @throws \Magento\Framework\Exception\NoSuchEntityException The specified customer was not found.
-     * @return bool <ul><li><b>True</b>. Delete succeeded.</li><li><b>False</b>. Delete failed.</li></ul>
+     * @return bool Delete succeeded (True). Delete failed (False).
      */
     public function deleteCustomer($customerId);
 
@@ -286,7 +298,7 @@ interface CustomerAccountServiceInterface
      *
      * @param string $customerEmail
      * @param int $websiteId If not set, will use the current websiteId
-     * @return bool <ul><li><b>True</b>. Email is available.</li><li><b>False</b>. Email is not available.</li></ul>
+     * @return bool True - Email is available. False - Email is not available.
      */
     public function isEmailAvailable($customerEmail, $websiteId = null);
 
@@ -295,7 +307,7 @@ interface CustomerAccountServiceInterface
      *
      * @param int $customerWebsiteId
      * @param int $storeId
-     * @return bool <ul><li><b>True</b>. Customer is in the store.</li><li><b>False</b>. Customer is not in the store.</li></ul>
+     * @return bool Customer is in store (True). Customer is not in store (False).
      */
     public function isCustomerInStore($customerWebsiteId, $storeId);
 
@@ -335,7 +347,7 @@ interface CustomerAccountServiceInterface
      * @param \Magento\Customer\Service\V1\Data\CustomerDetails $customerDetails
      * @param int $websiteId If not set, will use the current websiteId
      * @throws \Magento\Framework\Exception\NoSuchEntityException Customer with customerDetails is not found.
-     * @return bool <ul><li><b>True</b>. Update succeeded.</li><li><b>False</b>. Update failed.</li></ul>
+     * @return bool Update succeeded (True). Update failed (False).
      */
     public function updateCustomerDetailsByEmail(
         $customerEmail,
@@ -352,7 +364,7 @@ interface CustomerAccountServiceInterface
      * @param int $websiteId Optional. The website ID. If not set, the current website ID is used.
      * @throws \Magento\Customer\Exception Delete failed.
      * @throws \Magento\Framework\Exception\NoSuchEntityException Customer with specified customer ID was not found.
-     * @return bool True <ul><li><b>True</b>. Delete succeeded.</li><li><b>False</b>. Delete failed.</li></ul>
+     * @return bool Delete succeeded (True). Delete failed (False).
      */
     public function deleteCustomerByEmail($customerEmail, $websiteId = null);
 }
