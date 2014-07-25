@@ -164,7 +164,7 @@ p
 
 .logo
 {
-	background-color:graytext;
+	background-color:#31302b;
 }
 
 .sidebar-nav
@@ -920,4 +920,10 @@ time
   font-size: small;
 }
 
+}
+
+.btn-success-dev {
+    color: #FFF;
+    background-color: #428BCA;
+    border-color: #428BCA;
 }

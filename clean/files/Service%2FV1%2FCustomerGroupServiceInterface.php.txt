@@ -1,9 +1,14 @@
 <?php
 /**
+ * Customer group service interface file.
+ *
+ * Defines interface, constants, and methods for creation and
+ * management of customer groups.
+ *
  * {license_notice}
  *
- * @copyright   {copyright}
- * @license     {license_link}
+ * @copyright 2014 eBay Inc.
+ * @license GPL
  */
 namespace Magento\Customer\Service\V1;
 

@@ -45,9 +45,9 @@ use Magento\Framework\Service\V1\Data\Filter;
  * * Create customers with a password or a hashed password.
  * * Update, show information for, show details for, and delete customer accounts.
  * * Activate, find, or log in a customer.
- * * Check email availability or change the password for a customer
+ * * Check email availability or change the password for a customer.
  * * Get customer attributes, such as confirmation status, can update, can delete, and is customer in store.
- * * Validate a token in a reset passwork link.
+ * * Validate a token in a reset password link.
  * * Send or resend email to customer.
  *
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
@@ -207,7 +207,7 @@ class CustomerAccountService implements CustomerAccountServiceInterface
      *
      * @param string $email       The customer email address.
      * @param string $websiteId   The website ID.
-     * @param string $redirectUrl (Optional) The redirect URL to include in the confirmation email.
+     * @param string $redirectUrl (Optional) Default is an empty string. The redirect URL to include in the confirmation email.
      * @return void
      * @throws \Magento\Framework\Exception\NoSuchEntityException No customer exists for the specified email.
      * @throws \Magento\Framework\Exception\State\InvalidTransitionException Confirmation is not required.
@@ -802,10 +802,9 @@ class CustomerAccountService implements CustomerAccountServiceInterface
      * @param int $customerId
      * @param string $resetPasswordLinkToken
      * @return CustomerModel A CustomerModel object.
-     * @throws \Magento\Framework\Exception\State\InputMismatchException Token is mismatched.
-     * @throws \Magento\Framework\Exception\State\ExpiredException Token is expired.
-     * @throws \Magento\Framework\Exception\InputException Token or customer ID is not valid.
-     * @throws \Magento\Framework\Exception\NoSuchEntityException Customer does not exist.
+     * @throws InputMismatchException Token is mismatched.
+     * @throws ExpiredException Token is expired.
+     * @throws InputException The specified customer does not exist.
      */
     private function validateResetPasswordToken($customerId, $resetPasswordLinkToken)
     {
