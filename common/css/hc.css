@@ -54,7 +54,7 @@ body
 {
   color:#31302b;
   font-family:'OpenSansRegular';
-  background-color:#f0f0f0;
+  background-color:lightgray;
   width:100%;
   border-top:solid #EF672F;
   border-width:4px;
@@ -123,7 +123,8 @@ p
 
 .container a
 {
-  border-bottom:1px #8a8a8a dotted;
+ /* border-bottom:1px #8a8a8a dotted;*/
+  border-bottom: none;
   text-decoration:none
 }
 
@@ -911,9 +912,6 @@ time
       padding: 0 10px 0 10px;
   }
 
-
-
-
 .showcase-wrapper {
   width: 100%;
   height: 50%;
@@ -923,7 +921,8 @@ time
 }
 
 .btn-success-dev {
-    color: #FFF;
+   /* color: #FFF;*/
     background-color: #428BCA;
-    border-color: #428BCA;
+    border-color: white;
+    color: white;
 }
