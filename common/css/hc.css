@@ -928,3 +928,16 @@ time
     color: inherit;
     background-color: darkgray;
 }
+
+.navbar-brand {
+    float: left;
+    margin-right: 0px;
+    height: 50px;
+    padding: 15px;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+.smallcaps {
+    text-transform: uppercase;
+}
