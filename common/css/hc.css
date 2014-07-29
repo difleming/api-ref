@@ -941,3 +941,7 @@ time
 .smallcaps {
     text-transform: uppercase;
 }
+
+.td-api {
+    vertical-align: bottom;
+}

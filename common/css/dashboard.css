@@ -112,3 +112,7 @@ body {
     margin-left: auto;
     margin-top: 20px;
 }
+
+.td-api {
+    vertical-align: bottom;
+}
