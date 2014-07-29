@@ -18,7 +18,8 @@
 
     <!-- Custom styles for this template -->
     <!--    <link href="../common/css/navbar-fixed-top.css" rel="stylesheet"/>-->
-    <link href="../common/css/dashboard.css" rel="stylesheet" />
+    <link type="text/css" href="../common/css/dashboard.css" rel="stylesheet" />
+   <!-- <link type="text/css" href="../common/css/hc.css" rel="stylesheet" />-->
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -53,18 +54,6 @@
             <li class="active"><a href="../dashboards/user-guide.html">User Guide</a></li>
             <li><a href="../dashboards/api-ref.html">API Reference</a></li>
             <li><a href="../dashboards/release-notes.html">Release Notes</a></li>
-            <!--<li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li>-->
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -76,27 +65,48 @@
       </div>
       <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
         <div class="jumbotron-narrow">
-          <h1 id="customer">Customer service</h1>
-          <div class="table-responsive">
-            <table class="table table-striped">
+          <h1 id="customer">Customers</h1>
+          <div class="table-responsive pull-bottom">
+            <table class="table table-striped info">
               <tbody>
                 <tr class="active">
-                  <td><h4>createCustomer</h4></td>
+                  <td><h2 class="small">createCustomer</h2></td>
                   <td>Creates a customer.</td>
                   <td><button class="btn btn-sm btn-info">Details</button></td>
-
                 </tr>
                 <tr>
-                  <td><h4>updateCustomer</h4></td>
+                  <td><h2 class="small">updateCustomer</h2></td>
                   <td>Updates a customer.</td>
                   <td><button class="btn btn-sm btn-info">Details</button></td>
 
                 </tr>
                 <tr>
-                  <td><h4>deleteCustomer</h4></td>
+                  <td><h2 class="small">deleteCustomer</h2></td>
                   <td>Deletes a customer.</td>
                   <td><button class="btn btn-sm btn-info">Details</button></td>
-
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <h1 id="customer">Sessions</h1>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <tbody>
+                <tr>
+                  <td><h2 class="small">addSession</h2></td>
+                  <td>Adds a session.</td>
+                  <td><button class="btn btn-sm btn-info">Details</button></td>
+                </tr>
+                <tr>
+                  <td><h2 class="small">updateSession</h2></td>
+                  <td>Updates a session.</td>
+                  <td><button class="btn btn-sm btn-info">Details</button></td>
+                  
+                </tr>
+                <tr>
+                  <td><h2 class="small">deleteSession</h2></td>
+                  <td>Deletes a session.</td>
+                  <td><button class="btn btn-sm btn-info">Details</button></td>
                 </tr>
               </tbody>
             </table>
