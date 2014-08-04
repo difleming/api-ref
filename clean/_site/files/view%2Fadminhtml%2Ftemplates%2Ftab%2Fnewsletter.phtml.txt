@@ -1,0 +1,13 @@
+<?php
+/**
+ * {license_notice}
+ *
+ * @copyright   {copyright}
+ * @license     {license_link}
+ */
+?>
+<div class="entry-edit">
+<?php echo $this->getForm()->getHtml() ?>
+</div>
+<?php echo $this->getChildHtml('grid') ?>
+

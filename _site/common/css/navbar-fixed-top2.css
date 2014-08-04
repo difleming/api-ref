@@ -1,0 +1,40 @@
+body {
+  min-height: 2000px;
+  padding-top: 150px;
+}
+
+.navbar
+{
+ /* min-height: 100px;*/
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+}
+
+.navbar-header
+{
+/*  min-height: 100px;*/
+  margin-top: auto;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+}
+
+img 
+{
+    vertical-align: top;
+}
+
+.navbar-brand
+{
+    margin-bottom:40px;
+    margin-top: 0px;
+}
+
+.navbar-default
+{
+    background-color: black;
+}
+
+.navbar-nav {
+    float: left;
+    margin: 25px;
+}

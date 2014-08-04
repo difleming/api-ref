@@ -1,0 +1,22 @@
+<?php
+/**
+ * {license_notice}
+ *
+ * @copyright   {copyright}
+ * @license     {license_link}
+ */
+
+/** @var $installer \Magento\Customer\Model\Resource\Setup */
+$installer = $this;
+$connection = $installer->getConnection();
+
+/**
+ * Add unique index for customer_entity table
+ */
+$connection->addIndex(
+    $installer->getTable('customer_entity'),
+    $installer->getIdxName('customer_entity', array('email', 'website_id')),
+    array('email', 'website_id'),
+    \Magento\Framework\DB\Adapter\AdapterInterface::INDEX_TYPE_UNIQUE
+);
+

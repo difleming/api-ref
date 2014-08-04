@@ -1,0 +1,21 @@
+<?php
+/**
+ * {license_notice}
+ *
+ * @copyright   {copyright}
+ * @license     {license_link}
+ */
+?>
+<div class="field gender<?php if ($this->isRequired()) echo ' required' ?>">
+    <label class="label" for="<?php echo $this->getFieldId('gender')?>"><span><?php echo __('Gender') ?></span></label>
+    <div class="control">
+        <select id="<?php echo $this->getFieldId('gender')?>" name="<?php echo $this->getFieldName('gender')?>" title="<?php echo __('Gender') ?>"<?php if ($this->isRequired()):?> class="validate-select" data-validate="{required:true}"<?php endif; ?> <?php echo $this->getFieldParams() ?>>
+            <?php $options = $this->getGenderOptions(); ?>
+            <?php $value = $this->getGender();?>
+            <?php foreach ($options as $option):?>
+                <option value="<?php echo $option->getValue() ?>"<?php if ($option->getValue() == $value) echo ' selected="selected"' ?>><?php echo $option->getLabel() ?></option>
+            <?php endforeach;?>
+        </select>
+    </div>
+</div>
+

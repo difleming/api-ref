@@ -1,0 +1,44 @@
+<?php
+/**
+ * CustomerValidationResults.php defines a class that shows
+ * validation results for a customer service data object.
+ *
+ * {license_notice}
+ *
+ * @copyright {copyright}
+ * @license {license}
+ */
+namespace Magento\Customer\Service\V1\Data;
+
+/**
+ * CustomerAccountService Data Object used for validateCustomerData api
+ */
+class CustomerValidationResults extends \Magento\Framework\Service\Data\AbstractObject
+{
+    /**#@+
+     * Constants used as keys into $_data
+     */
+    const VALID = 'valid';
+    const MESSAGES = 'messages';
+
+    /**
+     * Whether the data used is valid customer data.
+     *
+     * @return bool
+     */
+    public function isValid()
+    {
+        return $this->_get(self::VALID);
+    }
+
+    /**
+     * Error messages as array in case of validation errors else empty array
+     *
+     * @return string[]
+     */
+    public function getMessages()
+    {
+        return $this->_get(self::MESSAGES);
+    }
+}
+

@@ -1,0 +1,300 @@
+<?php
+/**
+ * AddressBuilder.php defines a class that builds address service data object.
+ *
+ * {license_notice}
+ *
+ * @copyright {copyright}
+ * @license {license}
+ */
+namespace Magento\Customer\Service\V1\Data;
+
+use Magento\Framework\Service\Data\Eav\AbstractObject;
+use Magento\Framework\Service\Data\Eav\AbstractObjectBuilder;
+use Magento\Customer\Service\V1\CustomerMetadataServiceInterface;
+use Magento\Framework\Service\Data\Eav\AttributeValueBuilder;
+
+/**
+ * Builds address service data object.
+ *
+ * @method Address create()
+ * @method Address mergeDataObjectWithArray(AbstractObject $dataObject, array $data)
+ * @method Address mergeDataObjects(AbstractObject $firstDataObject, AbstractObject $secondDataObject)
+ */
+class AddressBuilder extends AbstractObjectBuilder
+{
+    /**
+     * Builds a region.
+     *
+     * @var \Magento\Customer\Service\V1\Data\RegionBuilder RegionBuilder object.
+     */
+    protected $_regionBuilder;
+
+    /**
+     * @var CustomerMetadataServiceInterface CustomerMetadataServiceInterface object.
+     */
+    protected $_metadataService;
+
+    /**
+     * Constructs address service data object.
+     * 
+     * @param \Magento\Framework\Service\Data\ObjectFactory $objectFactory ObjectFactory object.
+     * @param AttributeValueBuilder $valueBuilder AttributeValueBuilder object.
+     * @param RegionBuilder $regionBuilder RegionBuilder object.
+     * @param CustomerMetadataServiceInterface $metadataService CustomerMetadataServiceInterface object.
+     */
+    public function __construct(
+        \Magento\Framework\Service\Data\ObjectFactory $objectFactory,
+        AttributeValueBuilder $valueBuilder,
+        RegionBuilder $regionBuilder,
+        CustomerMetadataServiceInterface $metadataService
+    ) {
+        parent::__construct($objectFactory, $valueBuilder);
+        $this->_metadataService = $metadataService;
+        $this->_regionBuilder = $regionBuilder;
+        $this->_data[Address::KEY_REGION] = $regionBuilder->create();
+    }
+
+    /**
+     * Gets a region builder.
+     *
+     * @return RegionBuilder A RegionBuilder object.
+     */
+    public function getRegionBuilder()
+    {
+        return $this->_regionBuilder;
+    }
+
+    /**
+     * Sets the ID for the address.
+     *
+     * @param int $id ID.
+     * @return $this Updated address object.
+     */
+    public function setId($id)
+    {
+        return $this->_set(Address::KEY_ID, $id);
+    }
+
+    /**
+     * Sets the default shipping address flag to true or false.
+     *
+     * @param bool $defaultShipping Default shipping address flag.
+     * @return $this Updated address object.
+     */
+    public function setDefaultShipping($defaultShipping)
+    {
+        return $this->_set(Address::KEY_DEFAULT_SHIPPING, (bool)$defaultShipping);
+    }
+
+    /**
+     * Sets the default billing address flag to true or false.
+     *
+     * @param bool $defaultBilling Default billing address flag.
+     * @return $this Updated address object.
+     */
+    public function setDefaultBilling($defaultBilling)
+    {
+        return $this->_set(Address::KEY_DEFAULT_BILLING, (bool)$defaultBilling);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function _setDataValues(array $data)
+    {
+        if (array_key_exists(Address::KEY_REGION, $data)) {
+            if (!is_array($data[Address::KEY_REGION])) {
+                // Region data has been submitted as individual keys of Address object. Let's extract it.
+                $regionData = array();
+                foreach (array(Region::KEY_REGION, Region::KEY_REGION_CODE, Region::KEY_REGION_ID) as $attrCode) {
+                    if (isset($data[$attrCode])) {
+                        $regionData[$attrCode] = $data[$attrCode];
+                    }
+                }
+            } else {
+                $regionData = $data[Address::KEY_REGION];
+            }
+            $data[Address::KEY_REGION] = $this->_regionBuilder->populateWithArray($regionData)->create();
+        }
+        return parent::_setDataValues($data);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getCustomAttributesCodes()
+    {
+        $attributeCodes = array();
+        foreach ($this->_metadataService->getCustomAddressAttributeMetadata() as $attribute) {
+            $attributeCodes[] = $attribute->getAttributeCode();
+        }
+        return $attributeCodes;
+    }
+
+    /**
+     * Sets the region.
+     *
+     * @param \Magento\Customer\Service\V1\Data\Region $region Region.
+     * @return $this Updated address object.
+     */
+    public function setRegion(\Magento\Customer\Service\V1\Data\Region $region)
+    {
+        return $this->_set(Address::KEY_REGION, $region);
+    }
+
+    /**
+     * Sets the country ID.
+     *
+     * @param int $countryId Country ID.
+     * @return $this Updated address object.
+     */
+    public function setCountryId($countryId)
+    {
+        return $this->_set(Address::KEY_COUNTRY_ID, $countryId);
+    }
+
+    /**
+     * Sets the street name.
+     *
+     * @param string[] $street Street name.
+     * @return $this Updated address object.
+     */
+    public function setStreet($street)
+    {
+        return $this->_set(Address::KEY_STREET, $street);
+    }
+
+    /**
+     * Sets the company name.
+     *
+     * @param string $company Company name.
+     * @return $this Updated address object.
+     */
+    public function setCompany($company)
+    {
+        return $this->_set(Address::KEY_COMPANY, $company);
+    }
+
+    /**
+     * Sets the telephone number.
+     *
+     * @param string $telephone Telephone number.
+     * @return $this Updated address object.
+     */
+    public function setTelephone($telephone)
+    {
+        return $this->_set(Address::KEY_TELEPHONE, $telephone);
+    }
+
+    /**
+     * Sets the fax number.
+     *
+     * @param string $fax Fax number.
+     * @return $this Updated address object.
+     */
+    public function setFax($fax)
+    {
+        return $this->_set(Address::KEY_FAX, $fax);
+    }
+
+    /**
+     * Sets the postal code.
+     *
+     * @param string $postcode Postal code.
+     * @return $this Updated address object.
+     */
+    public function setPostcode($postcode)
+    {
+        return $this->_set(Address::KEY_POSTCODE, $postcode);
+    }
+
+    /**
+     * Sets the city name.
+     *
+     * @param string $city City name.
+     * @return $this Updated address object.
+     */
+    public function setCity($city)
+    {
+        return $this->_set(Address::KEY_CITY, $city);
+    }
+
+    /**
+     * Sets the first name.
+     *
+     * @param string $firstname First name.
+     * @return $this Updated address object.
+     */
+    public function setFirstname($firstname)
+    {
+        return $this->_set(Address::KEY_FIRSTNAME, $firstname);
+    }
+
+    /**
+     * Sets the last name.
+     *
+     * @param string $lastname Last name.
+     * @return $this Updated address object.
+     */
+    public function setLastname($lastname)
+    {
+        return $this->_set(Address::KEY_LASTNAME, $lastname);
+    }
+
+    /**
+     * Sets the middle name.
+     *
+     * @param string $middlename Middle name.
+     * @return $this Updated address object.
+     */
+    public function setMiddlename($middlename)
+    {
+        return $this->_set(Address::KEY_MIDDLENAME, $middlename);
+    }
+
+    /**
+     * Sets the prefix.
+     *
+     * @param string $prefix Prefix.
+     * @return $this Updated address object.
+     */
+    public function setPrefix($prefix)
+    {
+        return $this->_set(Address::KEY_PREFIX, $prefix);
+    }
+
+    /**
+     * Sets the suffix.
+     *
+     * @param string $suffix Suffix.
+     * @return $this Updated address object.
+     */
+    public function setSuffix($suffix)
+    {
+        return $this->_set(Address::KEY_SUFFIX, $suffix);
+    }
+
+    /**
+     * Sets the Vat ID.
+     *
+     * @param string $vatId Vat ID.
+     * @return $this Updated address object.
+     */
+    public function setVatId($vatId)
+    {
+        return $this->_set(Address::KEY_VAT_ID, $vatId);
+    }
+
+    /**
+     * Sets the customer ID.
+     *
+     * @param string $customerId Customer ID.
+     * @return $this Updated address object.
+     */
+    public function setCustomerId($customerId)
+    {
+        return $this->_set(Address::KEY_CUSTOMER_ID, $customerId);
+    }
+}
+
