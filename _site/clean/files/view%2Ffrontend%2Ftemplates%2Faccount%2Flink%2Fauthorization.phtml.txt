@@ -1,0 +1,19 @@
+<?php
+/**
+ * {license_notice}
+ *
+ * @copyright   {copyright}
+ * @license     {license_link}
+ */
+
+/** @var $this \Magento\Customer\Block\Account\AuthorizationLink */
+$dataPostParam = '';
+if ($this->isLoggedIn()) {
+    $dataPostParam = sprintf(" data-post='%s'", $this->getPostParams());
+}
+?>
+<li class="authorization-link">
+    <a <?php echo $this->getLinkAttributes(); ?><?php echo $dataPostParam; ?>>
+        <?php echo $this->escapeHtml($this->getLabel()); ?>
+    </a>
+</li>
