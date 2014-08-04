@@ -17,6 +17,22 @@ use Magento\Framework\Service\Data\Eav\AttributeValueBuilder;
 /**
  * Builds a customer service data object.
  *
+ * A customer service data object has these properties:
+ * <ul>
+ * <li>Default billing and shipping addresses
+ * <li>Confirmation status
+ * <li>Created-at time and created-in area
+ * <li>Date of birth
+ * <li>Email address
+ * <li>Prefix, first, middle, and last names, and suffix
+ * <li>Gender
+ * <li>ID of associated group
+ * <li>Unique ID that identifies the customer
+ * <li>ID of associated store
+ * <li>Value-added tax (VAT)
+ * <li>ID of associated website
+ * </ul>
+ *
  * @method Customer create()
  * @method Customer mergeDataObjectWithArray(AbstractObject $dataObject, array $data)
  * @method Customer mergeDataObjects(AbstractObject $firstDataObject, AbstractObject $secondDataObject)

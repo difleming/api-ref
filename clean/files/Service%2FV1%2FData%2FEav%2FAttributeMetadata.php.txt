@@ -17,6 +17,7 @@ class AttributeMetadata extends \Magento\Framework\Service\Data\AbstractObject
     /**#@+
      * Constants used as keys into $_data.
      */
+
     /**
      * Attribute code.
      */
@@ -24,81 +25,66 @@ class AttributeMetadata extends \Magento\Framework\Service\Data\AbstractObject
     /**
      * Front-end HTML for an input element.
      */
-
     const FRONTEND_INPUT = 'frontend_input';
     /**
      * Input filter that is used for the attribute.
      */
-
     const INPUT_FILTER = 'input_filter';
     /**
      * Store label.
      */
-
     const STORE_LABEL = 'store_label';
     /**
      * Validation rules.
      */
-
     const VALIDATION_RULES = 'validation_rules';
     /**
      * Options.
      */
-
     const OPTIONS = 'options';
     /**
-     * Indicates whether the attribute is visible on the front end.
+     * Whether or not the attribute is visible on the front end.
      */
-
     const VISIBLE = 'visible';
     /**
-     * Indicates whether the attribute is required.
+     * Whether or not the attribute is required.
      */
-
     const REQUIRED = 'required';
     /**
-     * Count of attribute lines.
+     * The number of attribute-value lines.
      */
-
     const MULTILINE_COUNT = 'multiline_count';
     /**
      * Data model.
      */
-
     const DATA_MODEL = 'data_model';
     /**
      * Indicates whether a user has defined an attribute.
      */
-
     const IS_USER_DEFINED = 'is_user_defined';
     /**
-     *  Class that is used to display the attribute on the front end.
+     *  Class that displays the attribute on the front end.
      */
     const FRONTEND_CLASS = 'frontend_class';
     /**
      * Sort order for attributes.
      */
-
     const SORT_ORDER = 'sort_order';
     /**
      * Label that appears on the front end.
      */
-
     const FRONTEND_LABEL = 'frontend_label';
     /**
-     * Indicates whether the attribute is a system attribute.
+     * Whether or not the attribute is a system attribute.
      */
-
     const IS_SYSTEM = 'is_system';
     /**
      * The attribute note for an element.
      */
-
     const NOTE = 'note';
-    /*
+    /**
      * Back-end type for the attribute.
      */
-
     const BACKEND_TYPE = 'backend_type';
 
     /**#@-*/
@@ -124,7 +110,7 @@ class AttributeMetadata extends \Magento\Framework\Service\Data\AbstractObject
     }
 
     /**
-     * Gets the input filter that is used for the attribute. For example, <i>date</i>.
+     * Gets the input filter that is used for the attribute. For example, date.
      *
      * @return string Input filter.
      */
@@ -164,9 +150,9 @@ class AttributeMetadata extends \Magento\Framework\Service\Data\AbstractObject
     }
 
     /**
-     * Determines whether the attribute is visible on the front end.
+     * Whether or not the attribute is visible on the front end.
      *
-     * @return bool <b>true</b> - Attribute is visible. <b>false</b> - Attribute is not visible.
+     * @return boolean <b>true</b>: Attribute is visible.
      */
     public function isVisible()
     {
@@ -174,9 +160,9 @@ class AttributeMetadata extends \Magento\Framework\Service\Data\AbstractObject
     }
 
     /**
-     * Determines whether the attribute is required.
+     * Whether or not the attribute is required.
      *
-     * @return bool <b>true</b> - Attribute is required. <b>false</b> - Attribute is optional.
+     * @return boolean <b>true</b>: Attribute is required.
      */
     public function isRequired()
     {
@@ -194,9 +180,9 @@ class AttributeMetadata extends \Magento\Framework\Service\Data\AbstractObject
     }
 
     /**
-     * Gets options for the attribute. <i>key => value pairs for select</i>
+     * Gets options for the attribute. For example, the key-value pairs for select.
      *
-     * @return \Magento\Customer\Service\V1\Data\Eav\Option[] An array of attribute options.
+     * @return \Magento\Customer\Service\V1\Data\Eav\Option[] Array of attribute options.
      */
     public function getOptions()
     {
@@ -204,7 +190,7 @@ class AttributeMetadata extends \Magento\Framework\Service\Data\AbstractObject
     }
 
     /**
-     * Gets the class that is used to display the attribute on the front end.
+     * Gets the class that displays the attribute on the front end.
      *
      * @return string Front-end class.
      */
@@ -214,9 +200,9 @@ class AttributeMetadata extends \Magento\Framework\Service\Data\AbstractObject
     }
 
     /**
-     * Determines whether a user has defined the current attribute.
+     * Whether or not a user has defined the current attribute.
      *
-     * @return bool <b>true</b> - A user has defined the attribute. <b>false</b> - No user has defined the attribute.
+     * @return boolean <b>true</b>: A user has defined the attribute.
      */
     public function isUserDefined()
     {
@@ -234,7 +220,7 @@ class AttributeMetadata extends \Magento\Framework\Service\Data\AbstractObject
     }
 
     /**
-     * Gets the label to be displayed on the front end.
+     * Gets the label that is displayed on the front end.
      *
      * @return string Front-end label.
      */
@@ -254,9 +240,9 @@ class AttributeMetadata extends \Magento\Framework\Service\Data\AbstractObject
     }
 
     /**
-     * Determines whether the attribute is a system attribute.
+     * Whether or not the attribute is a system attribute.
      *
-     * @return bool <b>true</b> - System attribute. <b>false</b> - Not a system attribute.
+     * @return boolean <b>true</b>: Attribute is a system attribute.
      */
     public function isSystem()
     {
