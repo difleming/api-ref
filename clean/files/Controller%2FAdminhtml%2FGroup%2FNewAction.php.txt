@@ -1,6 +1,7 @@
 <?php
 /**
- *
+ * Initializes current group and sets it in the registry.
+ * Loads, and renders customer group create or edit page.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -10,12 +11,17 @@ namespace Magento\Customer\Controller\Adminhtml\Group;
 
 use Magento\Customer\Controller\RegistryConstants;
 
+/**
+ * Initializes current group and sets it in the registry.
+ * Loads, and renders customer group create or edit page.
+ * @package Magento\Customer\Controller\Adminhtml\Group Group package.
+ */
 class NewAction extends \Magento\Customer\Controller\Adminhtml\Group
 {
     /**
-     * Initialize current group and set it in the registry.
+     * Initializes the current group and sets it in the registry.
      *
-     * @return int
+     * @return int Group ID.
      */
     protected function _initGroup()
     {
@@ -28,7 +34,7 @@ class NewAction extends \Magento\Customer\Controller\Adminhtml\Group
     }
 
     /**
-     * Edit or create customer group.
+     * Loads and renders the create or edit customer group page.
      *
      * @return void
      */

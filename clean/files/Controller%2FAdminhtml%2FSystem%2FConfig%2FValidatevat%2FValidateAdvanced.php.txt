@@ -1,17 +1,20 @@
 <?php
 /**
- *
+ * Validates a value-added tax (VAT) and returns results as JSON.
  * {license_notice}
  *
  * @copyright   {copyright}
  * @license     {license_link}
  */
 namespace Magento\Customer\Controller\Adminhtml\System\Config\Validatevat;
-
+/**
+ * Validates a value-added tax (VAT) and returns results as JSON.
+ * @package Magento\Customer\Controller\Adminhtml\System\Config\Validatevat Validatevat package.
+ */
 class ValidateAdvanced extends \Magento\Customer\Controller\Adminhtml\System\Config\Validatevat
 {
     /**
-     * Retrieve validation result as JSON
+     * Validates a value-added tax (VAT) and returns results as JSON.
      *
      * @return void
      */

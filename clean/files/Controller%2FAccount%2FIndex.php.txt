@@ -1,17 +1,20 @@
 <?php
 /**
- *
+ * Default customer account page.
  * {license_notice}
  *
  * @copyright   {copyright}
  * @license     {license_link}
  */
 namespace Magento\Customer\Controller\Account;
-
+/**
+ * Default customer account page.
+ * @package Magento\Customer\Controller\Account Account package.
+ */
 class Index extends \Magento\Customer\Controller\Account
 {
     /**
-     * Default customer account page
+     * Default customer account page.
      *
      * @return void
      */

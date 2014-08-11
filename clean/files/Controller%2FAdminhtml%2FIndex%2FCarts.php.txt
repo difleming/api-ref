@@ -1,17 +1,20 @@
 <?php
 /**
- *
+ * Gets shopping carts from all websites for a specified client.
  * {license_notice}
  *
  * @copyright   {copyright}
  * @license     {license_link}
  */
 namespace Magento\Customer\Controller\Adminhtml\Index;
-
+/**
+ * Gets shopping carts from all websites for a specified client.
+ * @package Magento\Customer\Controller\Adminhtml\Index Index package.
+ */
 class Carts extends \Magento\Customer\Controller\Adminhtml\Index
 {
     /**
-     * Get shopping carts from all websites for specified client
+     * Gets shopping carts from all websites for a specified client.
      *
      * @return void
      */

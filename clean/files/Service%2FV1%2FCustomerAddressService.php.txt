@@ -1,6 +1,6 @@
 <?php
 /**
- * Customer address service functions.
+ * Constructor and getter and setter functions for customer address service objects.
  *
  * {license_notice}
  *
@@ -16,7 +16,12 @@ use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\Framework\Exception\InputException;
 
 /**
- * Performs customer address-related functions.
+ * Use customer address service objects to create and manage customer addresses.
+ *
+ * Use the methods on customer address service objects to:
+ * * Add, update, or validate a set of addresses.
+ * * List, show information for, and delete addresses.
+ * * Show the default billing address or shipping address for a specified customer.
  *
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */

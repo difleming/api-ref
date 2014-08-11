@@ -1,24 +1,26 @@
 <?php
 /**
+ * Admin HTML customer orders grid block.
  * {license_notice}
  *
  * @copyright   {copyright}
  * @license     {license_link}
  */
 
+
+namespace Magento\Customer\Block\Adminhtml\Edit\Tab;
 /**
- * Adminhtml customer orders grid block
+ * Admin HTML customer orders grid block.
  *
  * @author      Magento Core Team <core@magentocommerce.com>
+ * @package Magento\Customer\Block\Adminhtml\Edit\Tab Tab package.
  */
-namespace Magento\Customer\Block\Adminhtml\Edit\Tab;
-
 class Reviews extends \Magento\Review\Block\Adminhtml\Grid
 {
     /**
-     * Hide grid mass action elements
+     * Hides the grid mass action elements.
      *
-     * @return \Magento\Customer\Block\Adminhtml\Edit\Tab\Reviews
+     * @return \Magento\Customer\Block\Adminhtml\Edit\Tab\Reviews Reviews object.
      */
     protected function _prepareMassaction()
     {
@@ -26,9 +28,9 @@ class Reviews extends \Magento\Review\Block\Adminhtml\Grid
     }
 
     /**
-     * Determine ajax url for grid refresh
+     * Gets the AJAX URL for a grid refresh.
      *
-     * @return string
+     * @return string Grid URL.
      */
     public function getGridUrl()
     {

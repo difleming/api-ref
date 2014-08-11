@@ -8,20 +8,16 @@
  * @license {license}
  */
 namespace Magento\Customer\Service\V1;
-
 /**
+ * Enables customer metadata creation and management.
  *
- * Defines constants and required methods for customer metadata.
+ * The constants define attribute IDs and entity types.
  *
- * The constants for customer metadata define attribute IDs and
- * entity types for customer and customer address.
- *
- * The methods for customer metadata enable users to:
+ * The methods enable you to:
  * * Show attribute metadata or custom attribute metadata for a customer or customer address.
  * * List EAV attribute metadata for a specified entity type.
  * * List attributes for a specified entity type filtered by a form code.
  * * List attribute metadata for all customers or customer addresses.
- *
  */
 interface CustomerMetadataServiceInterface
 {

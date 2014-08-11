@@ -1,5 +1,6 @@
 <?php
 /**
+ * Constructs and gets information about an admin HTML customer orders grid block.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -12,44 +13,46 @@ use Magento\Customer\Controller\RegistryConstants;
 use Magento\Directory\Model\Currency;
 
 /**
- * Adminhtml customer orders grid block
+ * Constructs and gets information about an admin HTML customer orders grid block object.
  */
 class Cart extends \Magento\Backend\Block\Widget\Grid\Extended
 {
     /**
-     * Core registry
+     * Core registry.
      *
      * @var \Magento\Framework\Registry
      */
     protected $_coreRegistry = null;
 
     /**
-     * @var \Magento\Framework\Data\CollectionFactory
+     * @var \Magento\Framework\Data\CollectionFactory Collection factory.
      */
     protected $_dataCollectionFactory;
 
     /**
-     * @var \Magento\Sales\Model\QuoteFactory
+     * @var \Magento\Sales\Model\QuoteFactory Quote factory.
      */
     protected $_quoteFactory;
 
     /**
-     * @var \Magento\Sales\Model\Quote
+     * @var \Magento\Sales\Model\Quote Quote.
      */
     protected $quote = null;
 
     /**
-     * @var string
+     * @var string Parent template.
      */
     protected $_parentTemplate;
 
     /**
-     * @param \Magento\Backend\Block\Template\Context $context
-     * @param \Magento\Backend\Helper\Data $backendHelper
-     * @param \Magento\Sales\Model\QuoteFactory $quoteFactory
-     * @param \Magento\Framework\Data\CollectionFactory $dataCollectionFactory
-     * @param \Magento\Framework\Registry $coreRegistry
-     * @param array $data
+     * Constructs an admin HTML customer orders grid block object.
+     *
+     * @param \Magento\Backend\Block\Template\Context $context Context.
+     * @param \Magento\Backend\Helper\Data $backendHelper Back-end helper.
+     * @param \Magento\Sales\Model\QuoteFactory $quoteFactory Quote factory.
+     * @param \Magento\Framework\Data\CollectionFactory $dataCollectionFactory Data collection factory.
+     * @param \Magento\Framework\Registry $coreRegistry Core registry.
+     * @param array $data An array of data.
      */
     public function __construct(
         \Magento\Backend\Block\Template\Context $context,
@@ -77,7 +80,7 @@ class Cart extends \Magento\Backend\Block\Widget\Grid\Extended
     }
 
     /**
-     * Prepare grid
+     * Prepares a grid.
      *
      * @return void
      */
@@ -88,7 +91,7 @@ class Cart extends \Magento\Backend\Block\Widget\Grid\Extended
     }
 
     /**
-     * Prepare collection
+     * Prepares a collection.
      *
      * @return $this
      */
@@ -182,9 +185,9 @@ class Cart extends \Magento\Backend\Block\Widget\Grid\Extended
     }
 
     /**
-     * Gets customer assigned to this block
+     * Gets the ID for the customer who is assigned to this block.
      *
-     * @return int
+     * @return int Current customer ID.
      */
     public function getCustomerId()
     {
@@ -200,9 +203,9 @@ class Cart extends \Magento\Backend\Block\Widget\Grid\Extended
     }
 
     /**
-     * Gets grid parent html
+     * Gets grid parent HTML.
      *
-     * @return string
+     * @return string Grid parent HTML.
      */
     public function getGridParentHtml()
     {
@@ -219,9 +222,9 @@ class Cart extends \Magento\Backend\Block\Widget\Grid\Extended
     }
 
     /**
-     * Get the quote of the cart
+     * Gets the quote of the cart.
      *
-     * @return \Magento\Sales\Model\Quote
+     * @return \Magento\Sales\Model\Quote Quote.
      */
     protected function getQuote()
     {

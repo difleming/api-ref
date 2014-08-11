@@ -1,5 +1,6 @@
 <?php
 /**
+ * Constructor and getter for admin newsletter queue grid block.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -12,25 +13,30 @@ namespace Magento\Customer\Block\Adminhtml\Edit\Tab\Newsletter;
  *
  * @author      Magento Core Team <core@magentocommerce.com>
  */
+/**
+ * Constructs and gets information about an admin newsletter queue grid block.
+ * @package Magento\Customer\Block\Adminhtml\Edit\Tab\Newsletter Newsletter package.
+ */
 class Grid extends \Magento\Backend\Block\Widget\Grid\Extended
 {
     /**
-     * Core registry
+     * Core registry.
      *
      * @var \Magento\Framework\Registry|null
      */
     protected $_coreRegistry = null;
 
     /**
-     * @var \Magento\Newsletter\Model\Resource\Queue\CollectionFactory
+     * @var \Magento\Newsletter\Model\Resource\Queue\CollectionFactory Collection factory.
      */
     protected $_collectionFactory;
-
     /**
-     * @param \Magento\Backend\Block\Template\Context $context
-     * @param \Magento\Backend\Helper\Data $backendHelper
-     * @param \Magento\Newsletter\Model\Resource\Queue\CollectionFactory $collectionFactory
-     * @param \Magento\Framework\Registry $coreRegistry
+     * Constructs an admin newsletter queue grid block object.
+     *
+     * @param \Magento\Backend\Block\Template\Context $context Context.
+     * @param \Magento\Backend\Helper\Data $backendHelper Back-end helper.
+     * @param \Magento\Newsletter\Model\Resource\Queue\CollectionFactory $collectionFactory Collection factory.
+     * @param \Magento\Framework\Registry $coreRegistry Core registry.
      * @param array $data
      */
     public function __construct(
@@ -46,7 +52,7 @@ class Grid extends \Magento\Backend\Block\Widget\Grid\Extended
     }
 
     /**
-     * @return void
+     * Constructs an admin newsletter queue grid block object.
      */
     protected function _construct()
     {
@@ -61,7 +67,9 @@ class Grid extends \Magento\Backend\Block\Widget\Grid\Extended
     }
 
     /**
-     * @return string
+     * Gets a URL for a grid block object.
+     *
+     * @return string Grid block object URL.
      */
     public function getGridUrl()
     {
@@ -69,7 +77,9 @@ class Grid extends \Magento\Backend\Block\Widget\Grid\Extended
     }
 
     /**
-     * @return $this
+     * Prepares a newsletter queue collection.
+     *
+     * @return $this Parent of prepared collection.
      */
     protected function _prepareCollection()
     {
@@ -84,7 +94,9 @@ class Grid extends \Magento\Backend\Block\Widget\Grid\Extended
     }
 
     /**
-     * @return $this
+     * Prepares columns.
+     *
+     * @return $this Parent of prepared columns.
      */
     protected function _prepareColumns()
     {

@@ -1,5 +1,6 @@
 <?php
 /**
+ * Constructs and gets information about customer front newsletter management block.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -11,24 +12,24 @@ use Magento\Customer\Service\V1\CustomerAccountServiceInterface;
 use Magento\Customer\Service\V1\CustomerAddressServiceInterface;
 
 /**
- * Customer front  newsletter manage block
+ * Constructs and gets information about customer front newsletter management block.
  */
 class Newsletter extends \Magento\Customer\Block\Account\Dashboard
 {
     /**
-     * @var string
+     * @var string *form/newsletter.phtml*
      */
     protected $_template = 'form/newsletter.phtml';
 
     /**
-     * Constructor
+     * Constructs a customer front newsletter management block object.
      *
-     * @param \Magento\Framework\View\Element\Template\Context $context
-     * @param \Magento\Customer\Model\Session $customerSession
-     * @param \Magento\Newsletter\Model\SubscriberFactory $subscriberFactory
-     * @param CustomerAccountServiceInterface $customerAccountService
-     * @param CustomerAddressServiceInterface $addressService
-     * @param array $data
+     * @param \Magento\Framework\View\Element\Template\Context $context Context.
+     * @param \Magento\Customer\Model\Session $customerSession Customer session.
+     * @param \Magento\Newsletter\Model\SubscriberFactory $subscriberFactory Subscriber factory.
+     * @param CustomerAccountServiceInterface $customerAccountService Customer account service.
+     * @param CustomerAddressServiceInterface $addressService Address service.
+     * @param array $data An array of data.
      */
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
@@ -50,7 +51,9 @@ class Newsletter extends \Magento\Customer\Block\Account\Dashboard
     }
 
     /**
-     * @return bool
+     * Determines whether the customer is subscribed to the newsletter.
+     * @return bool * **true** Subscribed.
+     * * **false** Not subscribed.
      * @SuppressWarnings(PHPMD.BooleanGetMethodName)
      */
     public function getIsSubscribed()
@@ -59,9 +62,9 @@ class Newsletter extends \Magento\Customer\Block\Account\Dashboard
     }
 
     /**
-     * Return the save action Url.
+     * Gets the save action URL.
      *
-     * @return string
+     * @return string Save action URL.
      */
     public function getAction()
     {

@@ -1,17 +1,20 @@
 <?php
 /**
- *
+ * Customer last orders grid for Ajax.
  * {license_notice}
  *
  * @copyright   {copyright}
  * @license     {license_link}
  */
 namespace Magento\Customer\Controller\Adminhtml\Index;
-
+/**
+ * Customer last orders grid for Ajax.
+ * @package Magento\Customer\Controller\Adminhtml\Index Index package.
+ */
 class LastOrders extends \Magento\Customer\Controller\Adminhtml\Index
 {
     /**
-     * Customer last orders grid for ajax
+     * Customer last orders grid for Ajax.
      *
      * @return void
      */

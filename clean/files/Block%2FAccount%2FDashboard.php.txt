@@ -1,5 +1,6 @@
 <?php
 /**
+ * Constructs and gets information about a customer dashboard block.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -11,44 +12,44 @@ use Magento\Customer\Service\V1\CustomerAccountServiceInterface;
 use Magento\Customer\Service\V1\CustomerAddressServiceInterface;
 
 /**
- * Customer dashboard block
+ * Constructs and gets information about a customer dashboard block.
  */
 class Dashboard extends \Magento\Framework\View\Element\Template
 {
     /**
-     * @var \Magento\Newsletter\Model\Subscriber
+     * @var \Magento\Newsletter\Model\Subscriber Cached subscription.
      */
     protected $_subscription;
 
     /**
-     * @var \Magento\Customer\Model\Session
+     * @var \Magento\Customer\Model\Session Cached customer session.
      */
     protected $_customerSession;
 
     /**
-     * @var \Magento\Newsletter\Model\SubscriberFactory
+     * @var \Magento\Newsletter\Model\SubscriberFactory Cached subscriber factory object.
      */
     protected $_subscriberFactory;
 
     /**
-     * @var CustomerAccountServiceInterface
+     * @var CustomerAccountServiceInterface Cached customer account service object.
      */
     protected $_customerAccountService;
 
     /**
-     * @var CustomerAddressServiceInterface
+     * @var CustomerAddressServiceInterface Cached address service object.
      */
     protected $_addressService;
 
     /**
-     * Constructor
+     * Constructs a customer dashboard block.
      *
-     * @param \Magento\Framework\View\Element\Template\Context $context
-     * @param \Magento\Customer\Model\Session $customerSession
-     * @param \Magento\Newsletter\Model\SubscriberFactory $subscriberFactory
-     * @param CustomerAccountServiceInterface $customerService
-     * @param CustomerAddressServiceInterface $addressService
-     * @param array $data
+     * @param \Magento\Framework\View\Element\Template\Context $context Context.
+     * @param \Magento\Customer\Model\Session $customerSession Customer session object.
+     * @param \Magento\Newsletter\Model\SubscriberFactory $subscriberFactory Subscriber factory object.
+     * @param CustomerAccountServiceInterface $customerAccountService Customer account service object.
+     * @param CustomerAddressServiceInterface $addressService Address service object.
+     * @param array $data An array of data.
      */
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
@@ -67,9 +68,9 @@ class Dashboard extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * Return the Customer given the customer Id stored in the session.
+     * Gets information about a specified customer.
      *
-     * @return \Magento\Customer\Service\V1\Data\Customer
+     * @return mixed Customer object.
      */
     public function getCustomer()
     {
@@ -77,9 +78,9 @@ class Dashboard extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * Retrieve the Url for editing the customer's account.
+     * Gets the URL that enables a customer to edit their account.
      *
-     * @return string
+     * @return string Account URL.
      */
     public function getAccountUrl()
     {
@@ -87,9 +88,9 @@ class Dashboard extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * Retrieve the Url for customer addresses.
+     * Gets the URL that enables a customer to edit their addresses.
      *
-     * @return string
+     * @return string Account addresses URL.
      */
     public function getAddressesUrl()
     {
@@ -97,10 +98,10 @@ class Dashboard extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * Retrieve the Url for editing the specified address.
+     * Gets the URL that enables a customer to edit a specified address.
      *
-     * @param \Magento\Customer\Service\V1\Data\Address $address
-     * @return string
+     * @param \Magento\Customer\Service\V1\Data\Address $address Address.
+     * @return string Account address URL.
      */
     public function getAddressEditUrl($address)
     {
@@ -111,9 +112,9 @@ class Dashboard extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * Retrieve the Url for customer orders.
+     * Gets the URL for customer orders.
      *
-     * @return string
+     * @return string Customer orders URL.
      */
     public function getOrdersUrl()
     {
@@ -121,9 +122,9 @@ class Dashboard extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * Retrieve the Url for customer reviews.
+     * Gets the URL for customer reviews.
      *
-     * @return string
+     * @return string Customer reviews URL.
      */
     public function getReviewsUrl()
     {
@@ -131,9 +132,9 @@ class Dashboard extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * Retrieve the Url for managing customer wishlist.
+     * Gets the URL that enables a customer to manage their wish list.
      *
-     * @return string
+     * @return string Wish list URL.
      */
     public function getWishlistUrl()
     {
@@ -141,9 +142,9 @@ class Dashboard extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * Retrieve the subscription object (i.e. the subscriber).
+     * Gets the subscription object.
      *
-     * @return \Magento\Newsletter\Model\Subscriber
+     * @return \Magento\Newsletter\Model\Subscriber Subscription object.
      */
     public function getSubscriptionObject()
     {
@@ -156,9 +157,9 @@ class Dashboard extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * Retrieve the Url for managing newsletter subscriptions.
+     * Gets a URL that enables a customer to manage their newsletter subscriptions.
      *
-     * @return string
+     * @return string Newsletter subscriptions URL.
      */
     public function getManageNewsletterUrl()
     {
@@ -166,9 +167,9 @@ class Dashboard extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * Retrieve subscription text, either subscribed or not.
+     * Gets the subscription text, which indicates whether or not the customer is subscribed.
      *
-     * @return string
+     * @return string Text that indicates the customer subscription status.
      */
     public function getSubscriptionText()
     {
@@ -180,9 +181,10 @@ class Dashboard extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * Retrieve the customer's primary addresses (i.e. default billing and shipping).
+     * Gets the primary billing and shipping addresses for a customer.
      *
-     * @return \Magento\Customer\Service\V1\Data\Address[]|bool
+     * @return \Magento\Customer\Service\V1\Data\Address[]|bool * The primary billing and shipping addresses, if present.
+     * * Otherwise, **false**.
      */
     public function getPrimaryAddresses()
     {
@@ -207,13 +209,13 @@ class Dashboard extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * Get back Url in account dashboard.
+     * Gets the back URL in account dashboard.
      *
      * This method is copy/pasted in:
      * \Magento\Wishlist\Block\Customer\Wishlist  - Because of strange inheritance
      * \Magento\Customer\Block\Address\Book - Because of secure Url
      *
-     * @return string
+     * @return string Back URL.
      */
     public function getBackUrl()
     {
@@ -225,9 +227,9 @@ class Dashboard extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * Create an instance of a subscriber.
+     * Creates a subscriber.
      *
-     * @return \Magento\Newsletter\Model\Subscriber
+     * @return \Magento\Newsletter\Model\Subscriber Subscriber.
      */
     protected function _createSubscriber()
     {

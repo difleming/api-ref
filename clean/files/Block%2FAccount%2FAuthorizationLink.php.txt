@@ -1,40 +1,46 @@
 <?php
 /**
+ * Constructs and gets information about an authorization link.
  * {license_notice}
  *
- * @copyright   {copyright}
- * @license     {license_link}
+ * @copyright {copyright}
+ * @license {license}
  */
 namespace Magento\Customer\Block\Account;
 
 /**
- * Customer authorization link
+ * Constructs and gets information about a customer authorization link.
+ *
+ * Use the authorization link methods to:
+ * * Construct an authorization link.
+ * * Get the link label, link destination, and POST request parameters for the link.
+ * * Determine whether the customer associated with the link is logged in.
  */
 class AuthorizationLink extends \Magento\Framework\View\Element\Html\Link
 {
     /**
-     * Customer session
-     *
-     * @var \Magento\Framework\App\Http\Context
+     * @var \Magento\Framework\App\Http\Context Customer session.
      */
     protected $httpContext;
 
     /**
-     * @var \Magento\Customer\Helper\Data
+     * @var \Magento\Customer\Helper\Data Customer helper.
      */
     protected $_customerHelper;
 
     /**
-     * @var \Magento\Core\Helper\PostData
+     * @var \Magento\Core\Helper\PostData Post data helper.
      */
     protected $_postDataHelper;
 
     /**
-     * @param \Magento\Framework\View\Element\Template\Context $context
-     * @param \Magento\Framework\App\Http\Context $httpContext
-     * @param \Magento\Customer\Helper\Data $customerHelper
-     * @param \Magento\Core\Helper\PostData $postDataHelper
-     * @param array $data
+     * Constructs an authorization link.
+     *
+     * @param \Magento\Framework\View\Element\Template\Context $context Context.
+     * @param \Magento\Framework\App\Http\Context $httpContext Customer session.
+     * @param \Magento\Customer\Helper\Data $customerHelper Customer helper object.
+     * @param \Magento\Core\Helper\PostData $postDataHelper Post data helper object.
+     * @param array $data An array of data.
      */
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
@@ -50,7 +56,9 @@ class AuthorizationLink extends \Magento\Framework\View\Element\Html\Link
     }
 
     /**
-     * @return string
+     * Gets the destination for an authorization link.
+     *
+     * @return string Link destination.
      */
     public function getHref()
     {
@@ -60,7 +68,9 @@ class AuthorizationLink extends \Magento\Framework\View\Element\Html\Link
     }
 
     /**
-     * @return string
+     *  Gets the label for an authorization link.
+     *
+     * @return string Link label.
      */
     public function getLabel()
     {
@@ -68,9 +78,9 @@ class AuthorizationLink extends \Magento\Framework\View\Element\Html\Link
     }
 
     /**
-     * Retrieve params for post request
+     * Gets the parameters for a POST request.
      *
-     * @return string
+     * @return string POST request parameters.
      */
     public function getPostParams()
     {
@@ -78,9 +88,10 @@ class AuthorizationLink extends \Magento\Framework\View\Element\Html\Link
     }
 
     /**
-     * Is logged in
+     * Determines whether the customer associated with a link is logged in.
      *
-     * @return bool
+     * @return bool  * **true** - Logged in.
+     * * **false** - Is not logged in.
      */
     public function isLoggedIn()
     {

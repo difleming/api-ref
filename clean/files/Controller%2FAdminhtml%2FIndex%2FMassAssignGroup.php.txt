@@ -1,17 +1,20 @@
 <?php
 /**
- *
+ * Performs customer mass assign group action.
  * {license_notice}
  *
  * @copyright   {copyright}
  * @license     {license_link}
  */
 namespace Magento\Customer\Controller\Adminhtml\Index;
-
+/**
+ * Performs customer mass assign group action.
+ * @package Magento\Customer\Controller\Adminhtml\Index Index package.
+ */
 class MassAssignGroup extends \Magento\Customer\Controller\Adminhtml\Index
 {
     /**
-     * Customer mass assign group action
+     * Performs customer mass assign group action.
      *
      * @return void
      */

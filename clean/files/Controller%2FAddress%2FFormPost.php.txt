@@ -1,6 +1,6 @@
 <?php
 /**
- *
+ * Extracts the address from a request.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -10,12 +10,17 @@ namespace Magento\Customer\Controller\Address;
 
 use Magento\Framework\Exception\InputException;
 
+/**
+ * Extracts the address from a request.
+ * Loads and renders the address save form.
+ * @package Magento\Customer\Controller\Address Address package.
+ */
 class FormPost extends \Magento\Customer\Controller\Address
 {
     /**
-     * Extract address from request
+     * Extracts the address from a request.
      *
-     * @return \Magento\Customer\Service\V1\Data\Address
+     * @return \Magento\Customer\Service\V1\Data\Address Address.
      */
     protected function _extractAddress()
     {
@@ -47,7 +52,7 @@ class FormPost extends \Magento\Customer\Controller\Address
     }
 
     /**
-     * Process address form save
+     * Loads and renders the save address form.
      *
      * @return void
      */

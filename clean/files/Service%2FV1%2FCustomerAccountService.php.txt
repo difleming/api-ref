@@ -1,6 +1,7 @@
 <?php
 /**
- * Customer account service functions.
+ * Constructs customer account service objects.
+ * Gets information for and sets information on customer account service objects.
  *
  * {license_notice}
  *
@@ -39,16 +40,16 @@ use Magento\Customer\Model\AddressRegistry;
 use Magento\Framework\Service\V1\Data\Filter;
 
 /**
- * Performs actions on a customer account.
+ * Use customer account service objects to create and manage customers.
  *
- * Use the customer account methods to:
- * * Create customers with a password or hashed password.
- * * Update, show information for, show details for, and delete customer accounts.
- * * Activate, find, and log in a customer.
+ * Use the methods on customer account service objects to:
+ * * Create a customer with a password or hashed password.
+ * * Update, show information for, show details for, and delete a customer account.
+ * * Activate, find, and log in a customer account.
  * * Check email availability and change the password for a customer.
  * * Get customer attributes, such as confirmation status, can update, can delete, and is customer in store.
  * * Validate a token in a reset password link.
- * * Send and resend email to customer.
+ * * Send and resend email to a customer.
  *
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  * @SuppressWarnings(PHPMD.TooManyFields)
@@ -142,26 +143,26 @@ class CustomerAccountService implements CustomerAccountServiceInterface
     private $configShare;
 
     /**
-     * Constructs a customer account.
+     * Constructs a customer account service object.
      *
-     * @param CustomerFactory $customerFactory
-     * @param ManagerInterface $eventManager
-     * @param StoreManagerInterface $storeManager
-     * @param Random $mathRandom
-     * @param Converter $converter
-     * @param Validator $validator
-     * @param Data\CustomerBuilder $customerBuilder
-     * @param Data\CustomerDetailsBuilder $customerDetailsBuilder
-     * @param Data\SearchResultsBuilder $searchResultsBuilder
-     * @param Data\CustomerValidationResultsBuilder $customerValidationResultsBuilder
-     * @param CustomerAddressServiceInterface $customerAddressService
-     * @param CustomerMetadataServiceInterface $customerMetadataService
-     * @param CustomerRegistry $customerRegistry
-     * @param AddressRegistry $addressRegistry
-     * @param UrlInterface $url
-     * @param Logger $logger
-     * @param Encryptor $encryptor
-     * @param ConfigShare $configShare
+     * @param CustomerFactory $customerFactory Customer factory object.
+     * @param ManagerInterface $eventManager Manager interface object.
+     * @param StoreManagerInterface $storeManager Store manager interface object.
+     * @param Random $mathRandom Random.
+     * @param Converter $converter Converter.
+     * @param Validator $validator Validator.
+     * @param Data\CustomerBuilder $customerBuilder Customer builder object.
+     * @param Data\CustomerDetailsBuilder $customerDetailsBuilder Customer details builder object.
+     * @param Data\SearchResultsBuilder $searchResultsBuilder Search results builder object.
+     * @param Data\CustomerValidationResultsBuilder $customerValidationResultsBuilder Customer validation results builder object.
+     * @param CustomerAddressServiceInterface $customerAddressService Customer address service object.
+     * @param CustomerMetadataServiceInterface $customerMetadataService Customer metadata service object.
+     * @param CustomerRegistry $customerRegistry Customer registry.
+     * @param AddressRegistry $addressRegistry Address registry.
+     * @param UrlInterface $url URL interface.
+     * @param Logger $logger Logger.
+     * @param Encryptor $encryptor Encryptor.
+     * @param ConfigShare $configShare Configuration share.
      *
      * @SuppressWarnings(PHPMD.ExcessiveParameterList)
      */
@@ -206,10 +207,7 @@ class CustomerAccountService implements CustomerAccountServiceInterface
     }
 
     /**
-     * Resends a confirmation email.
-     *
-     * Templates can use the redirect URL to direct the customer to a product that they browsed after
-     * they clicked the confirmation link.
+     * {@inheritdoc}
      *
      * @param string $email       The customer email address.
      * @param string $websiteId   The website ID.
@@ -217,7 +215,6 @@ class CustomerAccountService implements CustomerAccountServiceInterface
      * @return void
      * @throws \Magento\Framework\Exception\NoSuchEntityException No customer exists for the specified email.
      * @throws \Magento\Framework\Exception\State\InvalidTransitionException Confirmation is not required.
-     *
      */
     public function resendConfirmation($email, $websiteId, $redirectUrl = '')
     {
@@ -240,6 +237,12 @@ class CustomerAccountService implements CustomerAccountServiceInterface
 
     /**
      * Activates a specified customer.
+     *
+     * @param int $customerId The customer ID.
+     * @param string $confirmationKey The confirmation token for the customer.
+     * @return Data\Customer Updated customer object.
+     * @throws \Magento\Framework\Exception\State\InvalidTransitionException The account is already active.
+     * @throws \Magento\Framework\Exception\State\InputMismatchException The confirmation token is not valid.
      */
     public function activateCustomer($customerId, $confirmationKey)
     {

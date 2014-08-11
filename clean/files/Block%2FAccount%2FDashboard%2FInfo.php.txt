@@ -1,5 +1,6 @@
 <?php
 /**
+ * Constructs and gets information about a customer dashboard.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -11,38 +12,37 @@ use Magento\Customer\Service\V1\CustomerAccountServiceInterface;
 use Magento\Framework\Exception\NoSuchEntityException;
 
 /**
- * Dashboard Customer Info
+ * Constructs and gets information about a customer dashboard information object.
  */
 class Info extends \Magento\Framework\View\Element\Template
 {
     /**
-     * Cached subscription object
-     *
-     * @var \Magento\Newsletter\Model\Subscriber
+     * @var \Magento\Newsletter\Model\Subscriber Cached subscription object.
      */
     protected $_subscription;
 
     /**
-     * @var \Magento\Newsletter\Model\SubscriberFactory
+     * @var \Magento\Newsletter\Model\SubscriberFactory Cached subscription factory.
      */
     protected $_subscriberFactory;
 
-    /** @var \Magento\Customer\Helper\View */
+    /**
+     * @var \Magento\Customer\Helper\View Cached helper view. */
     protected $_helperView;
 
     /**
-     * @var \Magento\Customer\Helper\Session\CurrentCustomer
+     * @var \Magento\Customer\Helper\Session\CurrentCustomer The current customer.
      */
     protected $currentCustomer;
 
     /**
-     * Constructor
+     * Constructs a customer dashboard information object.
      *
-     * @param \Magento\Framework\View\Element\Template\Context $context
-     * @param \Magento\Customer\Helper\Session\CurrentCustomer $currentCustomer
-     * @param \Magento\Newsletter\Model\SubscriberFactory $subscriberFactory
-     * @param \Magento\Customer\Helper\View $helperView
-     * @param array $data
+     * @param \Magento\Framework\View\Element\Template\Context $context Context.
+     * @param \Magento\Customer\Helper\Session\CurrentCustomer $currentCustomer The current customer.
+     * @param \Magento\Newsletter\Model\SubscriberFactory $subscriberFactory A subscriber factory object.
+     * @param \Magento\Customer\Helper\View $helperView A helper view object.
+     * @param array $data An array of data.
      */
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
@@ -59,9 +59,10 @@ class Info extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * Returns the Magento Customer Model for this block
+     * Gets the Magento customer model for this block.
      *
-     * @return \Magento\Customer\Service\V1\Data\Customer|null
+     * @return \Magento\Customer\Service\V1\Data\Customer|null * The customer model for this block.
+     * * Otherwise, null.
      */
     public function getCustomer()
     {
@@ -73,9 +74,9 @@ class Info extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * Get the full name of a customer
+     * Gets the full name of a customer.
      *
-     * @return string full name
+     * @return string Full name of the customer.
      */
     public function getName()
     {
@@ -83,7 +84,9 @@ class Info extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * @return string
+     * Gets a URL that enables the customer to change their password.
+     *
+     * @return string Change password URL.
      */
     public function getChangePasswordUrl()
     {
@@ -91,9 +94,9 @@ class Info extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * Get Customer Subscription Object Information
+     * Gets information about a customer subscription object.
      *
-     * @return \Magento\Newsletter\Model\Subscriber
+     * @return \Magento\Newsletter\Model\Subscriber Customer subscription object.
      */
     public function getSubscriptionObject()
     {
@@ -108,9 +111,10 @@ class Info extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * Gets Customer subscription status
+     * Gets the customer subscription status.
      *
-     * @return bool
+     * @return bool * **true** - Is subscribed.
+     * * **false** - Is not subscribed.
      *
      * @SuppressWarnings(PHPMD.BooleanGetMethodName)
      */
@@ -120,9 +124,10 @@ class Info extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * Newsletter module availability
+     * Determines whether the newsletter module is available.
      *
-     * @return bool
+     * @return bool * **true** - Is available.
+     * * **false** - Is not available.
      */
     public function isNewsletterEnabled()
     {
@@ -130,7 +135,9 @@ class Info extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * @return \Magento\Newsletter\Model\Subscriber
+     * Creates a subscriber.
+     *
+     * @return \Magento\Newsletter\Model\Subscriber Customer subscriber object.
      */
     protected function _createSubscriber()
     {

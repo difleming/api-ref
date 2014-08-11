@@ -1,6 +1,6 @@
 <?php
 /**
- *
+ * Customer validation.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -11,13 +11,17 @@ namespace Magento\Customer\Controller\Adminhtml\Index;
 use \Magento\Customer\Service\V1\Data\Customer;
 use Magento\Framework\Message\Error;
 
+/**
+ * Validates a customer.
+ * @package Magento\Customer\Controller\Adminhtml\Index Index package.
+ */
 class Validate extends \Magento\Customer\Controller\Adminhtml\Index
 {
     /**
-     * Customer validation
+     * Validates a customer.
      *
-     * @param \Magento\Framework\Object $response
-     * @return Customer|null
+     * @param \Magento\Framework\Object $response Response object.
+     * @return Customer|null Validated customer object. Otherwise, null.
      */
     protected function _validateCustomer($response)
     {
@@ -62,9 +66,9 @@ class Validate extends \Magento\Customer\Controller\Adminhtml\Index
     }
 
     /**
-     * Customer address validation.
+     * Validates a customer address.
      *
-     * @param \Magento\Framework\Object $response
+     * @param $response Response object.
      * @return void
      */
     protected function _validateCustomerAddress($response)

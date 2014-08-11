@@ -1,5 +1,6 @@
 <?php
 /**
+ * Constructs and renders a newsletter queue grid block action item.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -8,21 +9,23 @@
 namespace Magento\Customer\Block\Adminhtml\Edit\Tab\Newsletter\Grid\Renderer;
 
 /**
- * Adminhtml newsletter queue grid block action item renderer
+ * Constructs and renders a newsletter queue grid block action item.
  */
 class Action extends \Magento\Backend\Block\Widget\Grid\Column\Renderer\AbstractRenderer
 {
     /**
-     * Core registry
+     * Core registry.
      *
      * @var \Magento\Framework\Registry
      */
     protected $_coreRegistry = null;
 
     /**
-     * @param \Magento\Backend\Block\Context $context
-     * @param \Magento\Framework\Registry $registry
-     * @param array $data
+     * Constructs and renders a newsletter queue grid block action item.
+     *
+     * @param \Magento\Backend\Block\Context $context Context.
+     * @param \Magento\Framework\Registry $registry Registry.
+     * @param array $data An array of data.
      */
     public function __construct(
         \Magento\Backend\Block\Context $context,
@@ -34,8 +37,10 @@ class Action extends \Magento\Backend\Block\Widget\Grid\Column\Renderer\Abstract
     }
 
     /**
-     * @param \Magento\Framework\Object $row
-     * @return string
+     * Renders a newsletter queue grid block action item.
+     *
+     * @param \Magento\Framework\Object $row Row.
+     * @return string Rendered action item.
      */
     public function render(\Magento\Framework\Object $row)
     {
@@ -59,8 +64,9 @@ class Action extends \Magento\Backend\Block\Widget\Grid\Column\Renderer\Abstract
     }
 
     /**
-     * @param string $value
-     * @return string
+     * Gets the escaped value for a specified value.
+     * @param string $value Value.
+     * @return string Escaped value.
      */
     protected function _getEscapedValue($value)
     {
@@ -68,8 +74,9 @@ class Action extends \Magento\Backend\Block\Widget\Grid\Column\Renderer\Abstract
     }
 
     /**
-     * @param array $actions
-     * @return string
+     * Gets the HTML for an array of actions.
+     * @param array $actions Array of actions.
+     * @return string Actions HTML.
      */
     protected function _actionsToHtml(array $actions)
     {

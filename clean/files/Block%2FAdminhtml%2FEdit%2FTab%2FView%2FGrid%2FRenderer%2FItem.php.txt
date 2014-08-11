@@ -1,5 +1,6 @@
 <?php
 /**
+ * Constructs and renders name and option cell for a wish list grid item.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -10,29 +11,32 @@ namespace Magento\Customer\Block\Adminhtml\Edit\Tab\View\Grid\Renderer;
 use Magento\Catalog\Model\Product;
 
 /**
- * Adminhtml customers wishlist grid item renderer for name/options cell
+ * Renders name and options cell for an admin HTML customer wish list grid item.
+ * @package Magento\Customer\Block\Adminhtml\Edit\Tab\View\Grid\Renderer Renderer package.
  */
 class Item extends \Magento\Backend\Block\Widget\Grid\Column\Renderer\AbstractRenderer
 {
     /**
-     * Catalog product configuration
+     * Catalog product configuration.
      *
      * @var \Magento\Catalog\Helper\Product\Configuration|null
      */
     protected $_productConfig = null;
 
     /**
+     * Product configuration pool.
+     *
      * @var \Magento\Catalog\Helper\Product\ConfigurationPool
      */
     protected $_productConfigPool;
 
     /**
-     * Constructor
+     * Constructs name and option cell for a wish list grid item.
      *
-     * @param \Magento\Backend\Block\Context $context
-     * @param \Magento\Catalog\Helper\Product\Configuration $productConfig
-     * @param \Magento\Catalog\Helper\Product\ConfigurationPool $productConfigPool
-     * @param array $data
+     * @param \Magento\Backend\Block\Context $context Context.
+     * @param \Magento\Catalog\Helper\Product\Configuration $productConfig Product configuration.
+     * @param \Magento\Catalog\Helper\Product\ConfigurationPool $productConfigPool Product configuration pool.
+     * @param array $data An array of data.
      */
     public function __construct(
         \Magento\Backend\Block\Context $context,
@@ -46,10 +50,10 @@ class Item extends \Magento\Backend\Block\Widget\Grid\Column\Renderer\AbstractRe
     }
 
     /**
-     * Returns helper for product type
+     * Gets the helper for a specified product type.
      *
-     * @param Product $product
-     * @return \Magento\Catalog\Helper\Product\Configuration\ConfigurationInterface
+     * @param Product $product Product type.
+     * @return \Magento\Catalog\Helper\Product\Configuration\ConfigurationInterface Product helper.
      */
     protected function _getProductHelper($product)
     {
@@ -80,9 +84,9 @@ class Item extends \Magento\Backend\Block\Widget\Grid\Column\Renderer\AbstractRe
     }
 
     /**
-     * Returns product associated with this block
+     * Gets the product that is associated with this block.
      *
-     * @return string
+     * @return string Product.
      */
     public function getProduct()
     {
@@ -90,9 +94,9 @@ class Item extends \Magento\Backend\Block\Widget\Grid\Column\Renderer\AbstractRe
     }
 
     /**
-     * Returns list of options and their values for product configuration
+     * Gets a list of options and their values for a product configuration.
      *
-     * @return array
+     * @return array Array of options and values.
      */
     protected function getOptionList()
     {
@@ -103,10 +107,10 @@ class Item extends \Magento\Backend\Block\Widget\Grid\Column\Renderer\AbstractRe
     }
 
     /**
-     * Returns formatted option value for an item
+     * Gets the formatted option value for an item.
      *
-     * @param \Magento\Wishlist\Model\Item\Option $option
-     * @return array
+     * @param \Magento\Wishlist\Model\Item\Option $option Option.
+     * @return array Array of formatted option values.
      */
     protected function getFormattedOptionValue($option)
     {
@@ -115,10 +119,10 @@ class Item extends \Magento\Backend\Block\Widget\Grid\Column\Renderer\AbstractRe
     }
 
     /**
-     * Renders item product name and its configuration
+     * Renders the item product name and its configuration.
      *
-     * @param \Magento\Catalog\Model\Product\Configuration\Item\ItemInterface|\Magento\Framework\Object $item
-     * @return string
+     * @param \Magento\Catalog\Model\Product\Configuration\Item\ItemInterface|\Magento\Framework\Object $item Item.
+     * @return string Rendered product name and configuration.
      */
     public function render(\Magento\Framework\Object $item)
     {
@@ -129,11 +133,11 @@ class Item extends \Magento\Backend\Block\Widget\Grid\Column\Renderer\AbstractRe
     }
 
     /**
-     * Render product item with options
+     * Renders the product item with options.
      *
-     * @param Product $product
-     * @param array $options
-     * @return string
+     * @param Product $product Product.
+     * @param array $options Array of options.
+     * @return string Rendered product item with options.
      */
     protected function _renderItemOptions(Product $product, array $options)
     {

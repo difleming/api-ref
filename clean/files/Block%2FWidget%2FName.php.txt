@@ -1,5 +1,6 @@
 <?php
 /**
+ * Constructs and gets information about a name widget.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -14,7 +15,7 @@ use Magento\Customer\Helper\Address as AddressHelper;
 use Magento\Customer\Helper\Data as CustomerHelper;
 
 /**
- * Widget for showing customer name.
+ * Constructs and gets information for a widget that shows a customer name.
  *
  * @method Customer getObject()
  * @method Name setObject(Customer $customer)
@@ -22,16 +23,18 @@ use Magento\Customer\Helper\Data as CustomerHelper;
 class Name extends AbstractWidget
 {
     /**
-     * @var CustomerHelper
+     * @var CustomerHelper Customer helper.
      */
     protected $_customerHelper;
 
     /**
-     * @param Context $context
-     * @param AddressHelper $addressHelper
-     * @param CustomerMetadataServiceInterface $attributeMetadata
-     * @param CustomerHelper $customerHelper
-     * @param array $data
+     * Constructs a widget that shows a customer name.
+     *
+     * @param Context $context Context.
+     * @param AddressHelper $addressHelper Address helper.
+     * @param CustomerMetadataServiceInterface $attributeMetadata Attribute metadata.
+     * @param CustomerHelper $customerHelper Customer helper.
+     * @param array $data An array of data.
      */
     public function __construct(
         Context $context,
@@ -46,6 +49,8 @@ class Name extends AbstractWidget
     }
 
     /**
+     * Constructs widget location.
+     *
      * @return void
      */
     public function _construct()
@@ -57,10 +62,11 @@ class Name extends AbstractWidget
     }
 
     /**
-     * Can show config value
+     * Determines whether the configuration value for a specified key can be shown.
      *
-     * @param string $key
-     * @return bool
+     * @param string $key Key.
+     * @return bool * **true* Can be shown.
+     * * **false** Cannot be shown.
      */
     protected function _showConfig($key)
     {
@@ -68,9 +74,10 @@ class Name extends AbstractWidget
     }
 
     /**
-     * Can show prefix
+     * Determines whether the prefix can be shown.
      *
-     * @return bool
+     * @return bool * **true* Can be shown.
+     * * **false** Cannot be shown.
      */
     public function showPrefix()
     {
@@ -78,9 +85,10 @@ class Name extends AbstractWidget
     }
 
     /**
-     * Define if prefix attribute is required
+     * Determines whether a prefix attribute is required.
      *
-     * @return bool
+     * @return bool * **true* Required.
+     * * **false** Optional.
      */
     public function isPrefixRequired()
     {
@@ -88,9 +96,9 @@ class Name extends AbstractWidget
     }
 
     /**
-     * Retrieve name prefix drop-down options
+     * Gets the name prefix drop-down options.
      *
-     * @return array|bool
+     * @return array|bool Drop-down options.
      */
     public function getPrefixOptions()
     {
@@ -104,9 +112,10 @@ class Name extends AbstractWidget
     }
 
     /**
-     * Define if middle name attribute can be shown
+     * Determines whether a middle name attribute can be shown.
      *
-     * @return bool
+     * @return bool * **true* Can be shown.
+     * * **false** Cannot be shown.
      */
     public function showMiddlename()
     {
@@ -114,9 +123,10 @@ class Name extends AbstractWidget
     }
 
     /**
-     * Define if middlename attribute is required
+     * Determines whether a middle name attribute is required.
      *
-     * @return bool
+     * @return bool * **true* Required.
+     * * **false** Optional.
      */
     public function isMiddlenameRequired()
     {
@@ -124,9 +134,10 @@ class Name extends AbstractWidget
     }
 
     /**
-     * Define if suffix attribute can be shown
+     * Determines whether a suffix attribute can be shown.
      *
-     * @return bool
+     * @return bool * **true* Can be shown.
+     * * **false** Cannot be shown.
      */
     public function showSuffix()
     {
@@ -134,9 +145,10 @@ class Name extends AbstractWidget
     }
 
     /**
-     * Define if suffix attribute is required
+     * Determines whether the suffix attribute is required.
      *
-     * @return bool
+     * @return bool * **true* Required.
+     * * **false** Optional.
      */
     public function isSuffixRequired()
     {
@@ -144,9 +156,9 @@ class Name extends AbstractWidget
     }
 
     /**
-     * Retrieve name suffix drop-down options
+     * Gets name suffix drop-down options.
      *
-     * @return array|bool
+     * @return array|bool Drop-down options.
      */
     public function getSuffixOptions()
     {
@@ -159,9 +171,9 @@ class Name extends AbstractWidget
     }
 
     /**
-     * Class name getter
+     * Gets the class name.
      *
-     * @return string
+     * @return string Class name.
      */
     public function getClassName()
     {
@@ -172,9 +184,9 @@ class Name extends AbstractWidget
     }
 
     /**
-     * Container class name getter
+     * Gets the container class name.
      *
-     * @return string
+     * @return string Container class name.
      */
     public function getContainerClassName()
     {
@@ -186,10 +198,10 @@ class Name extends AbstractWidget
     }
 
     /**
-     * Retrieve customer or customer address attribute instance
+     * Gets the customer or customer address attribute instance for a specified attribute code.
      *
-     * @param string $attributeCode
-     * @return \Magento\Customer\Service\V1\Data\Eav\AttributeMetadata|null
+     * @param string $attributeCode Attribute code.
+     * @return \Magento\Customer\Service\V1\Data\Eav\AttributeMetadata|null Customer or customer address attribute, if present. Otherwise, null.
      *
      * @SuppressWarnings(PHPMD.CyclomaticComplexity)
      */
@@ -216,10 +228,10 @@ class Name extends AbstractWidget
     }
 
     /**
-     * Retrieve store attribute label
+     * Gets the store attribute label for a specified attribute code.
      *
-     * @param string $attributeCode
-     * @return string
+     * @param string $attributeCode Attribute code.
+     * @return string Attribute label.
      */
     public function getStoreLabel($attributeCode)
     {
@@ -228,10 +240,10 @@ class Name extends AbstractWidget
     }
 
     /**
-     * Get string with frontend validation classes for attribute
+     * Gets the string with front-end validation classes for a specified attribute code.
      *
-     * @param string $attributeCode
-     * @return string
+     * @param string $attributeCode Attribute code.
+     * @return string Front-end validation classes.
      */
     public function getAttributeValidationClass($attributeCode)
     {
@@ -239,8 +251,10 @@ class Name extends AbstractWidget
     }
 
     /**
-     * @param string $attributeCode
-     * @return bool
+     * Determines whether a specified attribute is required.
+     * @param string $attributeCode Attribute code.
+     * @return bool * **true** Required.
+     * * **false** Optional.
      */
     private function _isAttributeRequired($attributeCode)
     {
@@ -249,8 +263,11 @@ class Name extends AbstractWidget
     }
 
     /**
-     * @param string $attributeCode
-     * @return bool
+     * Determines whether a specified attribute can be shown.
+     *
+     * @param string $attributeCode Attribute code.
+     * @return bool * **true** Can be shown.
+     * * **false** Cannot be shown.
      */
     private function _isAttributeVisible($attributeCode)
     {

@@ -1,6 +1,6 @@
 <?php
 /**
- *
+ * Constructs, loads, and renders the create customer account page.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -13,35 +13,38 @@ use Magento\Framework\Exception\InputException;
 use Magento\Customer\Service\V1\CustomerAccountServiceInterface;
 
 /**
+ * Loads and renders the create customer account page.
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
 class CreatePost extends \Magento\Customer\Controller\Account
 {
-    /** @var \Magento\Customer\Model\CustomerExtractor */
+    /** @var \Magento\Customer\Model\CustomerExtractor Customer extractor. */
     protected $customerExtractor;
 
-    /** @var \Magento\Customer\Model\Metadata\FormFactory */
+    /** @var \Magento\Customer\Model\Metadata\FormFactory Form factory. */
     protected $_formFactory;
 
-    /** @var \Magento\Newsletter\Model\SubscriberFactory */
+    /** @var \Magento\Newsletter\Model\SubscriberFactory Subscriber factory. */
     protected $_subscriberFactory;
 
-    /** @var \Magento\Customer\Service\V1\Data\RegionBuilder */
+    /** @var \Magento\Customer\Service\V1\Data\RegionBuilder Region builder. */
     protected $_regionBuilder;
 
-    /** @var \Magento\Customer\Service\V1\Data\AddressBuilder */
+    /** @var \Magento\Customer\Service\V1\Data\AddressBuilder Address builder. */
     protected $_addressBuilder;
 
-    /** @var \Magento\Customer\Service\V1\Data\CustomerDetailsBuilder */
+    /** @var \Magento\Customer\Service\V1\Data\CustomerDetailsBuilder Customer details builder. */
     protected $_customerDetailsBuilder;
 
-    /** @var \Magento\Customer\Helper\Data */
+    /** @var \Magento\Customer\Helper\Data Customer helper data. */
     protected $_customerHelperData;
 
-    /** @var \Magento\Framework\Escaper */
+    /** @var \Magento\Framework\Escaper Escaper. */
     protected $escaper;
 
     /**
+     * Constructs the create customer account page.
+     *
      * @param \Magento\Framework\App\Action\Context $context
      * @param \Magento\Customer\Model\Session $customerSession
      * @param \Magento\Customer\Helper\Address $addressHelper
@@ -100,9 +103,9 @@ class CreatePost extends \Magento\Customer\Controller\Account
     }
 
     /**
-     * Add address to customer during create account
+     * Adds address to customer during create account action.
      *
-     * @return \Magento\Customer\Service\V1\Data\Address|null
+     * @return \Magento\Customer\Service\V1\Data\Address|null Address. Otherwise, null.
      */
     protected function _extractAddress()
     {
@@ -144,9 +147,10 @@ class CreatePost extends \Magento\Customer\Controller\Account
     }
 
     /**
-     * Is registration allowed
+     * Determines whether registration is allowed.
      *
-     * @return bool
+     * @return bool * **true** Allowed.
+     * * **false** Not allowed.
      */
     protected function isRegistrationAllowed()
     {
@@ -154,7 +158,7 @@ class CreatePost extends \Magento\Customer\Controller\Account
     }
 
     /**
-     * Create customer account action
+     * Loads and renders the create customer account page.
      *
      * @return void
      * @SuppressWarnings(PHPMD.CyclomaticComplexity)

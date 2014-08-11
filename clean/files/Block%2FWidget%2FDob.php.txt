@@ -1,5 +1,6 @@
 <?php
 /**
+ * Customer block widget.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -9,23 +10,28 @@ namespace Magento\Customer\Block\Widget;
 
 use Magento\Framework\Stdlib\DateTime\TimezoneInterface;
 
+/**
+ * Constructs and gets information about a date-of-birth object.
+ * @package Magento\Customer\Block\Widget Widget package.
+ */
 class Dob extends AbstractWidget
 {
     /**
-     * Constants for borders of date-type customer attributes
+     * Constants for borders of date-type customer attributes,
      */
     const MIN_DATE_RANGE_KEY = 'date_range_min';
 
     const MAX_DATE_RANGE_KEY = 'date_range_max';
 
     /**
-     * Date inputs
+     * Date inputs.
      *
      * @var array
      */
     protected $_dateInputs = array();
 
     /**
+     * Constructs a date-of-birth widget.
      * @return void
      */
     public function _construct()
@@ -35,7 +41,9 @@ class Dob extends AbstractWidget
     }
 
     /**
-     * @return bool
+     * Determines whether attribute metadata is enabled.
+     * @return bool * **true** Enabled.
+     * * **false** Disabled.
      */
     public function isEnabled()
     {
@@ -44,7 +52,9 @@ class Dob extends AbstractWidget
     }
 
     /**
-     * @return bool
+     * Determines whether attribute is required.
+     * @return bool * **true** Required.
+     * * **false** Optional.
      */
     public function isRequired()
     {
@@ -53,8 +63,9 @@ class Dob extends AbstractWidget
     }
 
     /**
-     * @param string $date
-     * @return $this
+     * Sets the date.
+     * @param string $date Date.
+     * @return $this Updated object.
      */
     public function setDate($date)
     {
@@ -64,7 +75,8 @@ class Dob extends AbstractWidget
     }
 
     /**
-     * @return string|bool
+     * Gets the day.
+     * @return bool|string Not sure this returns??
      */
     public function getDay()
     {
@@ -72,7 +84,8 @@ class Dob extends AbstractWidget
     }
 
     /**
-     * @return string|bool
+     * Gets the month.
+     * @return bool|string Not sure what this returns.
      */
     public function getMonth()
     {
@@ -80,7 +93,8 @@ class Dob extends AbstractWidget
     }
 
     /**
-     * @return string|bool
+     * Gets the year.
+     * @return bool|string Not sure what this returns.
      */
     public function getYear()
     {
@@ -88,9 +102,9 @@ class Dob extends AbstractWidget
     }
 
     /**
-     * Returns format which will be applied for DOB in javascript
+     * Gets the date format that is applied to the date-of-birth in JavaScript.
      *
-     * @return string
+     * @return string Date format.
      */
     public function getDateFormat()
     {
@@ -98,10 +112,10 @@ class Dob extends AbstractWidget
     }
 
     /**
-     * Add date input html
+     * Adds date input HTML.
      *
-     * @param string $code
-     * @param string $html
+     * @param string $code Code. (What is this?)
+     * @param string $html HTML.
      * @return void
      */
     public function setDateInput($code, $html)
@@ -110,11 +124,11 @@ class Dob extends AbstractWidget
     }
 
     /**
-     * Sort date inputs by dateformat order of current locale
+     * Sorts date inputs by date format in the order of the current locale.
      *
-     * @param bool $stripNonInputChars
+     * @param bool $stripNonInputChars Set to true to strip the non-input characters. Default is true.
      *
-     * @return string
+     * @return string Sorted date inputs.
      */
     public function getSortedDateInputs($stripNonInputChars = true)
     {
@@ -133,9 +147,8 @@ class Dob extends AbstractWidget
     }
 
     /**
-     * Return minimal date range value
-     *
-     * @return string|null
+     * Gets the minimum date range value.
+     * @return bool|null|string Date range value, if present. Otherwise, null.
      */
     public function getMinDateRange()
     {
@@ -150,9 +163,8 @@ class Dob extends AbstractWidget
     }
 
     /**
-     * Return maximal date range value
-     *
-     * @return string|null
+     * Gets the maximum date range value.
+     * @return bool|null|string Date range value, if present. Otherwise, null.
      */
     public function getMaxDateRange()
     {

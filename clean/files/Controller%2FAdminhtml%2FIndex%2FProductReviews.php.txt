@@ -1,6 +1,6 @@
 <?php
 /**
- *
+ * Gets the product reviews list for a customer.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -10,10 +10,14 @@ namespace Magento\Customer\Controller\Adminhtml\Index;
 
 use Magento\Customer\Controller\RegistryConstants;
 
+/**
+ * Gets the product reviews list for a customer.
+ * @package Magento\Customer\Controller\Adminhtml\Index Index package.
+ */
 class ProductReviews extends \Magento\Customer\Controller\Adminhtml\Index
 {
     /**
-     * Get customer's product reviews list
+     * Gets the product reviews list for a customer.
      *
      * @return void
      */

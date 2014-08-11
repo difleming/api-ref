@@ -1,17 +1,21 @@
 <?php
 /**
- *
+ * Edits a customer group action page.
  * {license_notice}
  *
  * @copyright   {copyright}
  * @license     {license_link}
  */
 namespace Magento\Customer\Controller\Adminhtml\Group;
-
+/**
+ * Edits a customer group action page.
+ * @package Magento\Customer\Controller\Adminhtml\Group Group package.
+ */
 class Edit extends \Magento\Customer\Controller\Adminhtml\Group
 {
     /**
-     * Edit customer group action. Forward to new action.
+     * Edits customer group action page.
+     * Forwards to new action page.
      *
      * @return void
      */

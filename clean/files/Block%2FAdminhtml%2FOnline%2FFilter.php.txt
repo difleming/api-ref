@@ -1,5 +1,6 @@
 <?php
 /**
+ * Admin HTML customer online filter.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -8,14 +9,16 @@
 namespace Magento\Customer\Block\Adminhtml\Online;
 
 /**
- * Adminhtml customers online filter
+ * Admin HTML customer online filter.
  *
  * @author      Magento Core Team <core@magentocommerce.com>
+ * @package Magento\Customer\Block\Adminhtml\Online Online package.
  */
 class Filter extends \Magento\Backend\Block\Widget\Form\Generic
 {
     /**
-     * @return $this
+     * Prepares the form.
+     * @return $this Prepared form.
      */
     protected function _prepareForm()
     {

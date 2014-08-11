@@ -1,5 +1,6 @@
 <?php
 /**
+ * Customer widget form file element block.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -8,31 +9,34 @@
 namespace Magento\Customer\Block\Adminhtml\Form\Element;
 
 /**
- * Customer Widget Form File Element Block
+ * Constructs and gets information about a customer widget form file element block.
  *
  * @author      Magento Core Team <core@magentocommerce.com>
+ * @package Magento\Customer\Block\Adminhtml\Form\Element Element package.
  */
 class File extends \Magento\Framework\Data\Form\Element\AbstractElement
 {
     /**
-     * @var \Magento\Framework\View\Asset\Repository
+     * @var \Magento\Framework\View\Asset\Repository Asset repository.
      */
     protected $_assetRepo;
 
     /**
-     * Adminhtml data
+     * Admin HTML data.
      *
      * @var \Magento\Backend\Helper\Data
      */
     protected $_adminhtmlData = null;
 
     /**
-     * @param \Magento\Framework\Data\Form\Element\Factory $factoryElement
-     * @param \Magento\Framework\Data\Form\Element\CollectionFactory $factoryCollection
-     * @param \Magento\Framework\Escaper $escaper
-     * @param \Magento\Backend\Helper\Data $adminhtmlData
-     * @param \Magento\Framework\View\Asset\Repository $assetRepo
-     * @param array $data
+     * Constructs a customer widget form file element block.
+     *
+     * @param \Magento\Framework\Data\Form\Element\Factory $factoryElement Factory element.
+     * @param \Magento\Framework\Data\Form\Element\CollectionFactory $factoryCollection Factory collection.
+     * @param \Magento\Framework\Escaper $escaper Escaper.
+     * @param \Magento\Backend\Helper\Data $adminhtmlData Admin HTML data.
+     * @param \Magento\Framework\View\Asset\Repository $assetRepo Asset repository.
+     * @param array $data An array of data.
      */
     public function __construct(
         \Magento\Framework\Data\Form\Element\Factory $factoryElement,
@@ -49,9 +53,9 @@ class File extends \Magento\Framework\Data\Form\Element\AbstractElement
     }
 
     /**
-     * Return Form Element HTML
+     * Gets the form element HTML.
      *
-     * @return string
+     * @return string Form element HTML.
      */
     public function getElementHtml()
     {
@@ -74,9 +78,9 @@ class File extends \Magento\Framework\Data\Form\Element\AbstractElement
     }
 
     /**
-     * Return Delete File CheckBox HTML
+     * Gets the delete file check box HTML.
      *
-     * @return string
+     * @return string Delete file check box HTML.
      */
     protected function _getDeleteCheckboxHtml()
     {
@@ -105,9 +109,9 @@ class File extends \Magento\Framework\Data\Form\Element\AbstractElement
     }
 
     /**
-     * Return Delete CheckBox SPAN Class name
+     * Gets the delete check box span class name.
      *
-     * @return string
+     * @return string Delete check box span class name.
      */
     protected function _getDeleteCheckboxSpanClass()
     {
@@ -115,9 +119,9 @@ class File extends \Magento\Framework\Data\Form\Element\AbstractElement
     }
 
     /**
-     * Return Delete CheckBox Label
+     * Gets the delete check box label.
      *
-     * @return string
+     * @return string Delete check box label.
      */
     protected function _getDeleteCheckboxLabel()
     {
@@ -125,9 +129,9 @@ class File extends \Magento\Framework\Data\Form\Element\AbstractElement
     }
 
     /**
-     * Return File preview link HTML
+     * Gets the file preview link HTML.
      *
-     * @return string
+     * @return string File preview link HTML.
      */
     protected function _getPreviewHtml()
     {
@@ -149,9 +153,9 @@ class File extends \Magento\Framework\Data\Form\Element\AbstractElement
     }
 
     /**
-     * Return Hidden element with current value
+     * Gets the current value of the hidden element.
      *
-     * @return string
+     * @return string Current value of the hidden element.
      */
     protected function _getHiddenInput()
     {
@@ -167,9 +171,9 @@ class File extends \Magento\Framework\Data\Form\Element\AbstractElement
     }
 
     /**
-     * Return Preview/Download URL
+     * Gets the preview/download URL.
      *
-     * @return string
+     * @return string Preview/download URL.
      */
     protected function _getPreviewUrl()
     {
@@ -180,12 +184,12 @@ class File extends \Magento\Framework\Data\Form\Element\AbstractElement
     }
 
     /**
-     * Return Element HTML
+     * Gets the element HTML.
      *
-     * @param string $element
-     * @param array $attributes
-     * @param bool $closed
-     * @return string
+     * @param string $element Element.
+     * @param array $attributes An array of attributes.
+     * @param bool $closed Optional. Closed value. Default is true.
+     * @return string Element HTML.
      */
     protected function _drawElementHtml($element, array $attributes, $closed = true)
     {
@@ -198,10 +202,10 @@ class File extends \Magento\Framework\Data\Form\Element\AbstractElement
     }
 
     /**
-     * Return escaped value
+     * Gets the escaped value.
      *
-     * @param int|null $index
-     * @return string|false
+     * @param int|null $index Optional. The index. Default is null.
+     * @return string|false Escaped value.
      */
     public function getEscapedValue($index = null)
     {

@@ -1,17 +1,21 @@
 <?php
 /**
- *
+ * Customer orders grid page.
  * {license_notice}
  *
  * @copyright   {copyright}
  * @license     {license_link}
  */
 namespace Magento\Customer\Controller\Adminhtml\Index;
-
+/**
+ * Customer orders grid page.
+ * @package Magento\Customer\Controller\Adminhtml\Index Index package.
+ */
 class Orders extends \Magento\Customer\Controller\Adminhtml\Index
 {
     /**
-     * Customer orders grid
+     * Initializes customer information and loads and renders
+     * the customer orders grid page.
      *
      * @return void
      */

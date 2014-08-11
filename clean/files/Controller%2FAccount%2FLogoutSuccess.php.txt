@@ -7,11 +7,14 @@
  * @license     {license_link}
  */
 namespace Magento\Customer\Controller\Account;
-
+/**
+ * Shows the logout success page.
+ * @package Magento\Customer\Controller\Account Account package.
+ */
 class LogoutSuccess extends \Magento\Customer\Controller\Account
 {
     /**
-     * Logout success page
+     * Loads and shows the logout success page.
      *
      * @return void
      */

@@ -10,13 +10,12 @@
 namespace Magento\Customer\Service\V1;
 
 /**
+ * Enables customer group creation and management.
  *
- * Defines constants and required methods for customer groups.
+ * The constants define the default group ID, the maximum number of groups, and the
+ * maximum number of characters in a group name.
  *
- * The constants for customer groups define the default group ID, the maximum number of groups, and
- * the maximum number of characters in a group name.
- *
- * The methods for customer groups enable users to:
+ * The methods enable you to:
  * * Add, update, list, and delete groups.
  * * Find groups that match specified search criteria.
  * * Get the default group in a store, the delete status for a group, and group details.

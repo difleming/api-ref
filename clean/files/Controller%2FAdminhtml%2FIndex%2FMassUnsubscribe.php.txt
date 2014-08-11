@@ -1,17 +1,20 @@
 <?php
 /**
- *
+ * Performs customer mass unsubscribe action.
  * {license_notice}
  *
  * @copyright   {copyright}
  * @license     {license_link}
  */
 namespace Magento\Customer\Controller\Adminhtml\Index;
-
+/**
+ * Performs customer mass unsubscribe action.
+ * @package Magento\Customer\Controller\Adminhtml\Index Index package.
+ */
 class MassUnsubscribe extends \Magento\Customer\Controller\Adminhtml\Index
 {
     /**
-     * Customer mass unsubscribe action
+     * Performs customer mass unsubscribe action.
      *
      * @return void
      */

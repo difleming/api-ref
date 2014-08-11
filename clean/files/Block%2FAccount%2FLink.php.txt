@@ -1,23 +1,29 @@
 <?php
 /**
+ * Constructs and gets information about a customer link.
  * {license_notice}
  *
  * @copyright   {copyright}
  * @license     {license_link}
  */
 namespace Magento\Customer\Block\Account;
+/**
+ * Constructs and gets information about a customer link.
+ * @package Magento\Customer\Block\Account Account package.
+ */
 
 class Link extends \Magento\Framework\View\Element\Html\Link
 {
     /**
-     * @var \Magento\Customer\Helper\Data
+     * @var \Magento\Customer\Helper\Data Customer helper.
      */
     protected $_customerHelper;
-
     /**
-     * @param \Magento\Framework\View\Element\Template\Context $context
-     * @param \Magento\Customer\Helper\Data $customerHelper
-     * @param array $data
+     * Constructs a customer link object.
+     *
+     * @param \Magento\Framework\View\Element\Template\Context $context Context.
+     * @param \Magento\Customer\Helper\Data $customerHelper Customer helper object.
+     * @param array $data An array of data.
      */
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
@@ -30,7 +36,9 @@ class Link extends \Magento\Framework\View\Element\Html\Link
     }
 
     /**
-     * @return string
+     * Gets the destination for the link.
+     *
+     * @return string The link destination.
      */
     public function getHref()
     {

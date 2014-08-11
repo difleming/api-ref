@@ -1,5 +1,6 @@
 <?php
 /**
+ * Constructs and gets information about a customer addresses form.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -18,7 +19,7 @@ use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\Customer\Service\V1\Data\AddressConverter;
 
 /**
- * Customer addresses forms
+ * Constructs and gets information about a customer addresses form.
  *
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
@@ -26,68 +27,102 @@ class Addresses extends GenericMetadata
 {
     /** Default street line count */
     const DEFAULT_STREET_LINES_COUNT = 2;
+    /**
+     * @var string *tab/addresses.phtml*.
+     */
 
     protected $_template = 'tab/addresses.phtml';
 
     /**
+     * JSON encoder.
+     *
      * @var \Magento\Framework\Json\EncoderInterface
      */
     protected $_jsonEncoder;
 
     /**
+     * Core data.
+     *
      * @var \Magento\Core\Helper\Data
      */
     protected $_coreData;
 
     /**
+     * Customer helper.
+     *
      * @var \Magento\Customer\Helper\Data
      */
     protected $_customerHelper;
 
     /**
+     * Directory helper.
+     *
      * @var \Magento\Directory\Helper\Data
      */
     protected $_directoryHelper;
 
-    /** @var \Magento\Customer\Helper\Address */
+    /**
+     * Address helper.
+     *
+     * @var \Magento\Customer\Helper\Address
+     */
     protected $_addressHelper;
 
-    /** @var  \Magento\Customer\Model\Metadata\FormFactory */
+    /**
+     * Metadata form factory.
+     *
+     * @var  \Magento\Customer\Model\Metadata\FormFactory */
     protected $_metadataFormFactory;
 
-    /** @var  CustomerAccountServiceInterface */
+    /**
+     * Customer account service.
+     *
+     * @var  CustomerAccountServiceInterface */
     protected $_customerAccountService;
 
-    /** @var  CustomerMetadataServiceInterface */
+    /**
+     * Metadata service.
+     *
+     * @var  CustomerMetadataServiceInterface */
     protected $_metadataService;
 
-    /** @var  AddressBuilder */
+    /**
+     * Address builder.
+     *
+     * @var  AddressBuilder */
     protected $_addressBuilder;
 
-    /** @var CustomerBuilder */
+    /**
+     * Customer builder.
+     *
+     * @var CustomerBuilder */
     protected $_customerBuilder;
 
-    /** @var  AttributeMetadataBuilder */
+    /**
+     * Attribute metadata builder.
+     *
+     * @var  AttributeMetadataBuilder */
     protected $_attributeMetadataBuilder;
 
     /**
-     * @param \Magento\Backend\Block\Template\Context $context
-     * @param \Magento\Framework\Registry $registry
-     * @param \Magento\Framework\Data\FormFactory $formFactory
-     * @param \Magento\Store\Model\System\Store $systemStore
-     * @param \Magento\Core\Helper\Data $coreData
-     * @param \Magento\Framework\Json\EncoderInterface $jsonEncoder
-     * @param \Magento\Customer\Model\Renderer\RegionFactory $regionFactory
-     * @param \Magento\Customer\Model\Metadata\FormFactory $metadataFormFactory
-     * @param \Magento\Customer\Helper\Data $customerHelper
-     * @param \Magento\Customer\Helper\Address $addressHelper
-     * @param \Magento\Customer\Service\V1\CustomerAccountServiceInterface $customerAccountService
-     * @param CustomerMetadataServiceInterface $metadataService
-     * @param AddressBuilder $addressBuilder
-     * @param CustomerBuilder $customerBuilder
-     * @param AttributeMetadataBuilder $attributeMetadataBuilder
-     * @param \Magento\Directory\Helper\Data $directoryHelper
-     * @param array $data
+     * Constructs a customer addresses form.
+     * @param \Magento\Backend\Block\Template\Context $context Context.
+     * @param \Magento\Framework\Registry $registry Registry.
+     * @param \Magento\Framework\Data\FormFactory $formFactory Form factory.
+     * @param \Magento\Store\Model\System\Store $systemStore System store.
+     * @param \Magento\Core\Helper\Data $coreData Core data.
+     * @param \Magento\Framework\Json\EncoderInterface $jsonEncoder JSON encoder.
+     * @param \Magento\Customer\Model\Renderer\RegionFactory $regionFactory Region factory.
+     * @param \Magento\Customer\Model\Metadata\FormFactory $metadataFormFactory Metadata form factory.
+     * @param \Magento\Customer\Helper\Data $customerHelper Customer helper.
+     * @param \Magento\Customer\Helper\Address $addressHelper Address helper.
+     * @param \Magento\Customer\Service\V1\CustomerAccountServiceInterface $customerAccountService Customer account service.
+     * @param CustomerMetadataServiceInterface $metadataService Metdata service.
+     * @param AddressBuilder $addressBuilder Address builder.
+     * @param CustomerBuilder $customerBuilder Customer builder.
+     * @param AttributeMetadataBuilder $attributeMetadataBuilder Attribute metadata builder.
+     * @param \Magento\Directory\Helper\Data $directoryHelper Directory helper.
+     * @param array $data An array of data.
      *
      * @SuppressWarnings(PHPMD.ExcessiveParameterList)
      */
@@ -127,7 +162,9 @@ class Addresses extends GenericMetadata
     }
 
     /**
-     * @return string
+     * Gets the regions URL.
+     *
+     * @return string Regions URL.
      */
     public function getRegionsUrl()
     {
@@ -135,7 +172,8 @@ class Addresses extends GenericMetadata
     }
 
     /**
-     * @return $this
+     * Prepares the layout.
+     * @return $this Prepared layout.
      */
     protected function _prepareLayout()
     {
@@ -178,9 +216,10 @@ class Addresses extends GenericMetadata
     }
 
     /**
-     * Check block is readonly.
+     * Determines whether the block is read-only.
      *
-     * @return bool
+     * @return bool * **true** Read-only.
+     * * **false** Writable.
      */
     public function isReadonly()
     {
@@ -198,7 +237,8 @@ class Addresses extends GenericMetadata
     }
 
     /**
-     * @return string
+     * Gets the delete button HTML.
+     * @return string Delete button HTML.
      */
     public function getDeleteButtonHtml()
     {
@@ -206,9 +246,9 @@ class Addresses extends GenericMetadata
     }
 
     /**
-     * Initialize form object
+     * Initializes the form object.
      *
-     * @return $this
+     * @return $this Form object.
      *
      * @SuppressWarnings(PHPMD.CyclomaticComplexity)
      * @SuppressWarnings(PHPMD.NPathComplexity)
@@ -329,7 +369,8 @@ class Addresses extends GenericMetadata
     }
 
     /**
-     * @return string
+     * Gets the cancel button HTML.
+     * @return string Cancel button HTML.
      */
     public function getCancelButtonHtml()
     {
@@ -337,7 +378,8 @@ class Addresses extends GenericMetadata
     }
 
     /**
-     * @return string
+     * Gets the Add address button HTML.
+     * @return string Add address button HTML.
      */
     public function getAddNewButtonHtml()
     {
@@ -345,9 +387,9 @@ class Addresses extends GenericMetadata
     }
 
     /**
-     * Return predefined additional element types
+     * Gets predefined additional element types.
      *
-     * @return array
+     * @return array Array of element types.
      */
     protected function _getAdditionalElementTypes()
     {
@@ -359,10 +401,10 @@ class Addresses extends GenericMetadata
     }
 
     /**
-     * Add specified values to name prefix element values
+     * Adds specified values to name prefix element values.
      *
-     * @param string|int|array $values
-     * @return $this
+     * @param string|int|array $values Values.
+     * @return $this Name prefix element.
      */
     public function addValuesToNamePrefixElement($values)
     {
@@ -373,10 +415,10 @@ class Addresses extends GenericMetadata
     }
 
     /**
-     * Add specified values to name suffix element values
+     * Adds specified values to name suffix element values.
      *
-     * @param string|int|array $values
-     * @return $this
+     * @param string|int|array $values Values.
+     * @return $this Name suffix element.
      */
     public function addValuesToNameSuffixElement($values)
     {
@@ -387,9 +429,9 @@ class Addresses extends GenericMetadata
     }
 
     /**
-     * Returns the template prefix
+     * Gets the template prefix.
      *
-     * @return string
+     * @return string Template prefix.
      */
     public function getTemplatePrefix()
     {
@@ -397,9 +439,9 @@ class Addresses extends GenericMetadata
     }
 
     /**
-     * Return array with countries associated to possible websites
+     * Gets the countries that are associated with possible websites.
      *
-     * @return array
+     * @return array An array of countries.
      */
     public function getDefaultCountries()
     {
@@ -417,9 +459,9 @@ class Addresses extends GenericMetadata
     }
 
     /**
-     * Return ISO2 country codes, which have optional Zip/Postal pre-configured
+     * Gets the ISO2 country codes, which have optional pre-configured zip and postal codes.
      *
-     * @return array|string
+     * @return array|string An array of country codes.
      */
     public function getOptionalZipCountries()
     {
@@ -427,9 +469,9 @@ class Addresses extends GenericMetadata
     }
 
     /**
-     * Returns the list of countries, for which region is required
+     * Gets the list of countries, for which region is required.
      *
-     * @return array
+     * @return array Array of countries.
      */
     public function getRequiredStateForCountries()
     {
@@ -437,9 +479,10 @@ class Addresses extends GenericMetadata
     }
 
     /**
-     * Return, whether non-required state should be shown
+     * Determines whether the non-required state should be shown.
      *
-     * @return int 1 if should be shown, and 0 if not.
+     * @return int * **1** Should be shown.
+     * * **0** Should not be shown.
      */
     public function getShowAllRegions()
     {
@@ -447,10 +490,10 @@ class Addresses extends GenericMetadata
     }
 
     /**
-     * Encode the $data into JSON format.
+     * Encodes the specified data in JSON format.
      *
-     * @param object|array $data
-     * @return string
+     * @param object|array $data Data.
+     * @return string JSON-formatted data.
      */
     public function jsonEncode($data)
     {
@@ -458,11 +501,11 @@ class Addresses extends GenericMetadata
     }
 
     /**
-     * Format the given address to the given type
+     * Formats the specified address as the specified type.
      *
-     * @param Address $address
-     * @param string $type
-     * @return string
+     * @param Address $address Address.
+     * @param string $type Type.
+     * @return string Formatted address.
      */
     public function format(Address $address, $type)
     {

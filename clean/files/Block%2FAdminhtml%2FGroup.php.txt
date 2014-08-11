@@ -1,22 +1,22 @@
 <?php
 /**
+ * Constructs and gets information about an admin HTML customers group page content block.
  * {license_notice}
  *
  * @copyright   {copyright}
  * @license     {license_link}
  */
-
+namespace Magento\Customer\Block\Adminhtml;
 /**
- * Adminhtml customers group page content block
+ * Constructs and gets information about an admin HTML customers group page content block.
  *
  * @author      Magento Core Team <core@magentocommerce.com>
  */
-namespace Magento\Customer\Block\Adminhtml;
-
 class Group extends \Magento\Backend\Block\Widget\Grid\Container
 {
     /**
-     * Modify header & button labels
+     * Constructs an admin HTML customers group page content block by adding
+     * header text and button label.
      *
      * @return void
      */
@@ -29,9 +29,9 @@ class Group extends \Magento\Backend\Block\Widget\Grid\Container
     }
 
     /**
-     * Redefine header css class
+     * Gets a header CSS class.
      *
-     * @return string
+     * @return string Header CSS class.
      */
     public function getHeaderCssClass()
     {

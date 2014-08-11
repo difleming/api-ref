@@ -1,6 +1,6 @@
 <?php
 /**
- *
+ * Ajax handler to response configuration field set of composite product in a customer wish list.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -10,10 +10,14 @@ namespace Magento\Customer\Controller\Adminhtml\Wishlist\Product\Composite\Wishl
 
 use Exception;
 
+/**
+ * Configures a field set of composite product in a customer wish list.
+ * @package Magento\Customer\Controller\Adminhtml\Wishlist\Product\Composite\Wishlist Wishlist package.
+ */
 class Configure extends \Magento\Customer\Controller\Adminhtml\Wishlist\Product\Composite\Wishlist
 {
     /**
-     * Ajax handler to response configuration fieldset of composite product in customer's wishlist.
+     * Configures a field set of composite product in a customer wish list.
      *
      * @return void
      */

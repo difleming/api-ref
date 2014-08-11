@@ -13,31 +13,34 @@ use Magento\Framework\Exception\EmailNotConfirmedException;
 use Magento\Framework\Exception\AuthenticationException;
 
 /**
+ * Constructs and shows login page.
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
 class LoginPost extends \Magento\Customer\Controller\Account
 {
-    /** @var \Magento\Core\Helper\Data */
+    /** @var \Magento\Core\Helper\Data Core data helper. */
     protected $coreHelperData;
 
-    /** @var \Magento\Customer\Helper\Data */
+    /** @var \Magento\Customer\Helper\Data Customer data helper. */
     protected $_customerHelperData;
 
-    /** @var \Magento\Core\App\Action\FormKeyValidator */
+    /** @var \Magento\Core\App\Action\FormKeyValidator Form key validator. */
     protected $_formKeyValidator;
 
     /**
-     * @param \Magento\Framework\App\Action\Context $context
-     * @param \Magento\Customer\Model\Session $customerSession
-     * @param \Magento\Customer\Helper\Address $addressHelper
-     * @param \Magento\Framework\UrlFactory $urlFactory
-     * @param \Magento\Store\Model\StoreManagerInterface $storeManager
-     * @param \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig
-     * @param \Magento\Framework\App\State $appState
-     * @param CustomerAccountServiceInterface $customerAccountService
-     * @param \Magento\Core\Helper\Data $coreHelperData
-     * @param \Magento\Customer\Helper\Data $customerHelperData
-     * @param \Magento\Core\App\Action\FormKeyValidator $formKeyValidator
+     * Constructs login page.
+     *
+     * @param \Magento\Framework\App\Action\Context $context Context.
+     * @param \Magento\Customer\Model\Session $customerSession Customer session.
+     * @param \Magento\Customer\Helper\Address $addressHelper Address helper.
+     * @param \Magento\Framework\UrlFactory $urlFactory URL factory.
+     * @param \Magento\Store\Model\StoreManagerInterface $storeManager Store manager.
+     * @param \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig Scope configuration.
+     * @param \Magento\Framework\App\State $appState Application state.
+     * @param CustomerAccountServiceInterface $customerAccountService Customer account service.
+     * @param \Magento\Core\Helper\Data $coreHelperData Core data helper.
+     * @param \Magento\Customer\Helper\Data $customerHelperData Customer data helper.
+     * @param \Magento\Core\App\Action\FormKeyValidator $formKeyValidator Form key validator.
      *
      * @SuppressWarnings(PHPMD.ExcessiveParameterList)
      */
@@ -70,7 +73,7 @@ class LoginPost extends \Magento\Customer\Controller\Account
     }
 
     /**
-     * Define target URL and redirect customer after logging in
+     * Defines the target URL and redirects the customer after logging in.
      *
      * @return void
      * @SuppressWarnings(PHPMD.CyclomaticComplexity)
@@ -123,7 +126,7 @@ class LoginPost extends \Magento\Customer\Controller\Account
     }
 
     /**
-     * Login post action
+     * Login post action.
      *
      * @return void
      * @SuppressWarnings(PHPMD.CyclomaticComplexity)

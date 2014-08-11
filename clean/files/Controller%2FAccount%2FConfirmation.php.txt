@@ -1,6 +1,6 @@
 <?php
 /**
- *
+ * Sends confirmation link to a specified email.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -10,10 +10,14 @@ namespace Magento\Customer\Controller\Account;
 
 use Magento\Framework\Exception\State\InvalidTransitionException;
 
+/**
+ * Sends confirmation link to a specified email.
+ * @package Magento\Customer\Controller\Account Account package.
+ */
 class Confirmation extends \Magento\Customer\Controller\Account
 {
     /**
-     * Send confirmation link to specified email
+     * Sends confirmation link to a specified email.
      *
      * @return void
      */

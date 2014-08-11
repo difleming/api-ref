@@ -1,5 +1,6 @@
 <?php
 /**
+ * Constructs and gets information about a recent orders grid block.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -10,30 +11,31 @@ namespace Magento\Customer\Block\Adminhtml\Edit\Tab\View;
 use Magento\Customer\Controller\RegistryConstants;
 
 /**
- * Adminhtml customer recent orders grid block
+ * Constructs and gets information about an admin HTML
+ * customer recent orders grid block.
  */
 class Orders extends \Magento\Backend\Block\Widget\Grid\Extended
 {
     /**
-     * Core registry
+     * Core registry.
      *
      * @var \Magento\Framework\Registry|null
      */
     protected $_coreRegistry = null;
 
     /**
-     * @var \Magento\Sales\Model\Resource\Order\Grid\CollectionFactory
+     * @var \Magento\Sales\Model\Resource\Order\Grid\CollectionFactory Collection factory.
      */
     protected $_collectionFactory;
 
     /**
-     * Constructor
+     * Constructs an admin HTML customer recent orders grid block.
      *
-     * @param \Magento\Backend\Block\Template\Context $context
-     * @param \Magento\Backend\Helper\Data $backendHelper
-     * @param \Magento\Sales\Model\Resource\Order\Grid\CollectionFactory $collectionFactory
-     * @param \Magento\Framework\Registry $coreRegistry
-     * @param array $data
+     * @param \Magento\Backend\Block\Template\Context $context Context.
+     * @param \Magento\Backend\Helper\Data $backendHelper Back-end helper.
+     * @param \Magento\Sales\Model\Resource\Order\Grid\CollectionFactory $collectionFactory Collection factory.
+     * @param \Magento\Framework\Registry $coreRegistry Core registry.
+     * @param array $data An array of data.
      */
     public function __construct(
         \Magento\Backend\Block\Template\Context $context,
@@ -48,7 +50,7 @@ class Orders extends \Magento\Backend\Block\Widget\Grid\Extended
     }
 
     /**
-     * Initialize the orders grid.
+     * Initializes the orders grid.
      *
      * @return void
      */

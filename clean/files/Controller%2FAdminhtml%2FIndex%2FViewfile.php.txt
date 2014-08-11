@@ -1,6 +1,6 @@
 <?php
 /**
- *
+ * Customer view file action page.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -10,13 +10,17 @@ namespace Magento\Customer\Controller\Adminhtml\Index;
 
 use Magento\Framework\App\Action\NotFoundException;
 
+/**
+ * Customer view file action page.
+ * @package Magento\Customer\Controller\Adminhtml\Index Index package.
+ */
 class Viewfile extends \Magento\Customer\Controller\Adminhtml\Index
 {
     /**
-     * Customer view file action
+     * Customer view file action page.
      *
      * @return void
-     * @throws NotFoundException
+     * @throws NotFoundException Page not found.
      *
      * @SuppressWarnings(PHPMD.ExitExpression)
      */

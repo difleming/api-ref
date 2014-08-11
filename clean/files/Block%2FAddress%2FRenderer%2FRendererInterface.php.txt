@@ -1,5 +1,6 @@
 <?php
 /**
+ * Setter and getters for renderer.
  * {license_notice}
  *
  * @copyright   {copyright}

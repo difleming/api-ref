@@ -1,5 +1,6 @@
 <?php
 /**
+ * Generic metadata.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -8,18 +9,18 @@
 namespace Magento\Customer\Block\Adminhtml\Edit\Tab;
 
 /**
- * Generic block that uses customer metatdata attributes.
+ * Renders generic block that uses customer metatdata attributes.
  *
  * @SuppressWarnings(PHPMD.DepthOfInheritance)
  */
 class GenericMetadata extends \Magento\Backend\Block\Widget\Form\Generic
 {
     /**
-     * Set Fieldset to Form
+     * Sets field set to form.
      *
-     * @param \Magento\Customer\Service\V1\Data\Eav\AttributeMetadata[] $attributes attributes that are to be added
-     * @param \Magento\Framework\Data\Form\Element\Fieldset $fieldset
-     * @param array $exclude attributes that should be skipped
+     * @param \Magento\Customer\Service\V1\Data\Eav\AttributeMetadata[] $attributes Attributes to be added.
+     * @param \Magento\Framework\Data\Form\Element\Fieldset $fieldset Field set.
+     * @param array $exclude Attributes to skip.
      * @return void
      */
     protected function _setFieldset($attributes, $fieldset, $exclude = array())
@@ -55,11 +56,11 @@ class GenericMetadata extends \Magento\Backend\Block\Widget\Form\Generic
     }
 
     /**
-     * Apply configuration specific for different element type
+     * Applies a configuration specific to a different element type.
      *
-     * @param string $inputType
-     * @param \Magento\Framework\Data\Form\Element\AbstractElement $element
-     * @param \Magento\Customer\Service\V1\Data\Eav\AttributeMetadata $attribute
+     * @param string $inputType Input type.
+     * @param \Magento\Framework\Data\Form\Element\AbstractElement $element Element.
+     * @param \Magento\Customer\Service\V1\Data\Eav\AttributeMetadata $attribute Attribute.
      * @return void
      */
     protected function _applyTypeSpecificConfigCustomer(
@@ -88,8 +89,10 @@ class GenericMetadata extends \Magento\Backend\Block\Widget\Form\Generic
     }
 
     /**
-     * @param \Magento\Customer\Service\V1\Data\Eav\AttributeMetadata $attribute
-     * @return array
+     * Gets an attribute options array.
+     *
+     * @param \Magento\Customer\Service\V1\Data\Eav\AttributeMetadata $attribute Attribute.
+     * @return array Options array.
      */
     protected function _getAttributeOptionsArray(\Magento\Customer\Service\V1\Data\Eav\AttributeMetadata $attribute)
     {

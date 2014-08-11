@@ -1,17 +1,20 @@
 <?php
 /**
- *
+ * Customer last view wish list for Ajax.
  * {license_notice}
  *
  * @copyright   {copyright}
  * @license     {license_link}
  */
 namespace Magento\Customer\Controller\Adminhtml\Index;
-
+/**
+ * Customer last view wish list for Ajax.
+ * @package Magento\Customer\Controller\Adminhtml\Index Index package.
+ */
 class ViewWishlist extends \Magento\Customer\Controller\Adminhtml\Index
 {
     /**
-     * Customer last view wishlist for ajax
+     * Customer last view wish list for Ajax.
      *
      * @return void
      */

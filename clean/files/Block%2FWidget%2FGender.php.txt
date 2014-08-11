@@ -1,5 +1,6 @@
 <?php
 /**
+ * Renders customer gender attribute.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -13,22 +14,22 @@ use Magento\Customer\Service\V1\Data\Customer;
 use Magento\Customer\Service\V1\Data\Eav\Option;
 
 /**
- * Block to render customer's gender attribute
+ * Constructs block to render customer gender attribute.
  */
 class Gender extends AbstractWidget
 {
     /**
-     * @var \Magento\Customer\Model\Session
+     * @var \Magento\Customer\Model\Session Customer session.
      */
     protected $_customerSession;
 
     /**
-     * @var CustomerAccountServiceInterface
+     * @var CustomerAccountServiceInterface Customer account service.
      */
     protected $_customerAccountService;
 
     /**
-     * Create an instance of the Gender widget
+     * Constructs a gender widget object.
      *
      * @param \Magento\Framework\View\Element\Template\Context $context
      * @param \Magento\Customer\Helper\Address $addressHelper
@@ -52,7 +53,7 @@ class Gender extends AbstractWidget
     }
 
     /**
-     * Initialize block
+     * Initializes block.
      *
      * @return void
      */
@@ -63,8 +64,9 @@ class Gender extends AbstractWidget
     }
 
     /**
-     * Check if gender attribute enabled in system
-     * @return bool
+     * Determines whether the gender attribute is enabled.
+     * @return bool * **true** Enabled.
+     * * **false** Disabled.
      */
     public function isEnabled()
     {
@@ -72,8 +74,9 @@ class Gender extends AbstractWidget
     }
 
     /**
-     * Check if gender attribute marked as required
-     * @return bool
+     * Determines whether the gender attribute is required.
+     * @return bool * **true** Required.
+     * * **false** Optional.
      */
     public function isRequired()
     {
@@ -81,8 +84,8 @@ class Gender extends AbstractWidget
     }
 
     /**
-     * Get current customer from session using the customer service
-     * @return Customer
+     * Gets the current customer from the session by using the customer service.
+     * @return Customer Customer.
      */
     public function getCustomer()
     {
@@ -90,8 +93,8 @@ class Gender extends AbstractWidget
     }
 
     /**
-     * Returns options from gender attribute
-     * @return Option[]
+     * Gets options from the gender attribute.
+     * @return Option[] An array of options.
      */
     public function getGenderOptions()
     {

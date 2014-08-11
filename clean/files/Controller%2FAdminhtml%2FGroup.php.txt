@@ -1,5 +1,6 @@
 <?php
 /**
+ * Customer groups controller.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -11,34 +12,34 @@ use Magento\Customer\Service\V1\CustomerGroupServiceInterface;
 use Magento\Customer\Service\V1\Data\CustomerGroupBuilder;
 
 /**
- * Customer groups controller
+ * Customer groups controller.
  */
 class Group extends \Magento\Backend\App\Action
 {
     /**
-     * Core registry
+     * Core registry.
      *
      * @var \Magento\Framework\Registry
      */
     protected $_coreRegistry;
 
     /**
-     * @var CustomerGroupServiceInterface
+     * @var CustomerGroupServiceInterface Group service.
      */
     protected $_groupService;
 
     /**
-     * @var CustomerGroupBuilder
+     * @var CustomerGroupBuilder Customer group builder.
      */
     protected $_customerGroupBuilder;
 
     /**
-     * Initialize Group Controller
+     * Initializes the group controller.
      *
-     * @param \Magento\Backend\App\Action\Context $context
-     * @param \Magento\Framework\Registry $coreRegistry
-     * @param CustomerGroupServiceInterface $groupService
-     * @param CustomerGroupBuilder $customerGroupBuilder
+     * @param \Magento\Backend\App\Action\Context $context Context.
+     * @param \Magento\Framework\Registry $coreRegistry Core registry.
+     * @param CustomerGroupServiceInterface $groupService Group service.
+     * @param CustomerGroupBuilder $customerGroupBuilder Customer group builder.
      */
     public function __construct(
         \Magento\Backend\App\Action\Context $context,
@@ -53,9 +54,10 @@ class Group extends \Magento\Backend\App\Action
     }
 
     /**
-     * Determine if authorized to perform group actions.
+     * Determines whether a customer is authored to perform group actions.
      *
-     * @return bool
+     * @return bool * **true** Authorized.
+     * * **false** Not authorized.
      */
     protected function _isAllowed()
     {

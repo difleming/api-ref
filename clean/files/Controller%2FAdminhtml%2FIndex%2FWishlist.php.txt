@@ -1,6 +1,6 @@
 <?php
 /**
- *
+ * Wish list action page.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -10,10 +10,14 @@ namespace Magento\Customer\Controller\Adminhtml\Index;
 
 use Magento\Customer\Controller\RegistryConstants;
 
+/**
+ * Wish list action page.
+ * @package Magento\Customer\Controller\Adminhtml\Index Index package.
+ */
 class Wishlist extends \Magento\Customer\Controller\Adminhtml\Index
 {
     /**
-     * Wishlist Action
+     * Wish list action page.
      *
      * @return void
      */

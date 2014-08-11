@@ -1,5 +1,6 @@
 <?php
 /**
+ * Constructs and gets information about an admin HTML customer view sales block object.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -12,59 +13,67 @@ use Magento\Directory\Model\Currency;
 use Magento\Sales\Model\Order;
 
 /**
- * Adminhtml customer view sales block
+ * Constructs and gets information about an admin HTML customer view sales block object.
  */
 class Sales extends \Magento\Backend\Block\Template
 {
     /**
-     * Sales entity collection
+     * Sales entity collection.
      *
      * @var \Magento\Sales\Model\Resource\Sale\Collection
      */
     protected $_collection;
 
     /**
+     * Grouped collection.
+     *
      * @var array
      */
     protected $_groupedCollection;
 
     /**
+     * Website count.
+     *
      * @var int[]
      */
     protected $_websiteCounts;
 
     /**
-     * Currency model
+     * Currency model.
      *
      * @var Currency
      */
     protected $_currency;
 
     /**
-     * Core registry
+     * Core registry.
      *
      * @var \Magento\Framework\Registry
      */
     protected $_coreRegistry = null;
 
     /**
+     * Currency factory.
+     *
      * @var \Magento\Directory\Model\CurrencyFactory
      */
     protected $_currencyFactory;
 
     /**
+     * Collection factory.
+     *
      * @var \Magento\Sales\Model\Resource\Sale\CollectionFactory
      */
     protected $_collectionFactory;
 
     /**
-     * Constructor
+     * Constructs an admin HTML customer view sales block object.
      *
-     * @param \Magento\Backend\Block\Template\Context $context
-     * @param \Magento\Directory\Model\CurrencyFactory $currencyFactory
-     * @param \Magento\Sales\Model\Resource\Sale\CollectionFactory $collectionFactory
-     * @param \Magento\Framework\Registry $coreRegistry
-     * @param array $data
+     * @param \Magento\Backend\Block\Template\Context $context Context.
+     * @param \Magento\Directory\Model\CurrencyFactory $currencyFactory Current factory.
+     * @param \Magento\Sales\Model\Resource\Sale\CollectionFactory $collectionFactory Collection factory.
+     * @param \Magento\Framework\Registry $coreRegistry Core registry.
+     * @param array $data An array of data.
      */
     public function __construct(
         \Magento\Backend\Block\Template\Context $context,
@@ -80,7 +89,7 @@ class Sales extends \Magento\Backend\Block\Template
     }
 
     /**
-     * Initialize the sales grid.
+     * Initializes the sales grid.
      *
      * @return void
      */
@@ -91,9 +100,9 @@ class Sales extends \Magento\Backend\Block\Template
     }
 
     /**
-     * Execute before toHtml() code.
+     * Runs the before toHtml() code.
      *
-     * @return $this
+     * @return $this Before toHtml() code.
      */
     public function _beforeToHtml()
     {
@@ -142,10 +151,10 @@ class Sales extends \Magento\Backend\Block\Template
     }
 
     /**
-     * Retrieve the website count for the specified website Id
+     * Gets the the website count for a specified website ID.
      *
-     * @param int $websiteId
-     * @return int
+     * @param int $websiteId Website ID.
+     * @return int The website count.
      */
     public function getWebsiteCount($websiteId)
     {
@@ -153,7 +162,8 @@ class Sales extends \Magento\Backend\Block\Template
     }
 
     /**
-     * @return array
+     * Gets the rows in a grouped collection.
+     * @return array An array of rows.
      */
     public function getRows()
     {
@@ -161,7 +171,8 @@ class Sales extends \Magento\Backend\Block\Template
     }
 
     /**
-     * @return \Magento\Framework\Object
+     * Gets the totals for a grouped collection.
+     * @return mixed Totals.
      */
     public function getTotals()
     {
@@ -169,11 +180,11 @@ class Sales extends \Magento\Backend\Block\Template
     }
 
     /**
-     * Format price by specified website
+     * Formats the price by a specified website.
      *
-     * @param float $price
-     * @param null|int $websiteId
-     * @return string
+     * @param float $price Price.
+     * @param null|int $websiteId Optional. The website ID. Default is null.
+     * @return string Formatted price.
      */
     public function formatCurrency($price, $websiteId = null)
     {
@@ -181,9 +192,10 @@ class Sales extends \Magento\Backend\Block\Template
     }
 
     /**
-     * Is single store mode
+     * Determines whether the grouped collection is in single-store mode.
      *
-     * @return bool
+     * @return bool * **true** In single-store mode.
+     * * **false** Not in single-store mode.
      */
     public function isSingleStoreMode()
     {

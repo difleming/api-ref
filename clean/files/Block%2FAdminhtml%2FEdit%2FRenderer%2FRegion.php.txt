@@ -1,5 +1,6 @@
 <?php
 /**
+ * Constructs and renders an admin console.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -8,20 +9,24 @@
 namespace Magento\Customer\Block\Adminhtml\Edit\Renderer;
 
 /**
- * Customer address region field renderer
+ * Constructs and renders an admin console.
  */
 class Region extends \Magento\Backend\Block\AbstractBlock implements
     \Magento\Framework\Data\Form\Element\Renderer\RendererInterface
 {
     /**
+     * Directory helper.
+     *
      * @var \Magento\Directory\Helper\Data
      */
     protected $_directoryHelper;
 
     /**
-     * @param \Magento\Backend\Block\Context $context
-     * @param \Magento\Directory\Helper\Data $directoryHelper
-     * @param array $data
+     * Constructs an admin console.
+     *
+     * @param \Magento\Backend\Block\Context $context Context.
+     * @param \Magento\Directory\Helper\Data $directoryHelper Directory helper.
+     * @param array $data An array of data.
      */
     public function __construct(
         \Magento\Backend\Block\Context $context,
@@ -33,10 +38,11 @@ class Region extends \Magento\Backend\Block\AbstractBlock implements
     }
 
     /**
-     * Output the region element and javasctipt that makes it dependent from country element
+     * Renders the region element and JavaScript.
+     * Dependent on country element.
      *
-     * @param \Magento\Framework\Data\Form\Element\AbstractElement $element
-     * @return string
+     * @param \Magento\Framework\Data\Form\Element\AbstractElement $element Element.
+     * @return string Rendered region element.
      *
      * @SuppressWarnings(PHPMD.UnusedLocalVariable)
      */

@@ -1,5 +1,6 @@
 <?php
 /**
+ * Constructs and gets information about a customer login form block object.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -8,48 +9,50 @@
 namespace Magento\Customer\Block\Form;
 
 /**
- * Customer login form block
+ * Constructs and gets information about a customer login form block object.
  *
  * @author      Magento Core Team <core@magentocommerce.com>
  */
 class Login extends \Magento\Framework\View\Element\Template
 {
     /**
-     * @var int
+     * @var int User name.
      */
     private $_username = -1;
 
     /**
-     * @var \Magento\Customer\Model\Session
+     * @var \Magento\Customer\Model\Session Customer session.
      */
     protected $_customerSession;
 
     /**
-     * @var \Magento\Customer\Helper\Data
+     * @var \Magento\Customer\Helper\Data Customer helper.
      */
     protected $_customerHelper;
 
     /**
-     * Checkout data
+     * Checkout data.
      *
      * @var \Magento\Checkout\Helper\Data
      */
     protected $checkoutData;
 
     /**
-     * Core url
+     * Core URL.
      *
      * @var \Magento\Core\Helper\Url
      */
     protected $coreUrl;
 
     /**
-     * @param \Magento\Framework\View\Element\Template\Context $context
-     * @param \Magento\Customer\Model\Session $customerSession
-     * @param \Magento\Customer\Helper\Data $customerHelper
-     * @param \Magento\Checkout\Helper\Data $checkoutData
-     * @param \Magento\Core\Helper\Url $coreUrl
-     * @param array $data
+     * * Constructs a customer login form block object.
+     *
+     * @param \Magento\Framework\View\Element\Template\Context $context Context.
+     * @param \Magento\Customer\Model\Session $customerSession Customer session.
+     * @param \Magento\Customer\Helper\Data $customerHelper Customer helper.
+     * @param \Magento\Checkout\Helper\Data $checkoutData Checkout data.
+     * @param \Magento\Core\Helper\Url $coreUrl Core URL.
+     * @param array $data An array of data.
      */
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
@@ -69,7 +72,8 @@ class Login extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * @return $this
+     * Prepares the layout.
+     * @return $this Prepared layout.
      */
     protected function _prepareLayout()
     {
@@ -78,9 +82,9 @@ class Login extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * Retrieve form posting url
+     * Gets the form posting URL.
      *
-     * @return string
+     * @return string Form posting URL.
      */
     public function getPostActionUrl()
     {
@@ -88,9 +92,9 @@ class Login extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * Retrieve create new account url
+     * Gets the create account URL.
      *
-     * @return string
+     * @return string Create account URL.
      */
     public function getCreateAccountUrl()
     {
@@ -105,9 +109,9 @@ class Login extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * Retrieve password forgotten url
+     * Gets the forgot password URL.
      *
-     * @return string
+     * @return string Forgot password URL.
      */
     public function getForgotPasswordUrl()
     {
@@ -115,9 +119,9 @@ class Login extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * Retrieve username for form field
+     * Gets the user name for the form field.
      *
-     * @return string
+     * @return string User name.
      */
     public function getUsername()
     {

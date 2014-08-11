@@ -1,5 +1,6 @@
 <?php
 /**
+ * Constructor and getters for customers.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -9,31 +10,46 @@ namespace Magento\Customer\Block\Account;
 
 use Magento\Customer\Service\V1\CustomerAccountServiceInterface;
 
+/**
+ * Constructs and gets information about a customer object.
+ *
+ * Use the customer methods to:
+ * * Construct a customer object.
+ * * Determine whether a customer is logged in.
+ * * Get the full name of the logged-in customer.
+ * @package Magento\Customer\Block\Account
+ */
 class Customer extends \Magento\Framework\View\Element\Template
 {
-    /** @var CustomerAccountServiceInterface */
+    /**
+     * @var \Magento\Customer\Service\V1\CustomerAccountServiceInterface Customer account service object.
+     */
     protected $_customerAccountService;
 
-    /** @var \Magento\Customer\Helper\View */
+    /**
+     * @var \Magento\Customer\Helper\View View help object.
+     */
     protected $_viewHelper;
 
     /**
-     * @var \Magento\Framework\App\Http\Context
+     * @var \Magento\Framework\App\Http\Context Context object.
      */
     protected $httpContext;
 
     /**
-     * @var \Magento\Customer\Helper\Session\CurrentCustomer
+     * @var \Magento\Customer\Helper\Session\CurrentCustomer Customer object.
      */
     protected $currentCustomer;
 
     /**
-     * @param \Magento\Framework\View\Element\Template\Context $context
-     * @param CustomerAccountServiceInterface $customerAccountService
-     * @param \Magento\Customer\Helper\View $viewHelper
-     * @param \Magento\Framework\App\Http\Context $httpContext
-     * @param \Magento\Customer\Helper\Session\CurrentCustomer $currentCustomer
-     * @param array $data
+     * Constructs a customer object.
+     *
+     * @param \Magento\Framework\View\Element\Template\Context $context Context.
+     * @param CustomerAccountServiceInterface $customerAccountService Customer account service object.
+     * @param \Magento\Customer\Helper\View $viewHelper View helper object.
+     * @param \Magento\Framework\App\Http\Context $httpContext HTTP context.
+     * @param \Magento\Customer\Helper\Session\CurrentCustomer $currentCustomer Customer object.
+     * @param array $data Array of data.
      */
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
@@ -52,9 +68,10 @@ class Customer extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * Checking customer login status
+     * Determines whether a customer is logged in.
      *
-     * @return bool
+     * @return bool * **true** - Logged in.
+     * * **false** - Is not logged in.
      */
     public function customerLoggedIn()
     {
@@ -62,9 +79,10 @@ class Customer extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * Return the full name of the customer currently logged in
+     * Gets the full name of the currently logged-in customer.
      *
-     * @return string|null
+     * @return string|null * If present, full name of logged-in customer.
+     * * Otherwise, null.
      */
     public function getCustomerName()
     {

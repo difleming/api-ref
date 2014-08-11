@@ -1,7 +1,6 @@
 <?php
 /**
- * Customer dashboard addresses section
- *
+ * Constructs and gets information about customer addresses.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -13,29 +12,44 @@ use Magento\Customer\Service\V1\CustomerAccountServiceInterface;
 use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\Customer\Service\V1\Data\AddressConverter;
 
+/**
+ * Constructs displayable and editable customer addresses.
+ * Displayable content is returned as HTML. Editable content is returned as a URL.
+ *
+ * These addresses can be displayed or edited through the dashboard.
+ *
+ * Use the customer address methods to:
+ * * Construct a displayable and editable customer addresses object.
+ * * Get information for the currently logged-in customer.
+ * * Show the default billing or shipping address for the customer on the dashboard.
+ * * Get a URL from which the customer can edit address information.
+ * @package Magento\Customer\Block\Account\Dashboard
+ */
 class Address extends \Magento\Framework\View\Element\Template
 {
     /**
-     * @var \Magento\Customer\Model\Address\Config
+     * @var \Magento\Customer\Model\Address\Config Address configuration.
      */
     protected $_addressConfig;
 
     /**
-     * @var \Magento\Customer\Helper\Session\CurrentCustomer
+     * @var \Magento\Customer\Helper\Session\CurrentCustomer Customer object.
      */
     protected $currentCustomer;
 
     /**
-     * @var \Magento\Customer\Helper\Session\CurrentCustomerAddress
+     * @var \Magento\Customer\Helper\Session\CurrentCustomerAddress Customer address object.
      */
     protected $currentCustomerAddress;
 
     /**
-     * @param \Magento\Framework\View\Element\Template\Context $context
-     * @param \Magento\Customer\Helper\Session\CurrentCustomer $currentCustomer
-     * @param \Magento\Customer\Helper\Session\CurrentCustomerAddress $currentCustomerAddress
-     * @param \Magento\Customer\Model\Address\Config $addressConfig
-     * @param array $data
+     * Constructs a displayable and editable customer addresses object.
+     *
+     * @param \Magento\Framework\View\Element\Template\Context $context Context.
+     * @param \Magento\Customer\Helper\Session\CurrentCustomer $currentCustomer Current customer.
+     * @param \Magento\Customer\Helper\Session\CurrentCustomerAddress $currentCustomerAddress Current customer address.
+     * @param \Magento\Customer\Model\Address\Config $addressConfig Address configuration.
+     * @param array $data Array of data.
      */
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
@@ -52,9 +66,10 @@ class Address extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * Get the logged in customer
+     * Gets information for the currently logged-in customer.
      *
-     * @return \Magento\Customer\Service\V1\Data\Customer|null
+     * @return \Magento\Customer\Service\V1\Data\Customer|null * If present, information about the logged-in customer.
+     * * Otherwise, null.
      */
     public function getCustomer()
     {
@@ -66,9 +81,10 @@ class Address extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * HTML for Shipping Address
+     * Gets HTML that displays the primary shipping address.
      *
-     * @return string
+     * @return string * Primary shipping address HTML, if shipping address is set.
+     * * Otherwise, returns a message that indicates that the default shipping address has not been set.
      */
     public function getPrimaryShippingAddressHtml()
     {
@@ -86,9 +102,10 @@ class Address extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * HTML for Billing Address
+     * Gets HTML that displays the primary billing address.
      *
-     * @return string
+     * @return string * Primary billing address HTML, if shipping address is set.
+     * * Otherwise, returns a message that indicates that the default billing address has not been set.
      */
     public function getPrimaryBillingAddressHtml()
     {
@@ -106,7 +123,9 @@ class Address extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * @return string
+     * Gets the URL that enables the customer to edit their primary shipping address.
+     *
+     * @return string Primary shipping address URL.
      */
     public function getPrimaryShippingAddressEditUrl()
     {
@@ -121,7 +140,10 @@ class Address extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * @return string
+     * Gets the URL that enables the customer to edit their primary billing address.
+     *
+     * @return string|null * Primary billing address URL, if primary billing address is set.
+     * * Otherwise, null.
      */
     public function getPrimaryBillingAddressEditUrl()
     {
@@ -136,7 +158,9 @@ class Address extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * @return string
+     * Gets the URL that enables the customer to edit their address book.
+     *
+     * @return string Address book URL.
      */
     public function getAddressBookUrl()
     {
@@ -144,10 +168,10 @@ class Address extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * Render an address as HTML and return the result
+     * Renders and gets a specified address as HTML.
      *
-     * @param \Magento\Customer\Service\V1\Data\Address $address
-     * @return string
+     * @param \Magento\Customer\Service\V1\Data\Address $address Address.
+     * @return string Address HTML.
      */
     protected function _getAddressHtml($address)
     {

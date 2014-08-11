@@ -1,16 +1,20 @@
 <?php
 /**
- *
+ * Loads and renders view layout.
  * {license_notice}
  *
  * @copyright   {copyright}
  * @license     {license_link}
  */
 namespace Magento\Customer\Controller\Review;
-
+/**
+ * Loads and renders view layout.
+ * @package Magento\Customer\Controller\Review Review package.
+ */
 class View extends \Magento\Framework\App\Action\Action
 {
     /**
+     * Loads and renders view layout.
      * @return void
      */
     public function execute()

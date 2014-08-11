@@ -1,23 +1,22 @@
 <?php
 /**
+ * Prepares the default SELECT values for a customer widget form boolean element block.
  * {license_notice}
  *
  * @copyright   {copyright}
  * @license     {license_link}
  */
-
-
+namespace Magento\Customer\Block\Adminhtml\Form\Element;
 /**
- * Customer Widget Form Boolean Element Block
+ * Prepares the default SELECT values for a customer widget form boolean element block.
  *
  * @author      Magento Core Team <core@magentocommerce.com>
+ * @package Magento\Customer\Block\Adminhtml\Form\Element Element package.
  */
-namespace Magento\Customer\Block\Adminhtml\Form\Element;
-
 class Boolean extends \Magento\Framework\Data\Form\Element\Select
 {
     /**
-     * Prepare default SELECT values
+     * Prepares the default SELECT values.
      * @return void
      */
     protected function _construct()

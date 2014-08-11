@@ -1,5 +1,6 @@
 <?php
 /**
+ * Initializes a customer object.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -16,7 +17,7 @@ use Magento\Framework\Message\Error;
 use Magento\Customer\Controller\RegistryConstants;
 
 /**
- * Class Index
+ * Index class.
  *
  * @SuppressWarnings(PHPMD.ExcessiveClassComplexity)
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
@@ -26,83 +27,84 @@ use Magento\Customer\Controller\RegistryConstants;
 class Index extends \Magento\Backend\App\Action
 {
     /**
-     * @var \Magento\Framework\Validator
+     * @var \Magento\Framework\Validator Validator.
      */
     protected $_validator;
 
     /**
-     * Core registry
+     * Core registry.
      *
      * @var \Magento\Framework\Registry
      */
     protected $_coreRegistry = null;
 
     /**
-     * @var \Magento\Framework\App\Response\Http\FileFactory
+     * @var \Magento\Framework\App\Response\Http\FileFactory File factory.
      */
     protected $_fileFactory;
 
     /**
-     * @var \Magento\Customer\Model\CustomerFactory
+     * @var \Magento\Customer\Model\CustomerFactory Customer factory.
      */
     protected $_customerFactory = null;
 
-    /** @var  CustomerBuilder */
+    /** @var  CustomerBuilder Customer builder. */
     protected $_customerBuilder;
 
-    /** @var  CustomerDetailsBuilder */
+    /** @var  CustomerDetailsBuilder Customer details builder. */
     protected $_customerDetailsBuilder;
 
-    /** @var  AddressBuilder */
+    /** @var  AddressBuilder Address builder. */
     protected $_addressBuilder;
 
     /**
-     * @var \Magento\Customer\Model\AddressFactory
+     * @var \Magento\Customer\Model\AddressFactory Address factory.
      */
     protected $_addressFactory = null;
 
-    /** @var \Magento\Newsletter\Model\SubscriberFactory */
+    /** @var \Magento\Newsletter\Model\SubscriberFactory Subscriber factory. */
     protected $_subscriberFactory;
 
     /**
-     * @var \Magento\Customer\Helper\Data
+     * @var \Magento\Customer\Helper\Data Data helper.
      */
     protected $_dataHelper = null;
 
     /**
-     * @var \Magento\Customer\Model\Metadata\FormFactory
+     * @var \Magento\Customer\Model\Metadata\FormFactory Form factory.
      */
     protected $_formFactory;
 
-    /** @var CustomerAddressServiceInterface */
+    /** @var CustomerAddressServiceInterface Address service. */
     protected $_addressService;
 
-    /** @var CustomerAccountServiceInterface */
+    /** @var CustomerAccountServiceInterface Customer account service. */
     protected $_customerAccountService;
 
-    /** @var  \Magento\Customer\Helper\View */
+    /** @var  \Magento\Customer\Helper\View View helper. */
     protected $_viewHelper;
 
-    /** @var \Magento\Framework\Math\Random */
+    /** @var \Magento\Framework\Math\Random Random. */
     protected $_random;
-
     /**
-     * @param \Magento\Backend\App\Action\Context $context
-     * @param \Magento\Framework\Registry $coreRegistry
-     * @param \Magento\Framework\App\Response\Http\FileFactory $fileFactory
-     * @param \Magento\Customer\Model\CustomerFactory $customerFactory
-     * @param \Magento\Customer\Model\AddressFactory $addressFactory
-     * @param \Magento\Customer\Model\Metadata\FormFactory $formFactory
-     * @param \Magento\Newsletter\Model\SubscriberFactory $subscriberFactory
-     * @param CustomerBuilder $customerBuilder
-     * @param CustomerDetailsBuilder $customerDetailsBuilder
-     * @param AddressBuilder $addressBuilder
-     * @param CustomerAddressServiceInterface $addressService
-     * @param \Magento\Customer\Service\V1\CustomerAccountServiceInterface $accountService
-     * @param \Magento\Customer\Helper\View $viewHelper
-     * @param \Magento\Customer\Helper\Data $helper
-     * @param \Magento\Framework\Math\Random $random
+     * Constructs a customer initialization object.
+     * @todo What does this build?
      *
+     * @param \Magento\Backend\App\Action\Context $context Context.
+     * @param \Magento\Framework\Registry $coreRegistry Core registry.
+     * @param \Magento\Framework\App\Response\Http\FileFactory $fileFactory File factory.
+     * @param \Magento\Customer\Model\CustomerFactory $customerFactory Customer factory.
+     * @param \Magento\Customer\Model\AddressFactory $addressFactory Address factory.
+     * @param \Magento\Customer\Model\Metadata\FormFactory $formFactory Form factory.
+     * @param \Magento\Newsletter\Model\SubscriberFactory $subscriberFactory Subscriber factory.
+     * @param CustomerBuilder $customerBuilder Customer builder.
+     * @param CustomerDetailsBuilder $customerDetailsBuilder Customer details builder.
+     * @param AddressBuilder $addressBuilder Address builder.
+     * @param CustomerAddressServiceInterface $addressService Address service.
+     * @param CustomerAccountServiceInterface $accountService Account service.
+     * @param \Magento\Customer\Helper\View $viewHelper View helper.
+     * @param \Magento\Customer\Helper\Data $helper Data helper.
+     * @param \Magento\Framework\Math\Random $random Random.
      * @SuppressWarnings(PHPMD.ExcessiveParameterList)
      */
     public function __construct(
@@ -140,10 +142,10 @@ class Index extends \Magento\Backend\App\Action
     }
 
     /**
-     * Customer initialization
+     * Initializes a customer object.
      *
-     * @param string $idFieldName
-     * @return string customer id
+     * @param string $idFieldName Field name ID.
+     * @return string customer id Customer ID.
      */
     protected function _initCustomer($idFieldName = 'id')
     {
@@ -163,9 +165,9 @@ class Index extends \Magento\Backend\App\Action
     }
 
     /**
-     * Add errors messages to session.
+     * Adds specified error messages to a session.
      *
-     * @param array|string $messages
+     * @param array|string $messages An array of error messages.
      * @return void
      *
      * @SuppressWarnings(PHPMD.UnusedLocalVariable)
@@ -187,9 +189,9 @@ class Index extends \Magento\Backend\App\Action
     /**
      * Helper function that handles mass actions by taking in a callable for handling a single customer action.
      *
-     * @param callable $singleAction A single action callable that takes a customer ID as input
-     * @param int[] $customerIds Array of customer Ids to perform the action upon
-     * @return int Number of customers successfully acted upon
+     * @param callable $singleAction A single action callable that takes a customer ID as input.
+     * @param int[] $customerIds Array of customer IDs on which to perform the action.
+     * @return int The number of customers that were successfully initialized.
      */
     protected function actUponMultipleCustomers(callable $singleAction, $customerIds)
     {
@@ -210,9 +212,10 @@ class Index extends \Magento\Backend\App\Action
     }
 
     /**
-     * Customer access rights checking
+     * Checks the access rights for the customer.
      *
-     * @return bool
+     * @return bool * **true** Access rights granted.
+     * * **false** Access rights denied.
      */
     protected function _isAllowed()
     {

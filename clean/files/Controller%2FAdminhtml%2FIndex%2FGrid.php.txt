@@ -1,17 +1,20 @@
 <?php
 /**
- *
+ * Performs customer grid action.
  * {license_notice}
  *
  * @copyright   {copyright}
  * @license     {license_link}
  */
 namespace Magento\Customer\Controller\Adminhtml\Index;
-
+/**
+ * Performs customer grid action.
+ * @package Magento\Customer\Controller\Adminhtml\Index Index package.
+ */
 class Grid extends \Magento\Customer\Controller\Adminhtml\Index
 {
     /**
-     * Customer grid action
+     * Performs customer grid action.
      *
      * @return void
      */

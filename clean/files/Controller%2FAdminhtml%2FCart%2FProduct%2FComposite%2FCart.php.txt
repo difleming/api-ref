@@ -1,5 +1,6 @@
 <?php
 /**
+ * Catalog composite product configuration controller.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -10,38 +11,38 @@ namespace Magento\Customer\Controller\Adminhtml\Cart\Product\Composite;
 use Magento\Framework\Model\Exception;
 
 /**
- * Catalog composite product configuration controller
+ * Controller for catalog composite product configuration.
  *
  * @author      Magento Core Team <core@magentocommerce.com>
  */
 class Cart extends \Magento\Backend\App\Action
 {
     /**
-     * Customer we're working with
+     * Customer.
      *
      * @var int id of the customer
      */
     protected $_customerId;
 
     /**
-     * Quote we're working with
+     * Quote.
      *
      * @var \Magento\Sales\Model\Quote
      */
     protected $_quote = null;
 
     /**
-     * Quote item we're working with
+     * Quote item.
      *
      * @var \Magento\Sales\Model\Quote\Item
      */
     protected $_quoteItem = null;
 
     /**
-     * Loads customer, quote and quote item by request params
+     * Loads the customer, quote, and quote item by request parameters.
      *
-     * @return $this
-     * @throws \Magento\Framework\Model\Exception
+     * @return $this Catalog composite product configuration.
+     * @throws \Magento\Framework\Model\Exception The customer ID does not exist.
      */
     protected function _initData()
     {
@@ -70,9 +71,10 @@ class Cart extends \Magento\Backend\App\Action
     }
 
     /**
-     * Check the permission to Manage Customers
+     * Determines authorization status for customer management.
      *
-     * @return bool
+     * @return bool * **true** Authorized.
+     * * **false** Not authorized.
      */
     protected function _isAllowed()
     {

@@ -1,6 +1,6 @@
 <?php
 /**
- *
+ * Handles and gets cart grid contents.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -10,10 +10,14 @@ namespace Magento\Customer\Controller\Adminhtml\Index;
 
 use Magento\Customer\Controller\RegistryConstants;
 
+/**
+ * Handles and gets cart grid contents.
+ * @package Magento\Customer\Controller\Adminhtml\Index Index package.
+ */
 class Cart extends \Magento\Customer\Controller\Adminhtml\Index
 {
     /**
-     * Handle and then get cart grid contents
+     * Handles and gets cart grid contents.
      *
      * @return void
      */
