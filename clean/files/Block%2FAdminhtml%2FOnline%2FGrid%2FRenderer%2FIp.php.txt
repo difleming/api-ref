@@ -1,5 +1,6 @@
 <?php
 /**
+ * Renders an admin HTML customer online grid block item by IP.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -8,15 +9,17 @@
 namespace Magento\Customer\Block\Adminhtml\Online\Grid\Renderer;
 
 /**
- * Adminhtml customers online grid block item renderer by ip.
+ * Renders an admin HTML customer online grid block item by IP.
  *
  * @author      Magento Core Team <core@magentocommerce.com>
+ * @package Magento\Customer\Block\Adminhtml\Online\Grid\Renderer Renderer package.
  */
 class Ip extends \Magento\Backend\Block\Widget\Grid\Column\Renderer\AbstractRenderer
 {
     /**
-     * @param \Magento\Framework\Object $row
-     * @return string
+     * Renders an admin HTML customer online grid block item by IP.
+     * @param \Magento\Framework\Object $row Row.
+     * @return string Rendered block item.
      */
     public function render(\Magento\Framework\Object $row)
     {

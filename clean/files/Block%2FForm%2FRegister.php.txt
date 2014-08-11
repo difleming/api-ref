@@ -1,5 +1,6 @@
 <?php
 /**
+ * Constructor for a customer registration form block object.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -8,36 +9,39 @@
 namespace Magento\Customer\Block\Form;
 
 /**
- * Customer register form block
+ * Constructs, prepares, and gets information about a customer
+ * registration form block object.
  */
 class Register extends \Magento\Directory\Block\Data
 {
     /**
-     * @var \Magento\Customer\Model\Session
+     * @var \Magento\Customer\Model\Session Customer session.
      */
     protected $_customerSession;
 
     /**
-     * @var \Magento\Framework\Module\Manager
+     * @var \Magento\Framework\Module\Manager Module manager.
      */
     protected $_moduleManager;
 
     /**
-     * @var \Magento\Customer\Helper\Data
+     * @var \Magento\Customer\Helper\Data Customer helper.
      */
     protected $_customerHelper;
 
     /**
-     * @param \Magento\Framework\View\Element\Template\Context $context
-     * @param \Magento\Core\Helper\Data $coreData
-     * @param \Magento\Framework\Json\EncoderInterface $jsonEncoder
-     * @param \Magento\Framework\App\Cache\Type\Config $configCacheType
-     * @param \Magento\Directory\Model\Resource\Region\CollectionFactory $regionCollectionFactory
-     * @param \Magento\Directory\Model\Resource\Country\CollectionFactory $countryCollectionFactory
-     * @param \Magento\Framework\Module\Manager $moduleManager
-     * @param \Magento\Customer\Model\Session $customerSession
-     * @param \Magento\Customer\Helper\Data $customerHelper
-     * @param array $data
+     * Constructs a customer registration form block object.
+     *
+     * @param \Magento\Framework\View\Element\Template\Context $context Context.
+     * @param \Magento\Core\Helper\Data $coreData Core data.
+     * @param \Magento\Framework\Json\EncoderInterface $jsonEncoder JSON encoder.
+     * @param \Magento\Framework\App\Cache\Type\Config $configCacheType Config cache type.
+     * @param \Magento\Directory\Model\Resource\Region\CollectionFactory $regionCollectionFactory Region collection factory.
+     * @param \Magento\Directory\Model\Resource\Country\CollectionFactory $countryCollectionFactory Country collection factory.
+     * @param \Magento\Framework\Module\Manager $moduleManager Module manager.
+     * @param \Magento\Customer\Model\Session $customerSession Customer session.
+     * @param \Magento\Customer\Helper\Data $customerHelper Customer helper.
+     * @param array $data An array of data.
      * 
      * @SuppressWarnings(PHPMD.ExcessiveParameterList)
      */
@@ -69,10 +73,10 @@ class Register extends \Magento\Directory\Block\Data
     }
 
     /**
-     * Get config
+     * Gets the configuration for a specified path.
      *
-     * @param string $path
-     * @return string|null
+     * @param string $path Path.
+     * @return string|null The configuration, if present. Otherwise, null.
      */
     public function getConfig($path)
     {
@@ -80,7 +84,8 @@ class Register extends \Magento\Directory\Block\Data
     }
 
     /**
-     * @return $this
+     * Prepares the layout for a customer registration form block.
+     * @return $this Prepared layout.
      */
     protected function _prepareLayout()
     {
@@ -89,9 +94,9 @@ class Register extends \Magento\Directory\Block\Data
     }
 
     /**
-     * Retrieve form posting url
+     * Gets a form posting URL.
      *
-     * @return string
+     * @return string Form posting URL.
      */
     public function getPostActionUrl()
     {
@@ -99,9 +104,9 @@ class Register extends \Magento\Directory\Block\Data
     }
 
     /**
-     * Retrieve back url
+     * Gets a go back URL.
      *
-     * @return string
+     * @return string Back URL.
      */
     public function getBackUrl()
     {
@@ -113,9 +118,9 @@ class Register extends \Magento\Directory\Block\Data
     }
 
     /**
-     * Retrieve form data
+     * Gets form data.
      *
-     * @return mixed
+     * @return mixed Form data.
      */
     public function getFormData()
     {
@@ -136,9 +141,9 @@ class Register extends \Magento\Directory\Block\Data
     }
 
     /**
-     * Retrieve customer country identifier
+     * Gets the customer country ID.
      *
-     * @return int
+     * @return int Customer country ID.
      */
     public function getCountryId()
     {
@@ -150,9 +155,9 @@ class Register extends \Magento\Directory\Block\Data
     }
 
     /**
-     * Retrieve customer region identifier
+     * Gets the customer region ID.
      *
-     * @return mixed
+     * @return int|null The region ID, if present. Otherwise, null.
      */
     public function getRegion()
     {
@@ -165,9 +170,10 @@ class Register extends \Magento\Directory\Block\Data
     }
 
     /**
-     * Newsletter module availability
+     * Determines whether the newsletter module is available.
      *
-     * @return bool
+     * @return bool * **true** Available.
+     * * **false** Not available.
      */
     public function isNewsletterEnabled()
     {
@@ -175,12 +181,12 @@ class Register extends \Magento\Directory\Block\Data
     }
 
     /**
-     * Restore entity data from session
-     * Entity and form code must be defined for the form
+     * Restores entity data from a session.
+     * Entity and form code must be defined for the form.
      *
-     * @param \Magento\Customer\Model\Metadata\Form $form
-     * @param string|null $scope
-     * @return $this
+     * @param \Magento\Customer\Model\Metadata\Form $form Form code.
+     * @param string|null $scope Optional. The scope. Default is null.
+     * @return $this Entity data.
      */
     public function restoreSessionData(\Magento\Customer\Model\Metadata\Form $form, $scope = null)
     {

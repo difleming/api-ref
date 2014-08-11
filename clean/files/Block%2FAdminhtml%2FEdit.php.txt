@@ -1,5 +1,6 @@
 <?php
 /**
+ * Constructs and gets information about a customer edit block.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -11,35 +12,38 @@ use Magento\Customer\Controller\RegistryConstants;
 use Magento\Customer\Service\V1\CustomerAccountServiceInterface;
 
 /**
- * Customer edit block
+ * Constructs and gets information about a customer edit block.
  */
 class Edit extends \Magento\Backend\Block\Widget\Form\Container
 {
     /**
-     * Core registry
+     * Core registry.
      *
      * @var \Magento\Framework\Registry
      */
     protected $_coreRegistry = null;
 
-    /** @var CustomerAccountServiceInterface */
+    /**
+     * Customer account service interface
+     * @var CustomerAccountServiceInterface
+     */
     protected $_customerAccountService;
 
     /**
-     * Customer view helper
+     * Customer view helper.
      *
      * @var \Magento\Customer\Helper\View
      */
     protected $_viewHelper;
 
     /**
-     * Constructor
+     * Constructs and gets information about a customer edit block.
      *
-     * @param \Magento\Backend\Block\Widget\Context $context
-     * @param \Magento\Framework\Registry $registry
-     * @param CustomerAccountServiceInterface $customerAccountService
-     * @param \Magento\Customer\Helper\View $viewHelper
-     * @param array $data
+     * @param \Magento\Backend\Block\Widget\Context $context Context.
+     * @param \Magento\Framework\Registry $registry Registry.
+     * @param CustomerAccountServiceInterface $customerAccountService Customer account service.
+     * @param \Magento\Customer\Helper\View $viewHelper View helper.
+     * @param array $data An array of data.
      */
     public function __construct(
         \Magento\Backend\Block\Widget\Context $context,
@@ -55,6 +59,8 @@ class Edit extends \Magento\Backend\Block\Widget\Form\Container
     }
 
     /**
+     * Constructs a customer edit block.
+     *
      * @return void
      */
     protected function _construct()
@@ -106,9 +112,9 @@ class Edit extends \Magento\Backend\Block\Widget\Form\Container
     }
 
     /**
-     * Retrieve the Url for creating an order.
+     * Gets the URL that enables a customer to create an order.
      *
-     * @return string
+     * @return string Order URL.
      */
     public function getCreateOrderUrl()
     {
@@ -116,9 +122,9 @@ class Edit extends \Magento\Backend\Block\Widget\Form\Container
     }
 
     /**
-     * Return the customer Id.
+     * Gets the customer ID.
      *
-     * @return int|null
+     * @return int|null Customer ID, if present. Otherwise, null.
      */
     public function getCustomerId()
     {
@@ -127,9 +133,10 @@ class Edit extends \Magento\Backend\Block\Widget\Form\Container
     }
 
     /**
-     * Retrieve the header text, either the name of an existing customer or 'New Customer'.
+     * Gets the header text for current customer.
      *
-     * @return string
+     * @return string * The name of an existing customer.
+     * * Otherwise, *New Customer*.
      */
     public function getHeaderText()
     {
@@ -143,9 +150,9 @@ class Edit extends \Magento\Backend\Block\Widget\Form\Container
     }
 
     /**
-     * Prepare form Html. Add block for configurable product modification interface.
+     * Prepares form HTML. Adds block for configurable product modification interface.
      *
-     * @return string
+     * @return string Form HTML.
      */
     public function getFormHtml()
     {
@@ -157,9 +164,9 @@ class Edit extends \Magento\Backend\Block\Widget\Form\Container
     }
 
     /**
-     * Retrieve customer validation Url.
+     * Gets the customer validation URL.
      *
-     * @return string
+     * @return string Customer validation URL.
      */
     public function getValidationUrl()
     {
@@ -167,9 +174,9 @@ class Edit extends \Magento\Backend\Block\Widget\Form\Container
     }
 
     /**
-     * Prepare the layout.
+     * Prepares the layout.
      *
-     * @return $this
+     * @return $this Prepared layout.
      */
     protected function _prepareLayout()
     {
@@ -194,9 +201,9 @@ class Edit extends \Magento\Backend\Block\Widget\Form\Container
     }
 
     /**
-     * Retrieve the save and continue edit Url.
+     * Gets the save and continue edit URL.
      *
-     * @return string
+     * @return string Save and continue edit URL.
      */
     protected function _getSaveAndContinueUrl()
     {

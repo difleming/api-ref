@@ -1,5 +1,6 @@
 <?php
 /**
+ * Catalog composite product configuration controller.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -10,29 +11,29 @@ namespace Magento\Customer\Controller\Adminhtml\Wishlist\Product\Composite;
 use Magento\Framework\Model\Exception as CoreException;
 
 /**
- * Catalog composite product configuration controller
+ * Catalog composite product configuration controller.
  */
 class Wishlist extends \Magento\Backend\App\Action
 {
     /**
-     * Wishlist we're working with.
+     * Wish list.
      *
      * @var \Magento\Wishlist\Model\Wishlist
      */
     protected $_wishlist = null;
 
     /**
-     * Wishlist item we're working with.
+     * Wish list item.
      *
      * @var \Magento\Wishlist\Model\Wishlist
      */
     protected $_wishlistItem = null;
 
     /**
-     * Loads wishlist and wishlist item.
+     * Loads wish list and wish list item.
      *
-     * @return $this
-     * @throws CoreException
+     * @return $this Wish list item.
+     * @throws CoreException No wish list item ID is defined.
      */
     protected function _initData()
     {
@@ -60,9 +61,10 @@ class Wishlist extends \Magento\Backend\App\Action
     }
 
     /**
-     * Check the permission to Manage Customers
+     * Checks the permission to manage customers.
      *
-     * @return bool
+     * @return bool * **true** Authorization granted.
+     * * **false** Authorization denied.
      */
     protected function _isAllowed()
     {

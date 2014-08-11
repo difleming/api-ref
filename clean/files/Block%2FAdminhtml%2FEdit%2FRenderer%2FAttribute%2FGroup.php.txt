@@ -1,5 +1,6 @@
 <?php
 /**
+ * Constructor and getters for group attributes.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -11,7 +12,7 @@ use Magento\Backend\Block\Widget\Form\Renderer\Fieldset\Element;
 use Magento\Customer\Controller\RegistryConstants;
 
 /**
- * Renderer for customer group ID
+ * Renders customer group ID.
  *
  * @method \Magento\Customer\Service\V1\Data\Eav\AttributeMetadata getDisableAutoGroupChangeAttribute()
  * @method mixed getDisableAutoGroupChangeAttributeValue()
@@ -19,29 +20,31 @@ use Magento\Customer\Controller\RegistryConstants;
 class Group extends Element
 {
     /**
+     * *edit/tab/account/form/renderer/group.phtml*
      * @var string
      */
     protected $_template = 'edit/tab/account/form/renderer/group.phtml';
 
     /**
-     * Customer address
+     * Customer address.
      *
      * @var \Magento\Customer\Helper\Address
      */
     protected $_addressHelper = null;
 
     /**
-     * Core registry
+     * Core registry.
      *
      * @var \Magento\Framework\Registry
      */
     protected $_coreRegistry = null;
 
     /**
-     * @param \Magento\Backend\Block\Template\Context $context
-     * @param \Magento\Customer\Helper\Address $customerAddress
-     * @param \Magento\Framework\Registry $registry
-     * @param array $data
+     * Constructs group.
+     * @param \Magento\Backend\Block\Template\Context $context Context.
+     * @param \Magento\Customer\Helper\Address $customerAddress Customer address.
+     * @param \Magento\Framework\Registry $registry Registry.
+     * @param array $data An array of data.
      */
     public function __construct(
         \Magento\Backend\Block\Template\Context $context,
@@ -55,9 +58,9 @@ class Group extends Element
     }
 
     /**
-     * Retrieve disable auto group change element HTML ID
+     * Gets the disable auto group change element HTML ID.
      *
-     * @return string
+     * @return string HTML ID.
      */
     protected function _getDisableAutoGroupChangeElementHtmlId()
     {
@@ -65,9 +68,9 @@ class Group extends Element
     }
 
     /**
-     * Retrieve disable auto group change checkbox label text
+     * Gets the disable auto group change checkbox label text.
      *
-     * @return string
+     * @return string Label text.
      */
     public function getDisableAutoGroupChangeCheckboxLabel()
     {
@@ -75,9 +78,9 @@ class Group extends Element
     }
 
     /**
-     * Retrieve disable auto group change checkbox state
+     * Gets the disable auto group change checkbox state.
      *
-     * @return string
+     * @return string Checkbox state.
      */
     public function getDisableAutoGroupChangeCheckboxState()
     {
@@ -93,9 +96,9 @@ class Group extends Element
     }
 
     /**
-     * Retrieve disable auto group change checkbox element HTML NAME
+     * Gets the disable auto group change checkbox element HTML name.
      *
-     * @return string
+     * @return string HTML name.
      */
     public function getDisableAutoGroupChangeCheckboxElementName()
     {
@@ -106,9 +109,9 @@ class Group extends Element
     }
 
     /**
-     * Retrieve disable auto group change checkbox element HTML ID
+     * Gets the disable auto group change checkbox element HTML ID.
      *
-     * @return string
+     * @return string HTML ID.
      */
     public function getDisableAutoGroupChangeCheckboxElementId()
     {

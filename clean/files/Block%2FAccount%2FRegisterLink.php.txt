@@ -1,5 +1,6 @@
 <?php
 /**
+ * Constructs and gets information about a registration link.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -8,27 +9,27 @@
 namespace Magento\Customer\Block\Account;
 
 /**
- * Customer register link
+ * Constructs and gets information about a customer registration link.
+ * @package Magento\Customer\Block\Account Account package.
  */
 class RegisterLink extends \Magento\Framework\View\Element\Html\Link
 {
     /**
-     * Customer session
-     *
-     * @var \Magento\Framework\App\Http\Context
+     * @var \Magento\Framework\App\Http\Context Customer session.
      */
     protected $httpContext;
 
     /**
-     * @var \Magento\Customer\Helper\Data
+     * @var \Magento\Customer\Helper\Data Customer helper.
      */
     protected $_customerHelper;
-
     /**
-     * @param \Magento\Framework\View\Element\Template\Context $context
-     * @param \Magento\Framework\App\Http\Context $httpContext
-     * @param \Magento\Customer\Helper\Data $customerHelper
-     * @param array $data
+     * Constructs an registration link object.
+     *
+     * @param \Magento\Framework\View\Element\Template\Context $context Context.
+     * @param \Magento\Framework\App\Http\Context $httpContext Customer session.
+     * @param \Magento\Customer\Helper\Data $customerHelper Customer helper object.
+     * @param array $data An array of data.
      */
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
@@ -43,7 +44,8 @@ class RegisterLink extends \Magento\Framework\View\Element\Html\Link
     }
 
     /**
-     * @return string
+     * Gets the destination for a registration link.
+     * @return string Link destination.
      */
     public function getHref()
     {
@@ -51,7 +53,8 @@ class RegisterLink extends \Magento\Framework\View\Element\Html\Link
     }
 
     /**
-     * {@inheritdoc}
+     * Converts to HTML.
+     * @return string HTML.
      */
     protected function _toHtml()
     {

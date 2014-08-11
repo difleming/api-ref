@@ -1,25 +1,24 @@
 <?php
 /**
+ * Customer widget form image file element block.
  * {license_notice}
  *
  * @copyright   {copyright}
  * @license     {license_link}
  */
 
-
-/**
- * Customer Widget Form Image File Element Block
- *
- * @author      Magento Core Team <core@magentocommerce.com>
- */
 namespace Magento\Customer\Block\Adminhtml\Form\Element;
-
+/**
+ * Customer widget form image file element block.
+ * @author      Magento Core Team <core@magentocommerce.com>
+ * @package Magento\Customer\Block\Adminhtml\Form\Element Element package.
+ */
 class Image extends \Magento\Customer\Block\Adminhtml\Form\Element\File
 {
     /**
-     * Return Delete CheckBox Label
+     * Gets the delete check box label.
      *
-     * @return string
+     * @return string Label.
      */
     protected function _getDeleteCheckboxLabel()
     {
@@ -27,9 +26,9 @@ class Image extends \Magento\Customer\Block\Adminhtml\Form\Element\File
     }
 
     /**
-     * Return Delete CheckBox SPAN Class name
+     * Gets the delete check box span class name.
      *
-     * @return string
+     * @return string Span class name.
      */
     protected function _getDeleteCheckboxSpanClass()
     {
@@ -37,9 +36,9 @@ class Image extends \Magento\Customer\Block\Adminhtml\Form\Element\File
     }
 
     /**
-     * Return File preview link HTML
+     * Gets the file preview link HTML.
      *
-     * @return string
+     * @return string Preview link HTML.
      */
     protected function _getPreviewHtml()
     {
@@ -68,9 +67,9 @@ class Image extends \Magento\Customer\Block\Adminhtml\Form\Element\File
     }
 
     /**
-     * Return Image URL
+     * Gets the image URL.
      *
-     * @return string
+     * @return string Image URL.
      */
     protected function _getPreviewUrl()
     {

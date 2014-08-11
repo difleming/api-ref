@@ -1,16 +1,20 @@
 <?php
 /**
- *
+ * Create customer address action.
  * {license_notice}
  *
  * @copyright   {copyright}
  * @license     {license_link}
  */
 namespace Magento\Customer\Controller\Address;
-
+/**
+ * Create customer address action.
+ * @package Magento\Customer\Controller\Address Address package.
+ */
 class NewAction extends \Magento\Customer\Controller\Address
 {
     /**
+     * Create customer address action.
      * @return void
      */
     public function execute()

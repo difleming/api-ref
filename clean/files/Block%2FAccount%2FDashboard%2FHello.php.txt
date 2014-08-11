@@ -1,5 +1,7 @@
 <?php
 /**
+ * Constructs and gets the customer name.
+ *
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -8,32 +10,34 @@
 namespace Magento\Customer\Block\Account\Dashboard;
 
 use Magento\Customer\Service\V1\CustomerAccountServiceInterface;
-
+/**
+ * Constructs and gets the complete customer name.
+ */
 class Hello extends \Magento\Framework\View\Element\Template
 {
     /**
-     * @var \Magento\Customer\Model\Session
+     * @var \Magento\Customer\Model\Session Customer session.
      */
     protected $_customerSession;
 
     /**
-     * @var \Magento\Customer\Helper\View
+     * @var \Magento\Customer\Helper\View View helper.
      */
     protected $_viewHelper;
 
     /**
-     * @var CustomerAccountServiceInterface
+     * @var CustomerAccountServiceInterface Customer account service.
      */
     protected $_customerAccountService;
 
     /**
-     * Constructor
+     * Constructs a customer name.
      *
-     * @param \Magento\Framework\View\Element\Template\Context $context
-     * @param \Magento\Customer\Model\Session $customerSession
-     * @param \Magento\Customer\Helper\View $viewHelper
-     * @param CustomerAccountServiceInterface $customerAccountService
-     * @param array $data
+     * @param \Magento\Framework\View\Element\Template\Context $context Context.
+     * @param \Magento\Customer\Model\Session $customerSession Customer session.
+     * @param \Magento\Customer\Helper\View $viewHelper View helper.
+     * @param CustomerAccountServiceInterface $customerAccountService Customer account service.
+     * @param array $data An array of data.
      */
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
@@ -50,9 +54,9 @@ class Hello extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * Concatenate all customer name parts into full customer name.
+     * Concatenates the customer name parts to create a complete customer name.
      *
-     * @return string
+     * @return string Customer name.
      */
     public function getCustomerName()
     {

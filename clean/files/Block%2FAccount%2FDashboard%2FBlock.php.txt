@@ -1,19 +1,24 @@
 <?php
 /**
+ * Constructor for customer account dashboard.
  * {license_notice}
  *
  * @copyright   {copyright}
  * @license     {license_link}
  */
 namespace Magento\Customer\Block\Account\Dashboard;
-
+/**
+ * Constructs a customer account dashboard.
+ *
+ * @package Magento\Customer\Block\Account\Dashboard
+ */
 class Block extends \Magento\Framework\View\Element\Template
 {
     /**
-     * Account dashboard block constructor.
+     * Constructs a customer account dashboard.
      *
-     * @param \Magento\Framework\View\Element\Template\Context $context
-     * @param array $data
+     * @param \Magento\Framework\View\Element\Template\Context $context Customer session.
+     * @param array $data Array of data.
      */
     public function __construct(\Magento\Framework\View\Element\Template\Context $context, array $data = array())
     {

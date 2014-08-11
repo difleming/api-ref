@@ -1,24 +1,32 @@
 <?php
 /**
+ * Constructor and renderer for admin newsletter queue grid block status item.
  * {license_notice}
  *
  * @copyright   {copyright}
  * @license     {license_link}
  */
 namespace Magento\Customer\Block\Adminhtml\Edit\Tab\Newsletter\Grid\Renderer;
-
 /**
- * Adminhtml newsletter queue grid block status item renderer
+ * Constructs and renders an admin newsletter queue grid block status item.
+ *
+ * @package Magento\Customer\Block\Adminhtml\Edit\Tab\Newsletter\Grid\Renderer
  */
 class Status extends \Magento\Backend\Block\Widget\Grid\Column\Renderer\AbstractRenderer
 {
     /**
-     * @var array
+     * @var array Array of statuses.
      */
     protected static $_statuses;
 
     /**
-     * Constructor for Grid Renderer Status
+     * Constructs a grid renderer status object.
+     * Status values include:
+     * * Sent
+     * * Cancel
+     * * Not Sent
+     * * Sending
+     * * Paused
      *
      * @return void
      */
@@ -35,8 +43,10 @@ class Status extends \Magento\Backend\Block\Widget\Grid\Column\Renderer\Abstract
     }
 
     /**
-     * @param \Magento\Framework\Object $row
-     * @return string
+     * Renders a grid status item.
+     *
+     * @param \Magento\Framework\Object $row The row for which to render a status item.
+     * @return string Rendered grid status item.
      */
     public function render(\Magento\Framework\Object $row)
     {
@@ -44,8 +54,11 @@ class Status extends \Magento\Backend\Block\Widget\Grid\Column\Renderer\Abstract
     }
 
     /**
-     * @param string $status
-     * @return string
+     * Determines whether a specified status is set.
+     * @todo Not sure what this does.
+     * @param string $status A status item.
+     * @return string * If status is set, returns the status.
+     * * Otherwise, returns *Unknown*.
      */
     public static function getStatus($status)
     {

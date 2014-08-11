@@ -1,16 +1,20 @@
 <?php
 /**
- *
+ * Validates and shows the online status for customers.
  * {license_notice}
  *
  * @copyright   {copyright}
  * @license     {license_link}
  */
 namespace Magento\Customer\Controller\Adminhtml\Online;
-
+/**
+ * Validates and shows the online status for customers.
+ * @package Magento\Customer\Controller\Adminhtml\Online Online package.
+ */
 class Index extends \Magento\Backend\App\Action
 {
     /**
+     * Validates the online status for a customer.
      * @return bool
      */
     protected function _isAllowed()
@@ -19,6 +23,7 @@ class Index extends \Magento\Backend\App\Action
     }
 
     /**
+     * Shows which customers are online.
      * @return void
      */
     public function execute()

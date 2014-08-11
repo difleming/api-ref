@@ -1,5 +1,6 @@
 <?php
 /**
+ * Renders online grid.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -8,15 +9,17 @@
 namespace Magento\Customer\Block\Adminhtml\Online\Grid\Renderer;
 
 /**
- * Adminhtml customers online grid renderer for customer type.
+ * Renders online grid for customer type.
  *
  * @author      Magento Core Team <core@magentocommerce.com>
  */
 class Type extends \Magento\Backend\Block\Widget\Grid\Column\Renderer\AbstractRenderer
 {
     /**
-     * @param \Magento\Framework\Object $row
-     * @return string
+     * Renders online grid for customer type.
+     *
+     * @param \Magento\Framework\Object $row The row for which to render a grid.
+     * @return string Online grid.
      */
     public function render(\Magento\Framework\Object $row)
     {

@@ -1,17 +1,20 @@
 <?php
 /**
- *
+ * Loads and renders the address book form.
  * {license_notice}
  *
  * @copyright   {copyright}
  * @license     {license_link}
  */
 namespace Magento\Customer\Controller\Address;
-
+/**
+ * Loads and renders the address book form.
+ * @package Magento\Customer\Controller\Address Address package.
+ */
 class Form extends \Magento\Customer\Controller\Address
 {
     /**
-     * Address book form
+     * Loads and renders the address book form.
      *
      * @return void
      */

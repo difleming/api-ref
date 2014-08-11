@@ -1,17 +1,20 @@
 <?php
 /**
- *
+ * Shows customer mass subscribe action page.
  * {license_notice}
  *
  * @copyright   {copyright}
  * @license     {license_link}
  */
 namespace Magento\Customer\Controller\Adminhtml\Index;
-
+/**
+ * Class MassSubscribe
+ * @package Magento\Customer\Controller\Adminhtml\Index Index package.
+ */
 class MassSubscribe extends \Magento\Customer\Controller\Adminhtml\Index
 {
     /**
-     * Customer mass subscribe action
+     * Shows customer mass subscribe action page.
      *
      * @return void
      */

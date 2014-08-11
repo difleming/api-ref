@@ -1,6 +1,6 @@
 <?php
 /**
- *
+ * Performs customer delete action.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -10,10 +10,14 @@ namespace Magento\Customer\Controller\Adminhtml\Index;
 
 use Magento\Customer\Controller\RegistryConstants;
 
+/**
+ * Performs customer delete action.
+ * @package Magento\Customer\Controller\Adminhtml\Index Index package.
+ */
 class Delete extends \Magento\Customer\Controller\Adminhtml\Index
 {
     /**
-     * Delete customer action
+     * Performs customer delete action.
      *
      * @return void
      */

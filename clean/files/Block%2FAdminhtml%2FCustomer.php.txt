@@ -1,22 +1,21 @@
 <?php
 /**
+ * Constructor for an admin HTML customers list block object.
  * {license_notice}
  *
  * @copyright   {copyright}
  * @license     {license_link}
  */
-
+namespace Magento\Customer\Block\Adminhtml;
 /**
- * Adminhtml customers list block
+ * Constructs an admin HTML customers list block object.
  *
  * @author      Magento Core Team <core@magentocommerce.com>
  */
-namespace Magento\Customer\Block\Adminhtml;
-
 class Customer extends \Magento\Backend\Block\Widget\Grid\Container
 {
     /**
-     * Constructor
+     * Constructs an admin HTML customers list block object.
      *
      * @return void
      */

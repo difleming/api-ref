@@ -1,6 +1,6 @@
 <?php
 /**
- *
+ * Confirms a customer account by ID and confirmation key.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -10,15 +10,19 @@ namespace Magento\Customer\Controller\Account;
 
 use Magento\Framework\Exception\StateException;
 
+/**
+ * Confirms a customer account by ID and confirmation key.
+ * @package Magento\Customer\Controller\Account Account package.
+ */
 class Confirm extends \Magento\Customer\Controller\Account
 {
     /**
-     * Confirm customer account by id and confirmation key
+     * Confirms a customer account by ID and confirmation key.
      *
      * @return void
      * @SuppressWarnings(PHPMD.CyclomaticComplexity)
      */
-    public function execute()
+public function execute()
     {
         if ($this->_getSession()->isLoggedIn()) {
             $this->_redirect('*/*/');

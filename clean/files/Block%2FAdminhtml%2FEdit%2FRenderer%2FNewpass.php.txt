@@ -1,5 +1,6 @@
 <?php
 /**
+ * Renders a new password field.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -12,15 +13,17 @@ use Magento\Framework\Data\Form\Element\AbstractElement;
 use Magento\Framework\Data\Form\Element\Renderer\RendererInterface;
 
 /**
- * Customer new password field renderer
+ * Renders a customer new password field.
  *
  * @author      Magento Core Team <core@magentocommerce.com>
  */
 class Newpass extends AbstractBlock implements RendererInterface
 {
     /**
-     * @param AbstractElement $element
-     * @return string
+     * Renders a customer new password field.
+     * @param AbstractElement $element Element.
+     * @todo Don't know what "element" is.
+     * @return string HTML for new password field.
      */
     public function render(AbstractElement $element)
     {

@@ -1,5 +1,6 @@
 <?php
 /**
+ * Constructs accordian.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -13,45 +14,47 @@ use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\Customer\Controller\RegistryConstants;
 
 /**
- * Adminhtml customer recent orders grid block
+ * Constructs accordian widget for an admin HTML customer recent orders grid block.
  */
 class Accordion extends \Magento\Backend\Block\Widget\Accordion
 {
     /**
-     * Core registry
+     * Core registry.
      *
      * @var \Magento\Framework\Registry
      */
     protected $_coreRegistry = null;
 
     /**
-     * @var \Magento\Sales\Model\QuoteFactory
+     * @var \Magento\Sales\Model\QuoteFactory Quote factory.
      */
     protected $_quoteFactory;
 
     /**
-     * @var \Magento\Wishlist\Model\Resource\Item\CollectionFactory
+     * @var \Magento\Wishlist\Model\Resource\Item\CollectionFactory Collection factory.
      */
     protected $_itemsFactory;
 
-    /** @var \Magento\Customer\Model\Config\Share  */
+    /** @var \Magento\Customer\Model\Config\Share Share configuration. */
     protected $_shareConfig;
 
-    /** @var CustomerAccountServiceInterface  */
+    /** @var CustomerAccountServiceInterface Customer account service. */
     protected $_customerAccountService;
 
-    /** @var \Magento\Customer\Service\V1\Data\CustomerBuilder  */
+    /** @var \Magento\Customer\Service\V1\Data\CustomerBuilder Customer builder. */
     protected $_customerBuilder;
 
     /**
-     * @param \Magento\Backend\Block\Template\Context $context
-     * @param \Magento\Sales\Model\QuoteFactory $quoteFactory
-     * @param \Magento\Wishlist\Model\Resource\Item\CollectionFactory $itemsFactory
-     * @param \Magento\Framework\Registry $registry
-     * @param \Magento\Customer\Model\Config\Share $shareConfig
-     * @param CustomerAccountServiceInterface $customerAccountService
-     * @param \Magento\Customer\Service\V1\Data\CustomerBuilder $customerBuilder
-     * @param array $data
+     * Constructs accordian widget for an admin HTML customer recent orders grid block.
+     *
+     * @param \Magento\Backend\Block\Template\Context $context Context.
+     * @param \Magento\Sales\Model\QuoteFactory $quoteFactory Quote factory.
+     * @param \Magento\Wishlist\Model\Resource\Item\CollectionFactory $itemsFactory Items factory.
+     * @param \Magento\Framework\Registry $registry Registry.
+     * @param \Magento\Customer\Model\Config\Share $shareConfig Share configuration.
+     * @param CustomerAccountServiceInterface $customerAccountService Customer account service.
+     * @param \Magento\Customer\Service\V1\Data\CustomerBuilder $customerBuilder Customer builder.
+     * @param array $data An array of data.
      */
     public function __construct(
         \Magento\Backend\Block\Template\Context $context,
@@ -140,11 +143,11 @@ class Accordion extends \Magento\Backend\Block\Widget\Accordion
     }
 
     /**
-     * Get customer data from session or service.
+     * Gets customer data from a session or service.
      *
-     * @param int|null $customerId possible customer ID from DB
-     * @return Customer
-     * @throws NoSuchEntityException
+     * @param $customerId Customer ID.
+     * @return Customer A customer object.
+     * @throws NoSuchEntityException The specified customer does not exist.
      */
     protected function getCustomer($customerId)
     {

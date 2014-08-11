@@ -1,17 +1,20 @@
 <?php
 /**
- *
+ * Customer login form page.
  * {license_notice}
  *
  * @copyright   {copyright}
  * @license     {license_link}
  */
 namespace Magento\Customer\Controller\Account;
-
+/**
+ * Customer login form page.
+ * @package Magento\Customer\Controller\Account Account package.
+ */
 class Login extends \Magento\Customer\Controller\Account
 {
     /**
-     * Customer login form page
+     * Customer login form page.
      *
      * @return void
      */

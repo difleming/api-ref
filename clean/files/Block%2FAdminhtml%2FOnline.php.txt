@@ -1,5 +1,6 @@
 <?php
 /**
+ * Prepares the layout for admin HTML online customer page content block.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -8,19 +9,23 @@
 namespace Magento\Customer\Block\Adminhtml;
 
 /**
- * Adminhtml online customers page content block
+ * Prepares the layout for admin HTML online customers page content block.
+ * Gets the filter form HTML.
  *
  * @author      Magento Core Team <core@magentocommerce.com>
+ * @package Magento\Customer\Block\Adminhtml Admin HTML package.
  */
 class Online extends \Magento\Backend\Block\Template
 {
     /**
-     * @var string
+     * @var string *online.phtml*
      */
     protected $_template = 'online.phtml';
 
     /**
-     * @return $this
+     * Gets the before to HTML.
+     * @return $this Before to HTML.
+     * @todo What's this?
      */
     public function _beforeToHtml()
     {
@@ -28,7 +33,8 @@ class Online extends \Magento\Backend\Block\Template
     }
 
     /**
-     * @return $this
+     * Prepares the layout.
+     * @return $this Prepared layout.
      */
     protected function _prepareLayout()
     {
@@ -37,7 +43,8 @@ class Online extends \Magento\Backend\Block\Template
     }
 
     /**
-     * @return string
+     * Gets the filter form HTML.
+     * @return string Filter form HTML.
      */
     public function getFilterFormHtml()
     {

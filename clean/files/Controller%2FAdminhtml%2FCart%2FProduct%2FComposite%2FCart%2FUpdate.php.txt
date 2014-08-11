@@ -1,17 +1,20 @@
 <?php
 /**
- *
+ * IFrame handler for submitted configuration for quote item.
  * {license_notice}
  *
  * @copyright   {copyright}
  * @license     {license_link}
  */
 namespace Magento\Customer\Controller\Adminhtml\Cart\Product\Composite\Cart;
-
+/**
+ * IFrame handler for submitted configuration for quote item.
+ * @package Magento\Customer\Controller\Adminhtml\Cart\Product\Composite\Cart Cart package.
+ */
 class Update extends \Magento\Customer\Controller\Adminhtml\Cart\Product\Composite\Cart
 {
     /**
-     * IFrame handler for submitted configuration for quote item
+     * IFrame handler for submitted configuration for quote item.
      *
      * @return void
      */

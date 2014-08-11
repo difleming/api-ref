@@ -1,0 +1,20 @@
+<?php
+/**
+ * Counting in action.
+ * @example example.php Example.
+ *
+ * {license_notice}
+ *
+ * @copyright {copyright}
+ * @license {license}
+ */
+namespace Magento\Customer\Service\V1;
+/**
+ * My hello world function.
+ */
+function writeMsg() {
+    echo "Hello world!";
+}
+
+writeMsg(); // call the function
+?>

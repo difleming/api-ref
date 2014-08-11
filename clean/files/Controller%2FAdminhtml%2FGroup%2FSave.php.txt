@@ -1,5 +1,6 @@
 <?php
 /**
+ * Stores customer group data to the session.
  *
  * {license_notice}
  *
@@ -10,12 +11,16 @@ namespace Magento\Customer\Controller\Adminhtml\Group;
 
 use Magento\Customer\Service\V1\Data\CustomerGroup;
 
+/**
+ * Stores customer group data to the session.
+ * @package Magento\Customer\Controller\Adminhtml\Group Group package.
+ */
 class Save extends \Magento\Customer\Controller\Adminhtml\Group
 {
     /**
-     * Store Customer Group Data to session
+     * Stores customer group data to the session.
      *
-     * @param array $customerGroupData
+     * @param array $customerGroupData An array of customer group data.
      * @return void
      */
     protected function storeCustomerGroupDataToSession($customerGroupData)
@@ -28,7 +33,7 @@ class Save extends \Magento\Customer\Controller\Adminhtml\Group
     }
 
     /**
-     * Create or save customer group.
+     * Creates and saves a customer group.
      *
      * @return void
      */

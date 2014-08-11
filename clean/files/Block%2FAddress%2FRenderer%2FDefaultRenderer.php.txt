@@ -1,5 +1,6 @@
 <?php
 /**
+ * Constructs and gets and sets information for a default renderer object.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -12,48 +13,55 @@ use Magento\Customer\Model\Metadata\ElementFactory;
 use Magento\Framework\View\Element\AbstractBlock;
 
 /**
- * Address format renderer default
+ * Constructs and gets information about a default renderer object.
+ * @package Magento\Customer\Block\Address\Renderer Renderer package.
  */
 class DefaultRenderer extends AbstractBlock implements RendererInterface
 {
     /**
-     * Format type object
+     * Format type object.
      *
      * @var \Magento\Framework\Object
      */
     protected $_type;
 
     /**
+     * Element factory.
+     *
      * @var ElementFactory
      */
     protected $_elementFactory;
 
     /**
+     * Country factory.
+     *
      * @var \Magento\Directory\Model\CountryFactory
      */
     protected $_countryFactory;
 
     /**
+     * Metadata service.
+     *
      * @var \Magento\Customer\Service\V1\CustomerMetadataServiceInterface
      */
     protected $_metadataService;
 
     /**
-     * Address converter
+     * Address converter.
      *
      * @var \Magento\Customer\Model\Address\Converter
      */
     protected $_addressConverter;
 
     /**
-     * Constructor
+     * Constructs a default renderer object.
      *
-     * @param \Magento\Framework\View\Element\Context $context
-     * @param ElementFactory $elementFactory
-     * @param \Magento\Directory\Model\CountryFactory $countryFactory ,
-     * @param \Magento\Customer\Model\Address\Converter $addressConverter
-     * @param \Magento\Customer\Service\V1\CustomerMetadataServiceInterface $metadataService
-     * @param array $data
+     * @param \Magento\Framework\View\Element\Context $context Context.
+     * @param ElementFactory $elementFactory Element factory.
+     * @param \Magento\Directory\Model\CountryFactory $countryFactory Country factory.
+     * @param \Magento\Customer\Model\Address\Converter $addressConverter Address converter.
+     * @param \Magento\Customer\Service\V1\CustomerMetadataServiceInterface $metadataService Metadata service.
+     * @param array $data An array of data.
      */
     public function __construct(
         \Magento\Framework\View\Element\Context $context,
@@ -72,9 +80,9 @@ class DefaultRenderer extends AbstractBlock implements RendererInterface
     }
 
     /**
-     * Retrieve format type object
+     * Gets the format type.
      *
-     * @return \Magento\Framework\Object
+     * @return \Magento\Framework\Object Format type.
      */
     public function getType()
     {
@@ -82,10 +90,10 @@ class DefaultRenderer extends AbstractBlock implements RendererInterface
     }
 
     /**
-     * Retrieve format type object
+     * Sets the format type.
      *
-     * @param  \Magento\Framework\Object $type
-     * @return $this
+     * @param  \Magento\Framework\Object $type The type.
+     * @return $this Format type.
      */
     public function setType(\Magento\Framework\Object $type)
     {
@@ -94,8 +102,9 @@ class DefaultRenderer extends AbstractBlock implements RendererInterface
     }
 
     /**
-     * @param AbstractAddress|null $address
-     * @return string
+     * Gets the format for a specified address.
+     * @param AbstractAddress|null $address Address.
+     * @return string Format.
      * @deprecated All new code should use renderArray based on Metadata service
      */
     public function getFormat(AbstractAddress $address = null)

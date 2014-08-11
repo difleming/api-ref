@@ -1,5 +1,6 @@
 <?php
 /**
+ * Constructs and renders a customer account form block object.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -14,81 +15,83 @@ use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\Framework\Stdlib\DateTime\TimezoneInterface;
 
 /**
- * Customer account form block
+ * Renders a customer account form block.
  *
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
 class View extends \Magento\Backend\Block\Template implements \Magento\Backend\Block\Widget\Tab\TabInterface
 {
     /**
-     * @var \Magento\Customer\Service\V1\Data\Customer
+     * @var \Magento\Customer\Service\V1\Data\Customer Customer.
      */
     protected $_customer;
 
     /**
-     * @var \Magento\Log\Model\Customer
+     * @var \Magento\Log\Model\Customer Customer log.
      */
     protected $_customerLog;
 
     /**
-     * Core registry
+     * Core registry.
      *
      * @var \Magento\Framework\Registry
      */
     protected $_coreRegistry;
 
     /**
-     * @var \Magento\Log\Model\Visitor
+     * @var \Magento\Log\Model\Visitor Model visitor.
      */
     protected $_modelVisitor;
 
     /**
-     * @var CustomerAccountServiceInterface
+     * @var CustomerAccountServiceInterface Account service.
      */
     protected $_accountService;
 
     /**
-     * @var \Magento\Customer\Service\V1\CustomerAddressServiceInterface
+     * @var \Magento\Customer\Service\V1\CustomerAddressServiceInterface Address service.
      */
     protected $_addressService;
 
     /**
-     * @var \Magento\Customer\Service\V1\CustomerGroupServiceInterface
+     * @var \Magento\Customer\Service\V1\CustomerGroupServiceInterface Group service.
      */
     protected $_groupService;
 
     /**
-     * @var \Magento\Customer\Service\V1\Data\CustomerBuilder
+     * @var \Magento\Customer\Service\V1\Data\CustomerBuilder Customer builder.
      */
     protected $_customerBuilder;
 
     /**
-     * @var \Magento\Customer\Helper\Address
+     * @var \Magento\Customer\Helper\Address Address helper.
      */
     protected $_addressHelper;
 
     /**
-     * @var \Magento\Log\Model\CustomerFactory
+     * @var \Magento\Log\Model\CustomerFactory Customer factory.
      */
     protected $_logFactory;
 
     /**
-     * @var \Magento\Framework\Stdlib\DateTime
+     * @var \Magento\Framework\Stdlib\DateTime Date and time.
      */
     protected $dateTime;
 
     /**
-     * @param \Magento\Backend\Block\Template\Context $context
-     * @param CustomerAccountServiceInterface $accountService
-     * @param \Magento\Customer\Service\V1\CustomerAddressServiceInterface $addressService
-     * @param \Magento\Customer\Service\V1\CustomerGroupServiceInterface $groupService
-     * @param \Magento\Customer\Service\V1\Data\CustomerBuilder $customerBuilder
-     * @param \Magento\Customer\Helper\Address $addressHelper
-     * @param \Magento\Log\Model\CustomerFactory $logFactory
-     * @param \Magento\Framework\Registry $registry
-     * @param \Magento\Log\Model\Visitor $modelVisitor
-     * @param \Magento\Framework\Stdlib\DateTime $dateTime
-     * @param array $data
+     * Constructs a customer account form block object.
+     *
+     * @param \Magento\Backend\Block\Template\Context $context Context.
+     * @param CustomerAccountServiceInterface $accountService Account service.
+     * @param \Magento\Customer\Service\V1\CustomerAddressServiceInterface $addressService Address service.
+     * @param \Magento\Customer\Service\V1\CustomerGroupServiceInterface $groupService Group service.
+     * @param \Magento\Customer\Service\V1\Data\CustomerBuilder $customerBuilder Customer builder.
+     * @param \Magento\Customer\Helper\Address $addressHelper Address helper.
+     * @param \Magento\Log\Model\CustomerFactory $logFactory Log factory.
+     * @param \Magento\Framework\Registry $registry Registry.
+     * @param \Magento\Log\Model\Visitor $modelVisitor Model visitor.
+     * @param \Magento\Framework\Stdlib\DateTime $dateTime Date and time.
+     * @param array $data An array of data.
      *
      * @SuppressWarnings(PHPMD.ExcessiveParameterList)
      */
@@ -118,7 +121,8 @@ class View extends \Magento\Backend\Block\Template implements \Magento\Backend\B
     }
 
     /**
-     * @return \Magento\Customer\Service\V1\Data\Customer
+     * Gets a customer object.
+     * @return \Magento\Customer\Service\V1\Data\Customer Customer object.
      */
     public function getCustomer()
     {
@@ -131,7 +135,8 @@ class View extends \Magento\Backend\Block\Template implements \Magento\Backend\B
     }
 
     /**
-     * @return string|null
+     * Gets a customer ID.
+     * @return string|null Customer ID. Otherwise, null.
      */
     public function getCustomerId()
     {
@@ -139,8 +144,9 @@ class View extends \Magento\Backend\Block\Template implements \Magento\Backend\B
     }
 
     /**
-     * @param int $groupId
-     * @return \Magento\Customer\Service\V1\Data\CustomerGroup|null
+     * Gets a group for a specified group ID.
+     * @param int $groupId Group ID.
+     * @return \Magento\Customer\Service\V1\Data\CustomerGroup|null Customer group. Otherwise, null.
      */
     private function getGroup($groupId)
     {
@@ -153,7 +159,8 @@ class View extends \Magento\Backend\Block\Template implements \Magento\Backend\B
     }
 
     /**
-     * @return string|null
+     * Gets a group name.
+     * @return string|null Group name. Otherwise, null.
      */
     public function getGroupName()
     {
@@ -169,9 +176,9 @@ class View extends \Magento\Backend\Block\Template implements \Magento\Backend\B
     }
 
     /**
-     * Load Customer Log model
+     * Loads a customer log model.
      *
-     * @return \Magento\Log\Model\Customer
+     * @return \Magento\Log\Model\Customer Customer log model.
      */
     public function getCustomerLog()
     {
@@ -182,9 +189,9 @@ class View extends \Magento\Backend\Block\Template implements \Magento\Backend\B
     }
 
     /**
-     * Get customer creation date
+     * Get the customer creation date.
      *
-     * @return string
+     * @return string Customer creation date.
      */
     public function getCreateDate()
     {
@@ -196,7 +203,8 @@ class View extends \Magento\Backend\Block\Template implements \Magento\Backend\B
     }
 
     /**
-     * @return string
+     * Gets the store creation date.
+     * @return string Store creation date.
      */
     public function getStoreCreateDate()
     {
@@ -209,7 +217,8 @@ class View extends \Magento\Backend\Block\Template implements \Magento\Backend\B
     }
 
     /**
-     * @return string
+     * Gets the time zone for the store creation date.
+     * @return string Time zone.
      */
     public function getStoreCreateDateTimezone()
     {
@@ -221,9 +230,9 @@ class View extends \Magento\Backend\Block\Template implements \Magento\Backend\B
     }
 
     /**
-     * Get customer last login date
+     * Gets the customer last login date.
      *
-     * @return string
+     * @return string Last login date.
      */
     public function getLastLoginDate()
     {
@@ -235,7 +244,8 @@ class View extends \Magento\Backend\Block\Template implements \Magento\Backend\B
     }
 
     /**
-     * @return string
+     * Gets the store last login date.
+     * @return string Last login date.
      */
     public function getStoreLastLoginDate()
     {
@@ -248,7 +258,8 @@ class View extends \Magento\Backend\Block\Template implements \Magento\Backend\B
     }
 
     /**
-     * @return string
+     * Gets the time zone for the store last login date.
+     * @return string Time zone.
      */
     public function getStoreLastLoginDateTimezone()
     {
@@ -260,7 +271,8 @@ class View extends \Magento\Backend\Block\Template implements \Magento\Backend\B
     }
 
     /**
-     * @return string
+     * Gets the current status.
+     * @return string Status.
      */
     public function getCurrentStatus()
     {
@@ -279,7 +291,8 @@ class View extends \Magento\Backend\Block\Template implements \Magento\Backend\B
     }
 
     /**
-     * @return string
+     * Gets the is-confirmed status.
+     * @return string Status.
      */
     public function getIsConfirmedStatus()
     {
@@ -296,7 +309,8 @@ class View extends \Magento\Backend\Block\Template implements \Magento\Backend\B
     }
 
     /**
-     * @return null|string
+     * Gets the ID of the store where the customer was created.
+     * @return null|string Store ID. Otherwise, null.
      */
     public function getCreatedInStore()
     {
@@ -304,7 +318,8 @@ class View extends \Magento\Backend\Block\Template implements \Magento\Backend\B
     }
 
     /**
-     * @return int
+     * Gets the store ID.
+     * @return int Store ID.
      */
     public function getStoreId()
     {
@@ -312,7 +327,8 @@ class View extends \Magento\Backend\Block\Template implements \Magento\Backend\B
     }
 
     /**
-     * @return string|null
+     * Gets HTML to display the billing address.
+     * @return string|null Billing address HTML. Otherwise, null.
      */
     public function getBillingAddressHtml()
     {
@@ -329,7 +345,8 @@ class View extends \Magento\Backend\Block\Template implements \Magento\Backend\B
     }
 
     /**
-     * @return string
+     * Gets HTML to display an accordian.
+     * @return string Accordian HTML. Otherwise, null.
      */
     public function getAccordionHtml()
     {
@@ -337,7 +354,8 @@ class View extends \Magento\Backend\Block\Template implements \Magento\Backend\B
     }
 
     /**
-     * @return string
+     * Gets HTML to display sales.
+     * @return string Sales HTML.
      */
     public function getSalesHtml()
     {
@@ -345,7 +363,8 @@ class View extends \Magento\Backend\Block\Template implements \Magento\Backend\B
     }
 
     /**
-     * @return string
+     * Gets the tab label.
+     * @return string Tab label.
      */
     public function getTabLabel()
     {
@@ -353,7 +372,8 @@ class View extends \Magento\Backend\Block\Template implements \Magento\Backend\B
     }
 
     /**
-     * @return string
+     * Gets the tab title.
+     * @return string Tab title.
      */
     public function getTabTitle()
     {
@@ -361,7 +381,9 @@ class View extends \Magento\Backend\Block\Template implements \Magento\Backend\B
     }
 
     /**
-     * @return bool
+     * Determines whether the tab can be shown.
+     * @return bool * **true** Can be shown.
+     * * **false** Cannot be shown.
      */
     public function canShowTab()
     {
@@ -372,7 +394,9 @@ class View extends \Magento\Backend\Block\Template implements \Magento\Backend\B
     }
 
     /**
-     * @return bool
+     * Determines whether the customer ID is hidden.
+     * @return bool * **true** Hidden.
+     * * **false** Visible.
      */
     public function isHidden()
     {

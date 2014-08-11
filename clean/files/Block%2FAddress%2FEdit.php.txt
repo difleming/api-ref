@@ -1,5 +1,6 @@
 <?php
 /**
+ * Constructor and getters for editable addresses.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -13,51 +14,51 @@ use Magento\Customer\Service\V1\Data\Customer;
 use Magento\Framework\Exception\NoSuchEntityException;
 
 /**
- * Customer address edit block
+ * Constructs and gets information about a customer address edit block object.
  *
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
 class Edit extends \Magento\Directory\Block\Data
 {
     /**
-     * @var Address|null
+     * @var Address|null Address or null.
      */
     protected $_address = null;
 
     /**
-     * @var \Magento\Customer\Model\Session
+     * @var \Magento\Customer\Model\Session Session.
      */
     protected $_customerSession;
 
     /**
-     * @var \Magento\Customer\Service\V1\CustomerAddressServiceInterface
+     * @var \Magento\Customer\Service\V1\CustomerAddressServiceInterface Address service interface.
      */
     protected $_addressService;
 
     /**
-     * @var \Magento\Customer\Service\V1\Data\AddressBuilder
+     * @var \Magento\Customer\Service\V1\Data\AddressBuilder Address builder.
      */
     protected $_addressBuilder;
 
     /**
-     * @var \Magento\Customer\Helper\Session\CurrentCustomer
+     * @var \Magento\Customer\Helper\Session\CurrentCustomer Current customer.
      */
     protected $currentCustomer;
 
     /**
-     * Constructor
+     * Constructs a customer address edit block object.
      *
-     * @param \Magento\Framework\View\Element\Template\Context $context
-     * @param \Magento\Core\Helper\Data $coreData
-     * @param \Magento\Framework\Json\EncoderInterface $jsonEncoder
-     * @param \Magento\Framework\App\Cache\Type\Config $configCacheType
-     * @param \Magento\Directory\Model\Resource\Region\CollectionFactory $regionCollectionFactory
-     * @param \Magento\Directory\Model\Resource\Country\CollectionFactory $countryCollectionFactory
-     * @param \Magento\Customer\Model\Session $customerSession
-     * @param \Magento\Customer\Service\V1\CustomerAddressServiceInterface $addressService
-     * @param \Magento\Customer\Service\V1\Data\AddressBuilder $addressBuilder
-     * @param \Magento\Customer\Helper\Session\CurrentCustomer $currentCustomer
-     * @param array $data
+     * @param \Magento\Framework\View\Element\Template\Context $context Context.
+     * @param \Magento\Core\Helper\Data $coreData Core data.
+     * @param \Magento\Framework\Json\EncoderInterface $jsonEncoder JSON encoder.
+     * @param \Magento\Framework\App\Cache\Type\Config $configCacheType Config cache type.
+     * @param \Magento\Directory\Model\Resource\Region\CollectionFactory $regionCollectionFactory Region collection factory.
+     * @param \Magento\Directory\Model\Resource\Country\CollectionFactory $countryCollectionFactory Country collection factory.
+     * @param \Magento\Customer\Model\Session $customerSession Customer session.
+     * @param \Magento\Customer\Service\V1\CustomerAddressServiceInterface $addressService Address service.
+     * @param \Magento\Customer\Service\V1\Data\AddressBuilder $addressBuilder Address builder.
+     * @param \Magento\Customer\Helper\Session\CurrentCustomer $currentCustomer Current customer.
+     * @param array $data An array of data.
      *
      * @SuppressWarnings(PHPMD.ExcessiveParameterList)
      */
@@ -91,9 +92,9 @@ class Edit extends \Magento\Directory\Block\Data
     }
 
     /**
-     * Prepare the layout of the address edit block.
+     * Prepares the layout of the address edit block.
      *
-     * @return $this
+     * @return $this Address edit block layout.
      */
     protected function _prepareLayout()
     {
@@ -139,9 +140,9 @@ class Edit extends \Magento\Directory\Block\Data
     }
 
     /**
-     * Generate name block html.
+     * Generates HTML for the name block.
      *
-     * @return string
+     * @return string Name block HTML.
      */
     public function getNameBlockHtml()
     {
@@ -155,9 +156,10 @@ class Edit extends \Magento\Directory\Block\Data
     }
 
     /**
-     * Return the title, either editing an existing address, or adding a new one.
+     * Gets the title for address block.
      *
-     * @return string
+     * @return string * If the address exists, title is **Edit Address**.
+     * * If the address does not exist, title is **Add New Address**.
      */
     public function getTitle()
     {
@@ -173,9 +175,9 @@ class Edit extends \Magento\Directory\Block\Data
     }
 
     /**
-     * Return the Url to go back.
+     * Gets a URL that enables a customer to go back.
      *
-     * @return string
+     * @return string Back URL.
      */
     public function getBackUrl()
     {
@@ -191,9 +193,9 @@ class Edit extends \Magento\Directory\Block\Data
     }
 
     /**
-     * Return the Url for saving.
+     * Gets a URL that enables a customer to save.
      *
-     * @return string
+     * @return string Save URL.
      */
     public function getSaveUrl()
     {
@@ -204,9 +206,10 @@ class Edit extends \Magento\Directory\Block\Data
     }
 
     /**
-     * Return the associated address.
+     * Gets an associated address.
      *
-     * @return Address
+     * @return Address|null * The address, if present.
+     * * Otherwise, null.
      */
     public function getAddress()
     {
@@ -214,10 +217,10 @@ class Edit extends \Magento\Directory\Block\Data
     }
 
     /**
-     * Return the specified numbered street line.
+     * Gets the specified numbered street line.
      *
-     * @param int $lineNumber
-     * @return string
+     * @param int $lineNumber Line number.
+     * @return string Street.
      */
     public function getStreetLine($lineNumber)
     {
@@ -226,9 +229,10 @@ class Edit extends \Magento\Directory\Block\Data
     }
 
     /**
-     * Return the country Id.
+     * Gets the country ID.
      *
-     * @return int|null|string
+     * @return int|null * The country ID, if present.
+     * * Otherwise, null.
      */
     public function getCountryId()
     {
@@ -239,9 +243,9 @@ class Edit extends \Magento\Directory\Block\Data
     }
 
     /**
-     * Return the name of the region for the address being edited.
+     * Gets the name of the region for the address that is being edited.
      *
-     * @return string region name
+     * @return string Region name.
      */
     public function getRegion()
     {
@@ -250,9 +254,9 @@ class Edit extends \Magento\Directory\Block\Data
     }
 
     /**
-     * Return the id of the region being edited.
+     * Gets the ID of the region that is being edited.
      *
-     * @return int region id
+     * @return int Region ID.
      */
     public function getRegionId()
     {
@@ -261,9 +265,9 @@ class Edit extends \Magento\Directory\Block\Data
     }
 
     /**
-     * Retrieve the number of addresses associated with the customer given a customer Id.
+     * Gets the number of addresses that are associated with a specified customer.
      *
-     * @return int
+     * @return int Number of addresses.
      */
     public function getCustomerAddressCount()
     {
@@ -271,9 +275,10 @@ class Edit extends \Magento\Directory\Block\Data
     }
 
     /**
-     * Determine if the address can be set as the default billing address.
+     * Determines whether the address can be set as the default billing address.
      *
-     * @return bool|int
+     * @return bool|int * **true** Can set as default billing address.
+     * * **false** Cannot set as default billing address.
      */
     public function canSetAsDefaultBilling()
     {
@@ -284,9 +289,10 @@ class Edit extends \Magento\Directory\Block\Data
     }
 
     /**
-     * Determine if the address can be set as the default shipping address.
+     * Determines whether the address can be set as the default shipping address.
      *
-     * @return bool|int
+     * @return bool|int * **true** Can set as default shipping address.
+     * * **false** Cannot set as default shipping address.
      */
     public function canSetAsDefaultShipping()
     {
@@ -299,7 +305,8 @@ class Edit extends \Magento\Directory\Block\Data
     /**
      * Is the address the default billing address?
      *
-     * @return bool
+     * @return bool * **true** Yes.
+     * * **false** No.
      */
     public function isDefaultBilling()
     {
@@ -309,7 +316,8 @@ class Edit extends \Magento\Directory\Block\Data
     /**
      * Is the address the default shipping address?
      *
-     * @return bool
+     * @return bool * **true** Yes.
+     * * **false** No.
      */
     public function isDefaultShipping()
     {
@@ -317,9 +325,9 @@ class Edit extends \Magento\Directory\Block\Data
     }
 
     /**
-     * Retrieve the Customer Data using the customer Id from the customer session.
+     * Gets customer data by using the customer ID from the customer session.
      *
-     * @return Customer
+     * @return Customer Customer data.
      */
     public function getCustomer()
     {
@@ -327,9 +335,9 @@ class Edit extends \Magento\Directory\Block\Data
     }
 
     /**
-     * Return back button Url, either to customer address or account.
+     * Gets the back button URL for either the customer address or account.
      *
-     * @return string
+     * @return string Back URL for customer address or account.
      */
     public function getBackButtonUrl()
     {
@@ -341,10 +349,10 @@ class Edit extends \Magento\Directory\Block\Data
     }
 
     /**
-     * Get config value.
+     * Gets the configuration value.
      *
-     * @param string $path
-     * @return string|null
+     * @param string $path The path for which to get the configuration value.
+     * @return string|null The configuration value or null.
      */
     public function getConfig($path)
     {

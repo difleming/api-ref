@@ -1,17 +1,20 @@
 <?php
 /**
- *
+ * Performs customer list action.
  * {license_notice}
  *
  * @copyright   {copyright}
  * @license     {license_link}
  */
 namespace Magento\Customer\Controller\Adminhtml\Index;
-
+/**
+ * Performs customer list action.
+ * @package Magento\Customer\Controller\Adminhtml\Index Index package.
+ */
 class Index extends \Magento\Customer\Controller\Adminhtml\Index
 {
     /**
-     * Customers list action
+     * Performs customer list action.
      *
      * @return void
      */

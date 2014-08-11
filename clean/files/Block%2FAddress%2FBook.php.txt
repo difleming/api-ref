@@ -1,5 +1,6 @@
 <?php
 /**
+ * Constructor and getters for books.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -11,39 +12,42 @@ use Magento\Customer\Service\V1\CustomerAccountServiceInterface;
 use Magento\Customer\Service\V1\CustomerAddressServiceInterface;
 
 /**
- * Customer address book block
+ * Constructs and gets information about a customer address book block object.
  *
  * @author      Magento Core Team <core@magentocommerce.com>
+ * @package Magento\Customer\Block\Address Address package.
  */
 class Book extends \Magento\Framework\View\Element\Template
 {
     /**
-     * @var \Magento\Customer\Helper\Session\CurrentCustomer
+     * @var \Magento\Customer\Helper\Session\CurrentCustomer Current customer.
      */
     protected $currentCustomer;
 
     /**
-     * @var CustomerAccountServiceInterface
+     * @var CustomerAccountServiceInterface Customer account service object.
      */
     protected $_customerAccountService;
 
     /**
-     * @var CustomerAddressServiceInterface
+     * @var CustomerAddressServiceInterface Address service object.
      */
     protected $_addressService;
 
     /**
-     * @var \Magento\Customer\Model\Address\Config
+     * @var \Magento\Customer\Model\Address\Config Address config object.
      */
     protected $_addressConfig;
 
     /**
-     * @param \Magento\Framework\View\Element\Template\Context $context
-     * @param CustomerAccountServiceInterface $customerAccountService
-     * @param CustomerAddressServiceInterface $addressService
-     * @param \Magento\Customer\Helper\Session\CurrentCustomer $currentCustomer
-     * @param \Magento\Customer\Model\Address\Config $addressConfig
-     * @param array $data
+     * Constructs a customer address book block object.
+     *
+     * @param \Magento\Framework\View\Element\Template\Context $context Context.
+     * @param CustomerAccountServiceInterface $customerAccountService Customer account service interface object.
+     * @param CustomerAddressServiceInterface $addressService Customer address service object.
+     * @param \Magento\Customer\Helper\Session\CurrentCustomer $currentCustomer Current customer.
+     * @param \Magento\Customer\Model\Address\Config $addressConfig Address config.
+     * @param array $data An array of data.
      */
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
@@ -62,7 +66,8 @@ class Book extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * @return $this
+     * Prepares an address book layout.
+     * @return $this Address book layout.
      */
     protected function _prepareLayout()
     {
@@ -72,7 +77,8 @@ class Book extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * @return string
+     * Gets a URL that enables a customer to add an address.
+     * @return string Edit address URL.
      */
     public function getAddAddressUrl()
     {
@@ -80,7 +86,8 @@ class Book extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * @return string
+     * Gets a URL that enables a customer to navigate back.
+     * @return string Back URL.
      */
     public function getBackUrl()
     {
@@ -91,7 +98,8 @@ class Book extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * @return string
+     * Gets a URL that enables a customer to delete an address.
+     * @return string Address delete URL.
      */
     public function getDeleteUrl()
     {
@@ -99,8 +107,9 @@ class Book extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * @param int $addressId
-     * @return string
+     * Gets a URL that enables a customer to edit an address.
+     * @param int $addressId ID of the address.
+     * @return string Edit address URL.
      */
     public function getAddressEditUrl($addressId)
     {
@@ -108,7 +117,9 @@ class Book extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * @return bool
+     * Determines whether the current customer has a primary billing or shipping address.
+     * @return bool * **true** Customer has a primary address.
+     * * **false** Customer does not have a primary address.
      */
     public function hasPrimaryAddress()
     {
@@ -116,7 +127,10 @@ class Book extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * @return \Magento\Customer\Service\V1\Data\Address[]|bool
+     * Gets additional addresses for the current customer.
+     *
+     * @return \Magento\Customer\Service\V1\Data\Address[]|bool * If present, returns an array of one or more addresses.
+     * * Otherwise, returns null.
      */
     public function getAdditionalAddresses()
     {
@@ -135,10 +149,10 @@ class Book extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * Render an address as HTML and return the result
+     * Renders and returns an address as HTML.
      *
-     * @param \Magento\Customer\Service\V1\Data\Address $address
-     * @return string
+     * @param \Magento\Customer\Service\V1\Data\Address $address An address.
+     * @return string Address rendered as HTML.
      */
     public function getAddressHtml(\Magento\Customer\Service\V1\Data\Address $address = null)
     {
@@ -151,7 +165,10 @@ class Book extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * @return \Magento\Customer\Service\V1\Data\Customer|null
+     * Gets the current customer.
+     * @return \Magento\Customer\Service\V1\Data\Customer|null * Current customer.
+     * * If current customer does not exist, returns null.
+     * @throws \Magento\Framework\Exception\NoSuchEntityException Customer does not exist.
      */
     public function getCustomer()
     {
@@ -168,7 +185,9 @@ class Book extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * @return int|null
+     * Gets the default billing address.
+     * @return int|null * Default billing address.
+     * * If customer does not exist, returns null.
      */
     public function getDefaultBilling()
     {
@@ -181,8 +200,11 @@ class Book extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * @param int $addressId
-     * @return \Magento\Customer\Service\V1\Data\Address|null
+     * Gets a specified address.
+     * @param int $addressId The address ID.
+     * @return \Magento\Customer\Service\V1\Data\Address|null * The address for the specified address ID.
+     * * If no address exists for the specified ID, returns null.
+     * @throws \Magento\Framework\Exception\NoSuchEntityException Address does not exist.
      */
     public function getAddressById($addressId)
     {
@@ -194,7 +216,9 @@ class Book extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * @return int|null
+     * Gets the default shipping address.
+     * @return int|null * Default shipping address.
+     * * If customer does not exist, returns null.
      */
     public function getDefaultShipping()
     {

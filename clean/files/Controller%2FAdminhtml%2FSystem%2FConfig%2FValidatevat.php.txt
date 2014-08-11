@@ -1,5 +1,6 @@
 <?php
 /**
+ * Validates a customer value-added tax (VAT) ID.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -8,14 +9,14 @@
 namespace Magento\Customer\Controller\Adminhtml\System\Config;
 
 /**
- * VAT validation controller
+ * Validates a customer value-added tax (VAT) ID.
  *
  * @author     Magento Core Team <core@magentocommerce.com>
  */
 class Validatevat extends \Magento\Backend\App\Action
 {
     /**
-     * Perform customer VAT ID validation
+     * Validates a customer value-added tax (VAT) ID.
      *
      * @return \Magento\Framework\Object
      */

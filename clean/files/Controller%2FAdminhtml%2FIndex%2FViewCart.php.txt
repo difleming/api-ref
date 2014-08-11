@@ -1,17 +1,20 @@
 <?php
 /**
- *
+ * Shows read-only shopping cart page.
  * {license_notice}
  *
  * @copyright   {copyright}
  * @license     {license_link}
  */
 namespace Magento\Customer\Controller\Adminhtml\Index;
-
+/**
+ * Shows read-only shopping cart page.
+ * @package Magento\Customer\Controller\Adminhtml\Index Index package.
+ */
 class ViewCart extends \Magento\Customer\Controller\Adminhtml\Index
 {
     /**
-     * Get shopping cart to view only
+     * Gets and shows read-only shopping cart page.
      *
      * @return void
      */

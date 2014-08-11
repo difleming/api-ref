@@ -1,6 +1,6 @@
 <?php
 /**
- * Customer group service functions.
+ * Constructor and getter and setter functions for customer group service objects.
  *
  * {license_notice}
  *
@@ -26,7 +26,12 @@ use Magento\Tax\Service\V1\Data\TaxClass;
 use Magento\Tax\Service\V1\TaxClassServiceInterface;
 
 /**
- * Handles customer business workflow encapsulation.
+ * Use customer group service objects to create and manage customer groups.
+ *
+ * Use the methods on customer group service objects to:
+ * * Add, update, list, and delete groups.
+ * * Find groups that match specified search criteria.
+ * * Get the default group in a store, the delete status for a group, and group details.
  *
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */

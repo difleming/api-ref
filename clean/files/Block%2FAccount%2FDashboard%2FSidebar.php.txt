@@ -1,5 +1,6 @@
 <?php
 /**
+ * Constructor and getters for sidebars.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -11,66 +12,89 @@ use Magento\Wishlist\Model\Resource\Item\Collection;
 use Magento\Wishlist\Model\Wishlist;
 
 /**
- * Account dashboard sidebar
+ * Constructs and gets information for an account dashboard sidebar object.
+ *
+ * Use the account dashboard sidebar methods to:
+ * * Construct an account dashboard sidebar object.
+ * * Get a shopping cart URL.
+ * * Get the number of items currently in the shopping cart.
+ * * Get the shopping cart wish list.
+ * @package Magento\Customer\Block\Account\Dashboard
  */
 class Sidebar extends \Magento\Framework\View\Element\Template
 {
     /**
-     * @var int
+     * @var int Number of items in the shopping cart.
      */
     protected $_cartItemsCount;
 
     /**
-     * Enter description here...
+     * Wish list.
      *
      * @var Wishlist
      */
     protected $_wishlist;
 
     /**
+     * Compare items.
+     *
      * @var int
      */
     protected $_compareItems;
 
     /**
+     * Session.
+     *
      * @var \Magento\Customer\Model\Session
      */
     protected $_customerSession;
 
     /**
+     * Session.
+     *
      * @var \Magento\Checkout\Model\Session
      */
     protected $_checkoutSession;
 
     /**
+     * Quote factory.
+     *
      * @var \Magento\Sales\Model\QuoteFactory
      */
     protected $_quoteFactory;
 
     /**
+     * Wish list factory.
+     *
      * @var \Magento\Wishlist\Model\WishlistFactory
      */
     protected $_wishListFactory;
 
     /**
+     * Collection factory.
+     *
      * @var \Magento\Catalog\Model\Resource\Product\Compare\Item\CollectionFactory
      */
     protected $_itemsCompareFactory;
 
     /**
+     * Current customer.
+     *
      * @var \Magento\Customer\Helper\Session\CurrentCustomer
      */
     protected $currentCustomer;
 
     /**
-     * @param \Magento\Framework\View\Element\Template\Context $context
-     * @param \Magento\Customer\Model\Session $customerSession
-     * @param \Magento\Checkout\Model\Session $checkoutSession
-     * @param \Magento\Sales\Model\QuoteFactory $quoteFactory
-     * @param \Magento\Wishlist\Model\WishlistFactory $wishListFactory
-     * @param \Magento\Catalog\Model\Resource\Product\Compare\Item\CollectionFactory $itemsCompareFactory
-     * @param \Magento\Customer\Helper\Session\CurrentCustomer $currentCustomer
-     * @param array $data
+     *  Constructs an account dashboard sidebar object.
+     *
+     * @param \Magento\Framework\View\Element\Template\Context $context Context.
+     * @param \Magento\Customer\Model\Session $customerSession Customer session.
+     * @param \Magento\Checkout\Model\Session $checkoutSession Checkout session.
+     * @param \Magento\Sales\Model\QuoteFactory $quoteFactory Quote factory.
+     * @param \Magento\Wishlist\Model\WishlistFactory $wishListFactory Wish list factory.
+     * @param \Magento\Catalog\Model\Resource\Product\Compare\Item\CollectionFactory $itemsCompareFactory Items compare factory.
+     * @param \Magento\Customer\Helper\Session\CurrentCustomer $currentCustomer Current customer.
+     * @param array $data An array of customer data.
      */
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
@@ -93,7 +117,9 @@ class Sidebar extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * @return string
+     * Gets the URL that enables the customer to edit their shopping cart.
+     *
+     * @return string Shopping cart URL.
      */
     public function getShoppingCartUrl()
     {
@@ -101,7 +127,9 @@ class Sidebar extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * @return int
+     * Gets the number of items in the shopping cart.
+     *
+     * @return int Number of items in the shopping cart.
      */
     public function getCartItemsCount()
     {
@@ -115,7 +143,9 @@ class Sidebar extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * @return Collection
+     * Gets the wish list.
+     *
+     * @return Collection Wish list.
      */
     public function getWishlist()
     {
@@ -144,7 +174,9 @@ class Sidebar extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * @return int
+     * Gets the number of items in the wish list.
+     *
+     * @return int Number of items in the wish list.
      */
     public function getWishlistCount()
     {
@@ -152,8 +184,10 @@ class Sidebar extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * @param Wishlist $wishlistItem
-     * @return string
+     * Gets a link that enables the customer to add an item to the wish list.
+     *
+     * @param $wishlistItem A wish list item to add.
+     * @return string Link.
      */
     public function getWishlistAddToCartLink($wishlistItem)
     {
@@ -161,7 +195,9 @@ class Sidebar extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * @return int
+     * Compares items.
+     * @todo Question: I'm not clear what this function does - which items is it comparing?
+     * @return int Number of items.
      */
     public function getCompareItems()
     {
@@ -179,7 +215,9 @@ class Sidebar extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * @return string
+     * Compares JS objects.
+     * @todo Question: What does this do?
+     * @return string What does this return?
      */
     public function getCompareJsObjectName()
     {
@@ -187,7 +225,8 @@ class Sidebar extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * @return string
+     * What does this do?
+     * @return string What does this return?
      */
     public function getCompareRemoveUrlTemplate()
     {
@@ -195,7 +234,8 @@ class Sidebar extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * @return string
+     * What does this do?
+     * @return string What does this return?
      */
     public function getCompareAddUrlTemplate()
     {
@@ -203,7 +243,8 @@ class Sidebar extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * @return string
+     * What does this do?
+     * @return string What does this return?
      */
     public function getCompareUrl()
     {
@@ -211,7 +252,8 @@ class Sidebar extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * @return \Magento\Sales\Model\Quote
+     * Creates a quote.
+     * @return \Magento\Sales\Model\Quote Quote.
      */
     protected function _createQuote()
     {
@@ -219,7 +261,8 @@ class Sidebar extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * @return Wishlist
+     * Creates a wish list.
+     * @return Wishlist Wish list.
      */
     protected function _createWishList()
     {
@@ -227,7 +270,9 @@ class Sidebar extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * @return \Magento\Catalog\Model\Resource\Product\Compare\Item\Collection
+     * Creates a product compare collection.
+     * @todo What is a product compare collection?
+     * @return \Magento\Catalog\Model\Resource\Product\Compare\Item\Collection Collection.
      */
     protected function _createProductCompareCollection()
     {

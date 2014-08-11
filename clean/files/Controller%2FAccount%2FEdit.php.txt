@@ -1,6 +1,6 @@
 <?php
 /**
- *
+ * Constructs and shows the reset forgotten password page.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -14,21 +14,27 @@ use Magento\Customer\Model\Session;
 use Magento\Customer\Helper\Address as CustomerHelper;
 use Magento\Framework\UrlFactory;
 
+/**
+ * Constructs and shows the reset forgotten password page.
+ * @package Magento\Customer\Controller\Account Account package.
+ */
 class Edit extends \Magento\Customer\Controller\Account
 {
-    /** @var \Magento\Customer\Service\V1\Data\CustomerBuilder */
+    /** @var \Magento\Customer\Service\V1\Data\CustomerBuilder Customer builder. */
     protected $_customerBuilder;
 
     /**
-     * @param Context $context
-     * @param Session $customerSession
-     * @param CustomerHelper $addressHelper
-     * @param UrlFactory $urlFactory
-     * @param \Magento\Store\Model\StoreManagerInterface $storeManager
-     * @param \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig
-     * @param \Magento\Framework\App\State $appState
-     * @param CustomerAccountServiceInterface $customerAccountService
-     * @param \Magento\Customer\Service\V1\Data\CustomerBuilder $customerBuilder
+     * Constructs the reset forgotten password page.
+     *
+     * @param Context $context Context.
+     * @param Session $customerSession Customer session.
+     * @param CustomerHelper $addressHelper Address helper.
+     * @param UrlFactory $urlFactory URL factory.
+     * @param \Magento\Store\Model\StoreManagerInterface $storeManager Store manager.
+     * @param \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig Scope configuration.
+     * @param \Magento\Framework\App\State $appState Application state.
+     * @param CustomerAccountServiceInterface $customerAccountService Customer account service.
+     * @param \Magento\Customer\Service\V1\Data\CustomerBuilder $customerBuilder Customer builder.
      */
     public function __construct(
         Context $context,
@@ -55,7 +61,8 @@ class Edit extends \Magento\Customer\Controller\Account
     }
 
     /**
-     * Forgot customer account information page
+     * Shows customer account information page.
+     * Enables customer to change a password.
      *
      * @return void
      */

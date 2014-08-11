@@ -1,7 +1,6 @@
 <?php
 /**
- * Customer metadata service functions.
- *
+ * Constructor and getter functions for customer metadata service objects.
  * {license_notice}
  *
  * @copyright {copyright}
@@ -13,7 +12,12 @@ use Magento\Eav\Model\Entity\Attribute\AbstractAttribute;
 use Magento\Framework\Exception\NoSuchEntityException;
 
 /**
- * Lists and creates metadata attributes.
+ * Use customer metadata service objects to create and manage customer metadata.
+ *
+ * Use the methods on customer metadata service objects to:
+ * * Add, update, list, and delete groups.
+ * * Find groups that match specified search criteria.
+ * * Get the default group in a store, the delete status for a group, and group details.
  *
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
@@ -60,7 +64,7 @@ class CustomerMetadataService implements CustomerMetadataServiceInterface
     private $addressDataObjectMethods;
 
     /**
-     * Constructs customer metadata.
+     * Constructs a customer metadata service object.
      *
      * @param \Magento\Eav\Model\Config $eavConfig A Config object.
      * @param \Magento\Customer\Model\Resource\Form\Attribute\CollectionFactory $attrFormCollectionFactory A CollectionFactory object.

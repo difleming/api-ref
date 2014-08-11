@@ -1,17 +1,20 @@
 <?php
 /**
- *
+ * Loads and renders customer addresses list.
  * {license_notice}
  *
  * @copyright   {copyright}
  * @license     {license_link}
  */
 namespace Magento\Customer\Controller\Address;
-
+/**
+ * Loads and renders customer addresses list.
+ * @package Magento\Customer\Controller\Address Address package.
+ */
 class Index extends \Magento\Customer\Controller\Address
 {
     /**
-     * Customer addresses list
+     * Loads and renders customer addresses list.
      *
      * @return void
      */

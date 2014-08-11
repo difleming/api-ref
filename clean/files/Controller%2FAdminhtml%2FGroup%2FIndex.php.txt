@@ -1,17 +1,20 @@
 <?php
 /**
- *
+ * Loads and renders customer groups list page.
  * {license_notice}
  *
  * @copyright   {copyright}
  * @license     {license_link}
  */
 namespace Magento\Customer\Controller\Adminhtml\Group;
-
+/**
+ * Loads and renders customer groups list page.
+ * @package Magento\Customer\Controller\Adminhtml\Group Group package.
+ */
 class Index extends \Magento\Customer\Controller\Adminhtml\Group
 {
     /**
-     * Customer groups list.
+     * Loads and renders customer groups list page.
      *
      * @return void
      */

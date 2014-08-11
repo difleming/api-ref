@@ -1,46 +1,45 @@
 <?php
 /**
+ * Constructs and gets information about an admin alidate value-added tax (VAT) ID validation block.
  * {license_notice}
  *
  * @copyright   {copyright}
  * @license     {license_link}
  */
-
+namespace Magento\Customer\Block\Adminhtml\System\Config;
 /**
- * Adminhtml VAT ID validation block
+ * Constructs and gets information about an admin alidate value-added tax (VAT) ID validation block.
  *
  * @author     Magento Core Team <core@magentocommerce.com>
  */
-namespace Magento\Customer\Block\Adminhtml\System\Config;
-
 class Validatevat extends \Magento\Backend\Block\System\Config\Form\Field
 {
     /**
-     * Merchant Country Field Name
+     * Merchant country field name.
      *
      * @var string
      */
     protected $_merchantCountry = 'general_store_information_country_id';
 
     /**
-     * Merchant VAT Number Field
+     * Merchant VAT number field.
      *
      * @var string
      */
     protected $_merchantVatNumber = 'general_store_information_merchant_vat_number';
 
     /**
-     * Validate VAT Button Label
+     * Validate VAT button label.
      *
      * @var string
      */
     protected $_vatButtonLabel = 'Validate VAT Number';
 
     /**
-     * Set Merchant Country Field Name
+     * Sets the merchant country field name.
      *
-     * @param string $countryField
-     * @return \Magento\Customer\Block\Adminhtml\System\Config\Validatevat
+     * @param string $countryField Country field.
+     * @return \Magento\Customer\Block\Adminhtml\System\Config\Validatevat Validate VAT object.
      */
     public function setMerchantCountryField($countryField)
     {
@@ -49,9 +48,9 @@ class Validatevat extends \Magento\Backend\Block\System\Config\Form\Field
     }
 
     /**
-     * Get Merchant Country Field Name
+     * Gets the merchant country field name.
      *
-     * @return string
+     * @return string Country field name.
      */
     public function getMerchantCountryField()
     {
@@ -59,10 +58,10 @@ class Validatevat extends \Magento\Backend\Block\System\Config\Form\Field
     }
 
     /**
-     * Set Merchant VAT Number Field
+     * Sets the merchant VAT number field.
      *
-     * @param string $vatNumberField
-     * @return \Magento\Customer\Block\Adminhtml\System\Config\Validatevat
+     * @param string $vatNumberField VAT number field.
+     * @return \Magento\Customer\Block\Adminhtml\System\Config\Validatevat Validate VAT object.
      */
     public function setMerchantVatNumberField($vatNumberField)
     {
@@ -71,9 +70,9 @@ class Validatevat extends \Magento\Backend\Block\System\Config\Form\Field
     }
 
     /**
-     * Get Merchant VAT Number Field
+     * Gets the merchant VAT number field value.
      *
-     * @return string
+     * @return string Merchant VAT number.
      */
     public function getMerchantVatNumberField()
     {
@@ -81,10 +80,10 @@ class Validatevat extends \Magento\Backend\Block\System\Config\Form\Field
     }
 
     /**
-     * Set Validate VAT Button Label
+     * Sets the validate VAT button label.
      *
-     * @param string $vatButtonLabel
-     * @return \Magento\Customer\Block\Adminhtml\System\Config\Validatevat
+     * @param string $vatButtonLabel VAT button label.
+     * @return \Magento\Customer\Block\Adminhtml\System\Config\Validatevat Validate VAT object.
      */
     public function setVatButtonLabel($vatButtonLabel)
     {
@@ -93,9 +92,9 @@ class Validatevat extends \Magento\Backend\Block\System\Config\Form\Field
     }
 
     /**
-     * Set template to itself
+     * Sets the template to itself.
      *
-     * @return \Magento\Customer\Block\Adminhtml\System\Config\Validatevat
+     * @return \Magento\Customer\Block\Adminhtml\System\Config\Validatevat Validate VAT object.
      */
     protected function _prepareLayout()
     {
@@ -107,10 +106,10 @@ class Validatevat extends \Magento\Backend\Block\System\Config\Form\Field
     }
 
     /**
-     * Unset some non-related element parameters
+     * Clears some non-related element parameters.
      *
-     * @param \Magento\Framework\Data\Form\Element\AbstractElement $element
-     * @return string
+     * @param \Magento\Framework\Data\Form\Element\AbstractElement $element Element.
+     * @return string Rendered element.
      */
     public function render(\Magento\Framework\Data\Form\Element\AbstractElement $element)
     {
@@ -119,10 +118,10 @@ class Validatevat extends \Magento\Backend\Block\System\Config\Form\Field
     }
 
     /**
-     * Get the button and scripts contents
+     * Gets the content of the button and scripts.
      *
-     * @param \Magento\Framework\Data\Form\Element\AbstractElement $element
-     * @return string
+     * @param \Magento\Framework\Data\Form\Element\AbstractElement $element Element.
+     * @return string Content of button and scripts.
      */
     protected function _getElementHtml(\Magento\Framework\Data\Form\Element\AbstractElement $element)
     {

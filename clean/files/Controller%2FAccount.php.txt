@@ -1,5 +1,6 @@
 <?php
 /**
+ * Customer account controller.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -12,7 +13,7 @@ use Magento\Customer\Service\V1\CustomerAccountServiceInterface;
 use Magento\Customer\Service\V1\CustomerGroupServiceInterface;
 
 /**
- * Customer account controller
+ * Customer account controller.
  *
  * @SuppressWarnings(PHPMD.ExcessiveClassComplexity)
  * @SuppressWarnings(PHPMD.NumberOfChildren)
@@ -21,7 +22,7 @@ use Magento\Customer\Service\V1\CustomerGroupServiceInterface;
 class Account extends \Magento\Framework\App\Action\Action
 {
     /**
-     * List of actions that are allowed for not authorized users
+     * The list of actions that are allowed for unauthorized users.
      *
      * @var string[]
      */
@@ -40,36 +41,38 @@ class Account extends \Magento\Framework\App\Action\Action
         'loginpost'
     );
 
-    /** @var \Magento\Customer\Model\Session */
+    /** @var \Magento\Customer\Model\Session Session. */
     protected $_session;
 
-    /** @var \Magento\Customer\Helper\Address */
+    /** @var \Magento\Customer\Helper\Address Address helper. */
     protected $_addressHelper;
 
-    /** @var \Magento\Framework\UrlFactory */
+    /** @var \Magento\Framework\UrlFactory URL factory. */
     protected $_urlFactory;
 
-    /** @var \Magento\Store\Model\StoreManagerInterface */
+    /** @var \Magento\Store\Model\StoreManagerInterface Store manager. */
     protected $_storeManager;
 
-    /** @var \Magento\Framework\App\Config\ScopeConfigInterface */
+    /** @var \Magento\Framework\App\Config\ScopeConfigInterface Scope configuration. */
     protected $_scopeConfig;
 
-    /** @var \Magento\Framework\App\State */
+    /** @var \Magento\Framework\App\State Application state. */
     protected $appState;
 
-    /** @var CustomerAccountServiceInterface  */
+    /** @var CustomerAccountServiceInterface Customer account service. */
     protected $_customerAccountService;
 
     /**
-     * @param \Magento\Framework\App\Action\Context $context
-     * @param \Magento\Customer\Model\Session $customerSession
-     * @param \Magento\Customer\Helper\Address $addressHelper
-     * @param \Magento\Framework\UrlFactory $urlFactory
-     * @param \Magento\Store\Model\StoreManagerInterface $storeManager
-     * @param \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig
-     * @param \Magento\Framework\App\State $appState
-     * @param CustomerAccountServiceInterface $customerAccountService
+     * Constructs a customer account object.
+     *
+     * @param \Magento\Framework\App\Action\Context $context Context.
+     * @param \Magento\Customer\Model\Session $customerSession Customer session.
+     * @param \Magento\Customer\Helper\Address $addressHelper Address helper.
+     * @param \Magento\Framework\UrlFactory $urlFactory URL factory.
+     * @param \Magento\Store\Model\StoreManagerInterface $storeManager Store manager.
+     * @param \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig Scope configuration.
+     * @param \Magento\Framework\App\State $appState Application state.
+     * @param CustomerAccountServiceInterface $customerAccountService Customer account service.
      */
     public function __construct(
         \Magento\Framework\App\Action\Context $context,
@@ -92,9 +95,9 @@ class Account extends \Magento\Framework\App\Action\Action
     }
 
     /**
-     * Retrieve customer session model object
+     * Gets the customer session model object.
      *
-     * @return \Magento\Customer\Model\Session
+     * @return \Magento\Customer\Model\Session Customer session model object.
      */
     protected function _getSession()
     {
@@ -102,9 +105,9 @@ class Account extends \Magento\Framework\App\Action\Action
     }
 
     /**
-     * Get list of actions that are allowed for not authorized users
+     * Gets the list of actions that are allowed for unauthorized users.
      *
-     * @return string[]
+     * @return string[] Array of actions.
      */
     protected function _getAllowedActions()
     {
@@ -112,10 +115,10 @@ class Account extends \Magento\Framework\App\Action\Action
     }
 
     /**
-     * Dispatch request
+     * Dispatches a request.
      *
-     * @param RequestInterface $request
-     * @return \Magento\Framework\App\ResponseInterface
+     * @param RequestInterface $request Request interface.
+     * @return \Magento\Framework\App\ResponseInterface Response interface.
      */
     public function dispatch(RequestInterface $request)
     {
@@ -143,9 +146,9 @@ class Account extends \Magento\Framework\App\Action\Action
     }
 
     /**
-     * Adds welcome message and returns success URL
+     * Adds welcome message and returns success URL.
      *
-     * @return string
+     * @return string Success URL.
      */
     protected function _welcomeCustomer()
     {
@@ -163,7 +166,7 @@ class Account extends \Magento\Framework\App\Action\Action
     }
 
     /**
-     * Adds a welcome message to the session
+     * Adds a welcome message to the session.
      *
      * @return void
      */
@@ -199,10 +202,11 @@ class Account extends \Magento\Framework\App\Action\Action
     }
 
     /**
-     * Check whether VAT ID validation is enabled
+     * Checks whether VAT ID validation is enabled.
      *
-     * @param \Magento\Store\Model\Store|string|int $store
-     * @return bool
+     * @param \Magento\Store\Model\Store|string|int $store Store ID.
+     * @return bool * **true** Enabled.
+     * * **false** Disabled.
      */
     protected function _isVatValidationEnabled($store = null)
     {
@@ -210,7 +214,8 @@ class Account extends \Magento\Framework\App\Action\Action
     }
 
     /**
-     * @return \Magento\Framework\UrlInterface
+     * Creates success URL.
+     * @return \Magento\Framework\UrlInterface URL interface.
      */
     protected function _createUrl()
     {

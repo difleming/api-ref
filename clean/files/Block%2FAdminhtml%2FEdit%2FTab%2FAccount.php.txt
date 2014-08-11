@@ -1,5 +1,6 @@
 <?php
 /**
+ * Constructs, initializes, and gets information about a customer account form block.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -11,7 +12,8 @@ use Magento\Customer\Service\V1\CustomerAccountServiceInterface;
 use \Magento\Framework\Service\DataObjectConverter;
 
 /**
- * Customer account form block
+ * Constructs, initializes, and gets information about a
+ * customer account form block.
  *
  * @SuppressWarnings(PHPMD.DepthOfInheritance)
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
@@ -19,67 +21,69 @@ use \Magento\Framework\Service\DataObjectConverter;
 class Account extends GenericMetadata
 {
     /**
-     * Disable Auto Group Change Attribute Name
+     * Disables auto group change attribute name.
      */
     const DISABLE_ATTRIBUTE_NAME = 'disable_auto_group_change';
 
     /**
-     * @var \Magento\Customer\Model\Metadata\FormFactory
+     * @var \Magento\Customer\Model\Metadata\FormFactory Customer form factory.
      */
     protected $_customerFormFactory;
 
     /**
-     * @var \Magento\Store\Model\System\Store
+     * @var \Magento\Store\Model\System\Store System store.
      */
     protected $_systemStore;
 
     /**
-     * @var \Magento\Framework\Json\EncoderInterface
+     * @var \Magento\Framework\Json\EncoderInterface JSON encoder.
      */
     protected $_jsonEncoder;
 
     /**
-     * @var \Magento\Customer\Helper\Data
+     * @var \Magento\Customer\Helper\Data Customer helper.
      */
     protected $_customerHelper;
 
     /**
-     * @var \Magento\Customer\Service\V1\CustomerAccountServiceInterface
+     * @var \Magento\Customer\Service\V1\CustomerAccountServiceInterface Customer account service.
      */
     protected $_customerAccountService;
 
     /**
-     * @var \Magento\Customer\Service\V1\CustomerMetadataServiceInterface
+     * @var \Magento\Customer\Service\V1\CustomerMetadataServiceInterface Customer metadata service.
      */
     protected $_customerMetadataService;
 
     /**
-     * @var \Magento\Customer\Service\V1\Data\CustomerBuilder
+     * @var \Magento\Customer\Service\V1\Data\CustomerBuilder Customer builder.
      */
     protected $_customerBuilder;
 
     /**
-     * @var \Magento\Customer\Model\Metadata\Form
+     * @var \Magento\Customer\Model\Metadata\Form Customer form.
      */
     protected $_customerForm;
 
     /**
-     * @var \Magento\Customer\Service\V1\Data\Customer
+     * @var \Magento\Customer\Service\V1\Data\Customer Customer data object.
      */
     protected $_customerDataObject;
 
     /**
-     * @param \Magento\Backend\Block\Template\Context $context
-     * @param \Magento\Framework\Registry $registry
-     * @param \Magento\Framework\Data\FormFactory $formFactory
-     * @param \Magento\Framework\Json\EncoderInterface $jsonEncoder
-     * @param \Magento\Customer\Model\Metadata\FormFactory $customerFormFactory
-     * @param \Magento\Store\Model\System\Store $systemStore
-     * @param \Magento\Customer\Helper\Data $customerHelper
-     * @param \Magento\Customer\Service\V1\CustomerAccountServiceInterface $customerAccountService
-     * @param \Magento\Customer\Service\V1\CustomerMetadataServiceInterface $customerMetadataService
-     * @param \Magento\Customer\Service\V1\Data\CustomerBuilder $customerBuilder
-     * @param array $data
+     * Constructs a customer account form block.
+     *
+     * @param \Magento\Backend\Block\Template\Context $context Context.
+     * @param \Magento\Framework\Registry $registry Registry.
+     * @param \Magento\Framework\Data\FormFactory $formFactory Form factory.
+     * @param \Magento\Framework\Json\EncoderInterface $jsonEncoder JSON encoder.
+     * @param \Magento\Customer\Model\Metadata\FormFactory $customerFormFactory Customer form factory.
+     * @param \Magento\Store\Model\System\Store $systemStore System store.
+     * @param \Magento\Customer\Helper\Data $customerHelper Customer helper.
+     * @param \Magento\Customer\Service\V1\CustomerAccountServiceInterface $customerAccountService Customer acount service.
+     * @param \Magento\Customer\Service\V1\CustomerMetadataServiceInterface $customerMetadataService Customer metadata service.
+     * @param \Magento\Customer\Service\V1\Data\CustomerBuilder $customerBuilder Customer builder.
+     * @param array $data An array data.
      *
      * @SuppressWarnings(PHPMD.ExcessiveParameterList)
      */
@@ -107,9 +111,9 @@ class Account extends GenericMetadata
     }
 
     /**
-     * Initialize form
+     * Initializes the form.
      *
-     * @return $this
+     * @return $this Initialized form.
      *
      * @SuppressWarnings(PHPMD.NPathComplexity)
      * @SuppressWarnings(PHPMD.CyclomaticComplexity)
@@ -131,10 +135,10 @@ class Account extends GenericMetadata
     }
 
     /**
-     * Customize fieldset elements
+     * Customizes field set elements.
      *
-     * @param \Magento\Framework\Data\Form\Element\Fieldset $fieldset
-     * @return array
+     * @param \Magento\Framework\Data\Form\Element\Fieldset $fieldset Field set.
+     * @return array Array of field set elements.
      */
     protected function _customizeFieldset($fieldset)
     {
@@ -177,11 +181,12 @@ class Account extends GenericMetadata
     }
 
     /**
-     * Check if type of Prefix and Suffix elements should be changed from text to select and change it if need.
+     * Determines whether the type of prefix and suffix elements should change from text to select.
+     * If so, make the change.
      *
-     * @param string $elementName
-     * @param \Magento\Framework\Data\Form\Element\Fieldset $fieldset
-     * @return null
+     * @param string $elementName Element name.
+     * @param \Magento\Framework\Data\Form\Element\Fieldset $fieldset Field set.
+     * @return null Null.
      */
     protected function _checkElementType($elementName, $fieldset)
     {
@@ -214,9 +219,9 @@ class Account extends GenericMetadata
     }
 
     /**
-     * Obtain customer data from session and create customer object
+     * Gets customer data from the session and creates a customer object.
      *
-     * @return \Magento\Customer\Service\V1\Data\Customer
+     * @return \Magento\Customer\Service\V1\Data\Customer Customer object.
      */
     protected function _getCustomerDataObject()
     {
@@ -229,9 +234,9 @@ class Account extends GenericMetadata
     }
 
     /**
-     * Return predefined additional element types
+     * Gets the predefined additional element types.
      *
-     * @return array
+     * @return array Array of predefined additional element types.
      */
     protected function _getAdditionalElementTypes()
     {
@@ -243,9 +248,9 @@ class Account extends GenericMetadata
     }
 
     /**
-     * Initialize attribute set.
+     * Initializes the attribute set.
      *
-     * @return \Magento\Customer\Service\V1\Data\Eav\AttributeMetadata[]
+     * @return \Magento\Customer\Service\V1\Data\Eav\AttributeMetadata[] Array of initialized attributes.
      */
     protected function _initCustomerAttributes()
     {
@@ -259,9 +264,9 @@ class Account extends GenericMetadata
     }
 
     /**
-     * Initialize customer form
+     * Initializes the customer form.
      *
-     * @return \Magento\Customer\Model\Metadata\Form $customerForm
+     * @return \Magento\Customer\Model\Metadata\Form $customerForm Initialized customer form.
      */
     protected function _getCustomerForm()
     {
@@ -276,11 +281,11 @@ class Account extends GenericMetadata
     }
 
     /**
-     * Handle Read-Only customer
+     * Handles a read-only customer.
      *
-     * @param \Magento\Framework\Data\Form $form
-     * @param int $customerId
-     * @param \Magento\Customer\Service\V1\Data\Eav\AttributeMetadata[] $attributes
+     * @param \Magento\Framework\Data\Form $form Form.
+     * @param int $customerId Customer ID.
+     * @param \Magento\Customer\Service\V1\Data\Eav\AttributeMetadata[] $attributes An array of attributes.
      * @return void
      */
     protected function _handleReadOnlyCustomer($form, $customerId, $attributes)
@@ -296,10 +301,10 @@ class Account extends GenericMetadata
     }
 
     /**
-     * Create New Customer form fields
+     * Creates new customer form fields.
      *
-     * @param \Magento\Framework\Data\Form\Element\Fieldset $fieldset
-     * @return array
+     * @param \Magento\Framework\Data\Form\Element\Fieldset $fieldset Field set.
+     * @return array Array of form fields.
      */
     protected function _addNewCustomerFormFields($fieldset)
     {
@@ -333,10 +338,10 @@ class Account extends GenericMetadata
     }
 
     /**
-     * Edit/View Existing Customer form fields
+     * Adds edit or view customer form fields.
      *
-     * @param \Magento\Framework\Data\Form\Element\Fieldset $fieldset
-     * @return string[] Values to set on the form
+     * @param \Magento\Framework\Data\Form\Element\Fieldset $fieldset Field set.
+     * @return string[] An array of values set on the form.
      */
     protected function _addEditCustomerFormFields($fieldset)
     {
@@ -382,9 +387,9 @@ class Account extends GenericMetadata
     }
 
     /**
-     * Called when account needs confirmation and does not have a confirmation key.
+     * Gets a random confirmation key for an account that lacks a confirmation key.
      *
-     * @return string confirmation key
+     * @return string Random confirmation key.
      */
     protected function _getRandomConfirmationKey()
     {

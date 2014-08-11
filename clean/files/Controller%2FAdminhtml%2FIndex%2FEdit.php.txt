@@ -1,6 +1,6 @@
 <?php
 /**
- *
+ * Performs customer edit action.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -12,10 +12,14 @@ use Magento\Customer\Service\V1\Data\Customer;
 use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\Customer\Service\V1\Data\AddressConverter;
 
+/**
+ * Performs customer edit action.
+ * @package Magento\Customer\Controller\Adminhtml\Index Index package.
+ */
 class Edit extends \Magento\Customer\Controller\Adminhtml\Index
 {
     /**
-     * Customer edit action
+     * Performs customer edit action.
      *
      * @return void
      * @SuppressWarnings(PHPMD.CyclomaticComplexity)

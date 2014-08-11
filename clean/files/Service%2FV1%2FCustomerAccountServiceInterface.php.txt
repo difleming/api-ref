@@ -8,12 +8,12 @@
  * @license {license}
  */
 namespace Magento\Customer\Service\V1;
-
 /**
+ * Enables customer account creation and management.
  *
- * Enables creation and management of customer accounts.
+ * The constants define some default values for new accounts.
  *
- * The methods for customer accounts enable users to:
+ * The methods enable you to:
  * * Create customers with a password or a hashed password.
  * * Update, show information for, show details for, and delete customer accounts.
  * * Activate, find, or log in a customer.
@@ -21,20 +21,20 @@ namespace Magento\Customer\Service\V1;
  * * Get customer attributes, such as confirmation status, can update, can delete, and is customer in store.
  * * Validate a token in a reset passwork link.
  * * Send or resend email to customer.
- *
  */
 interface CustomerAccountServiceInterface
 {
     /**#@+
-     * Service metadata
+     * Constants for the customer account service.
+     */
+    /**
+     * New email account registration status.
      */
     const NEW_ACCOUNT_EMAIL_REGISTERED = 'registered';
-
     /**
      * Confirmation email type. Default is confirmation.
      */
     const NEW_ACCOUNT_EMAIL_CONFIRMATION = 'confirmation';
-
     /**
      * Account confirmation status.
      */
@@ -42,14 +42,11 @@ interface CustomerAccountServiceInterface
     /**
      * Account confirmation is required.
      */
-
     const ACCOUNT_CONFIRMATION_REQUIRED = 'account_confirmation_required';
     /**
      * Account confirmation is not required.
      */
-
     const ACCOUNT_CONFIRMATION_NOT_REQUIRED = 'account_confirmation_not_required';
-
     /**
      * Send reminder email.
      */
@@ -57,7 +54,6 @@ interface CustomerAccountServiceInterface
     /**
      * Send reset email.
      */
-
     const EMAIL_RESET = 'email_reset';
     /**
      * Default password length. Default is 6.
@@ -66,16 +62,20 @@ interface CustomerAccountServiceInterface
     /**#@-*/
 
     /**
-     * Creates a customer account.
+     * Creates a customer account with thespecified customer details, password, and redirect URL.
+     * 
+     * The *$password* parameter is ignored if a hashed password is stored for the customer.
      *
-     * Customer account includes specified customer details, password, and redirect URL.
      * Templates can use the redirect URL to direct the customer to a product that they browsed after
      * they clicked the confirmation link.
      *
-     * @param \Magento\Customer\Service\V1\Data\CustomerDetails $customerDetails Required. Customer details object.
-     * @param string $password Optional. Customer password. If null, a random password is assigned. Disregard if $hash is not empty.
+     * CustomerDetails is required and contains an array of address data. If no changes
+     * are to be made to addresses, this array must be present and null.
+     *
+     * @param Data\CustomerDetails $customerDetails An array of address data.
+     * @param null $password Optional. Customer password. Default is null, which assigns a random password. 
      * @param string $redirectUrl Optional. The redirect URL to include in the confirmation email.
-     * @return \Magento\Customer\Service\V1\Data\Customer A Customer object.
+     * @return \Magento\Customer\Service\V1\Data\Customer A customer account service object.
      * @throws \Magento\Framework\Exception\InputException Input is not valid.
      * @throws \Magento\Framework\Exception\State\InputMismatchException The specified email is in use.
      */
@@ -86,19 +86,22 @@ interface CustomerAccountServiceInterface
     );
 
     /**
-     * Creates a customer account with specified hashed password.
+     * Creates a customer account with the specified hashed password.
      *
      * Templates can use the redirect URL to direct the customer to a product that they browsed after
      * they clicked the confirmation link.
      *
+     * CustomerDetails is required and contains an array of address data. If no changes
+     * are to be made to addresses, this array must be present and null.
+     *
      * @internal Do not expose this function as a web API.
      *
-     * @param \Magento\Customer\Service\V1\Data\CustomerDetails $customerDetails
-     * @param string $hash Password hash that we can save directly
-     * @param string $redirectUrl The redirect URL to include in the confirmation email.
+     * @param Data\CustomerDetails $customerDetails An array of address data.
+     * @param $hash Hashed password that can be saved.
+     * @param string $redirectUrl Optional. The redirect URL to include in the confirmation email.
      * @return \Magento\Customer\Service\V1\Data\Customer
-     * @throws \Magento\Framework\Exception\InputException If bad input is provided
-     * @throws \Magento\Framework\Exception\State\InputMismatchException If the provided email is already used
+     * @throws \Magento\Framework\Exception\InputException Input was not valid.
+     * @throws \Magento\Framework\Exception\State\InputMismatchException The specified email was in use.
      */
     public function createCustomerWithPasswordHash(
         \Magento\Customer\Service\V1\Data\CustomerDetails $customerDetails,
@@ -107,33 +110,34 @@ interface CustomerAccountServiceInterface
     );
 
     /**
-     * Updates account details for a customer. 
+     * Updates the account details for a customer.
      * 
-     * CustomerDetails contains a required array of address data. If no changes
+     * CustomerDetails is required and contains an array of address data. If no changes
      * are to be made to addresses, this array must be present and null.
      *
-     * @param \Magento\Customer\Service\V1\Data\CustomerDetails $customerDetails A customerDetails object.
-     * @return bool (True) The operation succeeded. (False) The operation failed.
-     * @throws \Magento\Framework\Exception\NoSuchEntityException The customer was not found.
+     * @param Data\CustomerDetails $customerDetails An array of address data.
+     * @return bool * **true** -  The update succeeded.
+     * * **false** -  The update failed.
+     * @throws \Magento\Framework\Exception\NoSuchEntityException The specified customer does not exist.
      */
     public function updateCustomer(\Magento\Customer\Service\V1\Data\CustomerDetails $customerDetails);
 
     /**
      * Shows details for a specified customer.
      *
-     * @param int $customerId
-     * @throws \Magento\Framework\Exception\NoSuchEntityException The specified customer was not found.
-     * @return \Magento\Customer\Service\V1\Data\Customer
+     * @param int $customerId The customer ID.
+     * @throws \Magento\Framework\Exception\NoSuchEntityException The specified customer does not exist.
+     * @return \Magento\Customer\Service\V1\Data\Customer A customer account service object.
      */
     public function getCustomer($customerId);
 
     /**
-     * Activates a specified customer account by using a key from a confirmation email.
+     * Activates a specified customer account by using a confirmation token from a confirmation email.
      *
-     * @param int $customerId
-     * @param string $confirmationKey Sent to customer in a confirmation email.
-     * @return \Magento\Customer\Service\V1\Data\Customer
-     * @throws \Magento\Framework\Exception\NoSuchEntityException The customer does not exist.
+     * @param int $customerId The customer ID.
+     * @param string $confirmationKey A confirmation token that was emailed to the customer.
+     * @return \Magento\Customer\Service\V1\Data\Customer A customer account service object.
+     * @throws \Magento\Framework\Exception\NoSuchEntityException The specified customer does not exist.
      * @throws \Magento\Framework\Exception\State\InputMismatchException The token is not valid.
      * @throws \Magento\Framework\Exception\State\InvalidTransitionException The account is already active.
      */
@@ -142,43 +146,44 @@ interface CustomerAccountServiceInterface
     /**
      * Finds customers that match specified search criteria.
      *
-     * @param \Magento\Framework\Service\V1\Data\SearchCriteria $searchCriteria
-     * @throws \Magento\Framework\Exception\InputException If the input is not valid.
-     * @return \Magento\Customer\Service\V1\Data\SearchResults containing Data\CustomerDetails
+     * @param \Magento\Framework\Service\V1\Data\SearchCriteria $searchCriteria Search criteria.
+     * @throws \Magento\Framework\Exception\InputException The input is not valid.
+     * @return \Magento\Customer\Service\V1\Data\SearchResults containing Data\CustomerDetails Search results.
      */
     public function searchCustomers(\Magento\Framework\Service\V1\Data\SearchCriteria $searchCriteria);
 
     /**
      * Logs in to a customer account by using a specified user name and password.
      *
-     * @param string $username username in plain-text
-     * @param string $password password in plain-text
-     * @return \Magento\Customer\Service\V1\Data\Customer
-     * @throws \Magento\Framework\Exception\AuthenticationException If authentication fails.
-     * @throws \Magento\Framework\Exception\EmailNotConfirmedException If account is unconfirmed.
-     * @throws \Magento\Framework\Exception\InvalidEmailOrPasswordException If email or password is not valid.
+     * @param string $username The user name in plain text.
+     * @param string $password The password in plain text.
+     * @return \Magento\Customer\Service\V1\Data\Customer A customer account service object.
+     * @throws \Magento\Framework\Exception\AuthenticationException Authentication failed.
+     * @throws \Magento\Framework\Exception\EmailNotConfirmedException The account is unconfirmed.
+     * @throws \Magento\Framework\Exception\InvalidEmailOrPasswordException The specified email or password is not valid.
      */
     public function authenticate($username, $password);
 
     /**
      * Changes the password for a specified customer.
      *
-     * @param int $customerId
-     * @param string $currentPassword
-     * @param string $newPassword
-     * @return bool Password change succeeded (True). Password change failed (False).
-     * @throws \Magento\Framework\Exception\NoSuchEntityException If specified customerId is not found.
-     * @throws \Magento\Framework\Exception\InvalidEmailOrPasswordException If password is not valid.
+     * @param int $customerId The customer ID.
+     * @param string $currentPassword The current password.
+     * @param string $newPassword The new password.
+     * @return bool * **true** -  Password change succeeded. 
+     * * **false** -  Password change failed.
+     * @throws \Magento\Framework\Exception\NoSuchEntityException The specified customer does not exist.
+     * @throws \Magento\Framework\Exception\InvalidEmailOrPasswordException The current password is not valid.
      */
     public function changePassword($customerId, $currentPassword, $newPassword);
 
     /**
      * Gets the hashed password for a customer. 
      * 
-     * You can save this password to a database.
+     * You can save this password to the database.
      *
-     * @param string $password
-     * @return string
+     * @param string $password The password.
+     * @return string A hashed password. You can save this password to the database.
      * @todo this method has to be removed when the checkout process refactored in the way it won't require to pass
      *       a password through requests
      */
@@ -187,13 +192,13 @@ interface CustomerAccountServiceInterface
     /**
      * Validates a specified password reset token for a specified customer.
      *
-     * @param int $customerId
-     * @param string $resetPasswordLinkToken
+     * @param int $customerId The customer ID.
+     * @param string $resetPasswordLinkToken A reset password token.
      * @return void
-     * @throws \Magento\Framework\Exception\State\InputMismatchException If token is mismatched.
-     * @throws \Magento\Framework\Exception\State\ExpiredException If token is expired.
-     * @throws \Magento\Framework\Exception\InputException If token or customer ID is not valid.
-     * @throws \Magento\Framework\Exception\NoSuchEntityException Customer does not exist.
+     * @throws \Magento\Framework\Exception\State\InputMismatchException The token is mismatched.
+     * @throws \Magento\Framework\Exception\State\ExpiredException The token is expired.
+     * @throws \Magento\Framework\Exception\InputException The token or customer ID is not valid.
+     * @throws \Magento\Framework\Exception\NoSuchEntityException The specified customer does not exist.
      */
     public function validateResetPasswordLinkToken($customerId, $resetPasswordLinkToken);
 
@@ -202,8 +207,7 @@ interface CustomerAccountServiceInterface
      *
      * @param string $email
      * @param string $template Type of email to send. Must be one of the email constants.
-     * @param int $websiteId Optional id. If the website ID is not provided,
-     *                       it is retrieved from the store manager.
+     * @param int $websiteId Optional. The website ID. Default is the current website ID retrieved from the store manager.
      * @return void
      */
     public function initiatePasswordReset($email, $template, $websiteId = null);
@@ -213,14 +217,14 @@ interface CustomerAccountServiceInterface
      * 
      * The reset token is required.
      *
-     * @param int $customerId Required. The customer ID.
-     * @param string $resetToken Required. The reset token emailed to the customer.
-     * @param string $newPassword Required. The new password.
+     * @param int $customerId The customer ID.
+     * @param string $resetToken The reset token emailed to the customer.
+     * @param string $newPassword The new password.
      * @return void
-     * @throws \Magento\Framework\Exception\State\InputMismatchException If token is mismatched
-     * @throws \Magento\Framework\Exception\State\ExpiredException If token is expired
-     * @throws \Magento\Framework\Exception\InputException If token or customer id is invalid
-     * @throws \Magento\Framework\Exception\NoSuchEntityException Customer doesn't exist
+     * @throws \Magento\Framework\Exception\State\InputMismatchException The token is mismatched.
+     * @throws \Magento\Framework\Exception\State\ExpiredException The token is expired.
+     * @throws \Magento\Framework\Exception\InputException The token or customer ID is not valid.
+     * @throws \Magento\Framework\Exception\NoSuchEntityException The specified customer does not exist.
      */
     public function resetPassword($customerId, $resetToken, $newPassword);
 
@@ -229,7 +233,7 @@ interface CustomerAccountServiceInterface
      *
      * @param int $customerId
      * @return string The account confirmation status. The status is xx, xx, or xx.
-     * @throws \Magento\Framework\Exception\NoSuchEntityException The customer with customer ID is not found.
+     * @throws \Magento\Framework\Exception\NoSuchEntityException The specified customer does not exist.
      */
     public function getConfirmationStatus($customerId);
 
@@ -262,94 +266,100 @@ interface CustomerAccountServiceInterface
      * Indicates whether the specified customer can be modified or is read-only.
      *
      * @param int $customerId
-     * @throws \Magento\Framework\Exception\NoSuchEntityException The customer with customer ID is not found.
-     * @return bool Modifications permitted (True). Read-only (False).
+     * @throws \Magento\Framework\Exception\NoSuchEntityException The specified customer does not exist.
+     * @return bool * **true** -  Modifications permitted. 
+     * * **false** -  Read-only.
      */
     public function canModify($customerId);
 
     /**
-     * Indicates whether the specified customer can be deleted or is read-only.
+     * Indicates whether or not the specified customer can be deleted.
      *
-     * @param int $customerId
-     * @throws \Magento\Framework\Exception\NoSuchEntityException The customer with customer ID is not found.
-     * @return bool Customer can be deleted (True). Read-only (False).
+     * @param int $customerId The customer ID.
+     * @throws \Magento\Framework\Exception\NoSuchEntityException The specified customer does not exist.
+     * @return bool * **true** -  Customer can be deleted. 
+     * * **false** -  Read-only.
      */
     public function canDelete($customerId);
 
     /**
-     * Shows customer details.
+     * Shows details for a specified customer.
      *
-     * @param int $customerId
-     * @throws \Magento\Framework\Exception\NoSuchEntityException The customer with customer ID is not found.
-     * @return \Magento\Customer\Service\V1\Data\CustomerDetails
+     * @param int $customerId The customer ID.
+     * @throws \Magento\Framework\Exception\NoSuchEntityException The specified customer does not exist.
+     * @return \Magento\Customer\Service\V1\Data\CustomerDetails An array of address data.
      */
     public function getCustomerDetails($customerId);
 
     /**
      * Deletes a specified customer.
      *
-     * @param int $customerId
+     * @param int $customerId The customer ID.
      * @throws \Magento\Customer\Exception Delete failed.
-     * @throws \Magento\Framework\Exception\NoSuchEntityException The specified customer was not found.
-     * @return bool Delete succeeded (True). Delete failed (False).
+     * @throws \Magento\Framework\Exception\NoSuchEntityException The specified customer does not exist.
+     * @return bool * **true** -  Delete succeeded. 
+     * * **false** -  Delete failed.
      */
     public function deleteCustomer($customerId);
 
     /**
      * Indicates whether an email is associated with a customer account in the specified website.
      *
-     * @param string $customerEmail
-     * @param int $websiteId If not set, will use the current websiteId
-     * @return bool True - Email is available. False - Email is not available.
+     * @param string $customerEmail Customer email address.
+     * @param int $websiteId Optional. The website ID. Default is the current website ID.
+     * @return bool * **true** -  Email is available.
+     * * **false** -  Email is not available.
      */
     public function isEmailAvailable($customerEmail, $websiteId = null);
 
     /**
      * Indicates whether the specified customer is in the store.
      *
-     * @param int $customerWebsiteId
+     * @param int $customerWebsiteId The website ID.
      * @param int $storeId
-     * @return bool Customer is in store (True). Customer is not in store (False).
+     * @return bool * **true** -  In store.
+     * * **false** -  Not in store.
      */
     public function isCustomerInStore($customerWebsiteId, $storeId);
 
     /**
      * Shows information for a specified customer.
      *
-     * Specify the customer by customer email and, optionally, website ID.
+     * Specify the customer by email and, optionally, website ID.
      *
-     * @param string $customerEmail
-     * @param int $websiteId If not set, will use the current websiteId
-     * @throws \Magento\Framework\Exception\NoSuchEntityException Customer with customerEmail is not found.
-     * @return \Magento\Customer\Service\V1\Data\Customer
+     * @param string $customerEmail The customer email address.
+     * @param int $websiteId Optional. The website ID. Default is the current website ID.
+     * @throws \Magento\Framework\Exception\NoSuchEntityException The specified customer does not exist.
+     * @return \Magento\Customer\Service\V1\Data\Customer A customer object.
      */
     public function getCustomerByEmail($customerEmail, $websiteId = null);
 
     /**
      * Shows details for a specified customer.
      *
-     * Specify the customer by customer email and, optionally, website ID.
+     * Specify the customer by email and, optionally, website ID.
      *
-     * @param string $customerEmail Required. The customer email.
-     * @param int $websiteId Optional. The website ID. If not set, the current website ID is used.
-     * @throws \Magento\Framework\Exception\NoSuchEntityException The specified customer was not found.
-     * @return \Magento\Customer\Service\V1\Data\CustomerDetails CustomerDetails object.
+     * @param string $customerEmail The customer email.
+     * @param int $websiteId Optional. The website ID. Default is the current website ID.
+     * @throws \Magento\Framework\Exception\NoSuchEntityException The specified customer does not exist.
+     * @return \Magento\Customer\Service\V1\Data\CustomerDetails An array of address data.
      */
     public function getCustomerDetailsByEmail($customerEmail, $websiteId = null);
 
     /**
      * Updates account details for a specified customer.
      *
-     * Specify the customer by customer email and, optionally, website ID.
+     * Specify the customer by email and, optionally, website ID.
      * 
-     * CustomerDetails contains a required array of address data. If no changes
+     * CustomerDetails is required and contains an array of address data. If no changes
      * are to be made to addresses, this array must be present and null.
      *
-     * @param string $customerEmail
-     * @param \Magento\Customer\Service\V1\Data\CustomerDetails $customerDetails
-     * @param int $websiteId If not set, will use the current websiteId
-     * @throws \Magento\Framework\Exception\NoSuchEntityException Customer with customerDetails is not found.
-     * @return bool Update succeeded (True). Update failed (False).
+     * @param string $customerEmail The customer email.
+     * @param \Magento\Customer\Service\V1\Data\CustomerDetails $customerDetails An array of address data.
+     * @param int $websiteId Optional. The website ID. Default is the current website ID.
+     * @throws \Magento\Framework\Exception\NoSuchEntityException The specified customer does not exist.
+     * @return bool * **true** -  Update succeeded.
+     * * **false** -  Update failed.
      */
     public function updateCustomerDetailsByEmail(
         $customerEmail,
@@ -360,13 +370,14 @@ interface CustomerAccountServiceInterface
     /**
      * Deletes a specified customer.
      *
-     * Specify the customer by customer email and, optionally, website ID.
+     * Specify the customer by email and, optionally, website ID.
      *
-     * @param string $customerEmail Required. The customer email.
-     * @param int $websiteId Optional. The website ID. If not set, the current website ID is used.
+     * @param string $customerEmail The customer email.
+     * @param int $websiteId Optional. The website ID. Default is the current website ID.
      * @throws \Magento\Customer\Exception Delete failed.
-     * @throws \Magento\Framework\Exception\NoSuchEntityException Customer with specified customer ID was not found.
-     * @return bool Delete succeeded (True). Delete failed (False).
+     * @throws \Magento\Framework\Exception\NoSuchEntityException The specified customer does not exist.
+     * @return bool * **true** -  Delete succeeded.
+     * * **false** -  Delete failed.
      */
     public function deleteCustomerByEmail($customerEmail, $websiteId = null);
 }

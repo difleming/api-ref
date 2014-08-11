@@ -1,6 +1,6 @@
 <?php
 /**
- *
+ * Change customer password action.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -13,35 +13,41 @@ use Magento\Framework\Exception\InputException;
 use Magento\Framework\Exception\AuthenticationException;
 
 /**
+ * Constructs and runs the change customer password action.
+ *
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
+ * @package Magento\Customer\Controller\Account
  */
 class EditPost extends \Magento\Customer\Controller\Account
 {
-    /** @var \Magento\Customer\Model\CustomerExtractor */
+    /** @var \Magento\Customer\Model\CustomerExtractor Customer extractor. */
     protected $customerExtractor;
 
-    /** @var \Magento\Customer\Service\V1\Data\CustomerDetailsBuilder */
+    /** @var \Magento\Customer\Service\V1\Data\CustomerDetailsBuilder Customer details builder. */
     protected $_customerDetailsBuilder;
 
-    /** @var \Magento\Core\App\Action\FormKeyValidator */
+    /** @var \Magento\Core\App\Action\FormKeyValidator Form key validator. */
     protected $_formKeyValidator;
 
-    /** @var \Magento\Customer\Service\V1\Data\CustomerBuilder */
+    /** @var \Magento\Customer\Service\V1\Data\CustomerBuilder Customer builder. */
     protected $_customerBuilder;
 
     /**
-     * @param \Magento\Framework\App\Action\Context $context
-     * @param \Magento\Customer\Model\Session $customerSession
-     * @param \Magento\Customer\Helper\Address $addressHelper
-     * @param \Magento\Framework\UrlFactory $urlFactory
-     * @param \Magento\Store\Model\StoreManagerInterface $storeManager
-     * @param \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig
-     * @param \Magento\Framework\App\State $appState
-     * @param CustomerAccountServiceInterface $customerAccountService
-     * @param \Magento\Customer\Service\V1\Data\CustomerDetailsBuilder $customerDetailsBuilder
-     * @param \Magento\Core\App\Action\FormKeyValidator $formKeyValidator
-     * @param \Magento\Customer\Service\V1\Data\CustomerBuilder $customerBuilder
-     * @param \Magento\Customer\Model\CustomerExtractor $customerExtractor
+     * Constructs a customer validator object.
+     * @todo What is being built here?
+     *
+     * @param \Magento\Framework\App\Action\Context $context Context.
+     * @param \Magento\Customer\Model\Session $customerSession Customer session.
+     * @param \Magento\Customer\Helper\Address $addressHelper Address helper.
+     * @param \Magento\Framework\UrlFactory $urlFactory URL factory.
+     * @param \Magento\Store\Model\StoreManagerInterface $storeManager Store manager.
+     * @param \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig Scope configuration.
+     * @param \Magento\Framework\App\State $appState Application state.
+     * @param CustomerAccountServiceInterface $customerAccountService Customer account service.
+     * @param \Magento\Customer\Service\V1\Data\CustomerDetailsBuilder $customerDetailsBuilder Customer details builder.
+     * @param \Magento\Core\App\Action\FormKeyValidator $formKeyValidator Form key validator.
+     * @param \Magento\Customer\Service\V1\Data\CustomerBuilder $customerBuilder Customer builder.
+     * @param \Magento\Customer\Model\CustomerExtractor $customerExtractor Customer extractor.
      *
      * @SuppressWarnings(PHPMD.ExcessiveParameterList)
      */
@@ -76,7 +82,7 @@ class EditPost extends \Magento\Customer\Controller\Account
     }
 
     /**
-     * Change customer password action
+     * Runs the change customer password action.
      *
      * @return void
      * @SuppressWarnings(PHPMD.CyclomaticComplexity)

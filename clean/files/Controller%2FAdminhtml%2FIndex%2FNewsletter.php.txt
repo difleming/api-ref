@@ -1,6 +1,6 @@
 <?php
 /**
- *
+ * Customer newsletter grid.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -10,10 +10,14 @@ namespace Magento\Customer\Controller\Adminhtml\Index;
 
 use Magento\Customer\Controller\RegistryConstants;
 
+/**
+ * Customer newsletter grid.
+ * @package Magento\Customer\Controller\Adminhtml\Index Index package.
+ */
 class Newsletter extends \Magento\Customer\Controller\Adminhtml\Index
 {
     /**
-     * Customer newsletter grid
+     * Customer newsletter grid.
      *
      * @return void
      */

@@ -1,5 +1,6 @@
 <?php
 /**
+ * Constructor for an admin HTML customer groups edit form object.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -10,32 +11,35 @@ namespace Magento\Customer\Block\Adminhtml\Group\Edit;
 use Magento\Customer\Controller\RegistryConstants;
 
 /**
- * Adminhtml customer groups edit form
+ * Constructs and prepares an admin
+ * HTML customer groups edit form object.
  */
 class Form extends \Magento\Backend\Block\Widget\Form\Generic
 {
     /**
-     * @var \Magento\Tax\Model\TaxClass\Source\Customer
+     * @var \Magento\Tax\Model\TaxClass\Source\Customer Tax customer.
      */
     protected $_taxCustomer;
 
     /**
-     * @var \Magento\Customer\Service\V1\CustomerGroupServiceInterface
+     * @var \Magento\Customer\Service\V1\CustomerGroupServiceInterface Group service.
      */
     protected $_groupService;
 
     /**
-     * @var \Magento\Customer\Service\V1\Data\CustomerGroupBuilder
+     * @var \Magento\Customer\Service\V1\Data\CustomerGroupBuilder Group builder.
      */
     protected $_groupBuilder;
 
     /**
-     * @param \Magento\Backend\Block\Template\Context $context
-     * @param \Magento\Framework\Registry $registry
-     * @param \Magento\Framework\Data\FormFactory $formFactory
-     * @param \Magento\Tax\Model\TaxClass\Source\Customer $taxCustomer
-     * @param \Magento\Customer\Service\V1\CustomerGroupServiceInterface $groupService
-     * @param \Magento\Customer\Service\V1\Data\CustomerGroupBuilder $groupBuilder
+     * Constructs an admin HTML customer groups edit form object.
+     *
+     * @param \Magento\Backend\Block\Template\Context $context Context.
+     * @param \Magento\Framework\Registry $registry Registry.
+     * @param \Magento\Framework\Data\FormFactory $formFactory Form factory.
+     * @param \Magento\Tax\Model\TaxClass\Source\Customer $taxCustomer Tax customer.
+     * @param \Magento\Customer\Service\V1\CustomerGroupServiceInterface $groupService Group service.
+     * @param \Magento\Customer\Service\V1\Data\CustomerGroupBuilder $groupBuilder Group builder.
      * @param array $data
      */
     public function __construct(
@@ -54,7 +58,7 @@ class Form extends \Magento\Backend\Block\Widget\Form\Generic
     }
 
     /**
-     * Prepare form for render
+     * Prepares a form for rendering.
      *
      * @return void
      */

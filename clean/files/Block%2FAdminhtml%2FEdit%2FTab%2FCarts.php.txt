@@ -1,5 +1,6 @@
 <?php
 /**
+ * Gets contents of carts for a specified client.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -8,23 +9,29 @@
 namespace Magento\Customer\Block\Adminhtml\Edit\Tab;
 
 /**
- * Obtain all carts contents for specified client
+ * Gets contents of carts for a specified client.
  */
 class Carts extends \Magento\Backend\Block\Template
 {
-    /** @var \Magento\Customer\Model\Config\Share */
+    /**
+     * Share configuration.
+     *
+     * @var \Magento\Customer\Model\Config\Share */
     protected $_shareConfig;
 
     /**
+     * Customer builder.
+     *
      * @var \Magento\Customer\Service\V1\Data\CustomerBuilder
      */
     protected $_customerBuilder;
 
     /**
-     * @param \Magento\Backend\Block\Template\Context          $context
-     * @param \Magento\Customer\Model\Config\Share             $shareConfig
-     * @param \Magento\Customer\Service\V1\Data\CustomerBuilder $customerBuilder
-     * @param array                                            $data
+     * Constructs object.
+     * @param \Magento\Backend\Block\Template\Context          $context Context.
+     * @param \Magento\Customer\Model\Config\Share             $shareConfig Shared configuration.
+     * @param \Magento\Customer\Service\V1\Data\CustomerBuilder $customerBuilder Customer builder.
+     * @param array                                            $data An array of data.
      */
     public function __construct(
         \Magento\Backend\Block\Template\Context $context,
@@ -38,9 +45,9 @@ class Carts extends \Magento\Backend\Block\Template
     }
 
     /**
-     * Add shopping cart grid of each website
+     * Adds shopping cart grid of each website.
      *
-     * @return $this
+     * @return $this Updated grid.
      */
     protected function _prepareLayout()
     {
@@ -63,9 +70,9 @@ class Carts extends \Magento\Backend\Block\Template
     }
 
     /**
-     * Just get child blocks html
+     * Gets the child blocks HTML.
      *
-     * @return string
+     * @return string Child blocks HTML.
      */
     protected function _toHtml()
     {
@@ -74,7 +81,8 @@ class Carts extends \Magento\Backend\Block\Template
     }
 
     /**
-     * @return \Magento\Customer\Service\V1\Data\Customer
+     * Gets the customer.
+     * @return \Magento\Customer\Service\V1\Data\Customer Customer.
      */
     protected function _getCustomer()
     {

@@ -1,5 +1,6 @@
 <?php
 /**
+ * Constructs and gets information about a send email form.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -10,23 +11,29 @@ namespace Magento\Customer\Block\Adminhtml\Edit\Renderer\Attribute;
 use Magento\Backend\Block\Widget\Form\Renderer\Fieldset\Element;
 
 /**
- * Renderer for sendemail checkbox
+ * Renders a send email check box.
  */
 class Sendemail extends Element
 {
     /**
+     * Template.
+     *
      * @var string
      */
     protected $_template = 'edit/tab/account/form/renderer/sendemail.phtml';
 
     /**
+     * Store manager.
+     *
      * @var \Magento\Store\Model\StoreManagerInterface|null
      */
     protected $_storeManager = null;
 
     /**
-     * @param \Magento\Backend\Block\Template\Context $context
-     * @param array $data
+     * Constructs a send email check box.
+     *
+     * @param \Magento\Backend\Block\Template\Context $context Context.
+     * @param array $data An array of data.
      */
     public function __construct(
         \Magento\Backend\Block\Template\Context $context,
@@ -37,9 +44,10 @@ class Sendemail extends Element
     }
 
     /**
-     * Check if Single Store Mode is enabled
+     * Determines whether single-store mode is enabled.
      *
-     * @return bool
+     * @return bool * **true** Enabled.
+     * * **false** Disabled.
      */
     public function isSingleStoreMode()
     {
@@ -47,8 +55,8 @@ class Sendemail extends Element
     }
 
     /**
-     * Get form HTML ID
-     * @return string
+     * Gets the form HTML ID.
+     * @return string Form HTML ID.
      */
     public function getFormHtmlId()
     {

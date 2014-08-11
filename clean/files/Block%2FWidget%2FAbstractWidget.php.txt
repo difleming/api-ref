@@ -1,29 +1,36 @@
 <?php
 /**
+ * Abstract widget constructor and getters.
  * {license_notice}
  *
  * @copyright   {copyright}
  * @license     {license_link}
  */
 namespace Magento\Customer\Block\Widget;
+/**
+ * Constructs and gets information about an abstract widget object.
+ * @package Magento\Customer\Block\Widget Widget package.
+ */
 
 class AbstractWidget extends \Magento\Framework\View\Element\Template
 {
     /**
-     * @var \Magento\Customer\Service\V1\CustomerMetadataServiceInterface
+     * @var \Magento\Customer\Service\V1\CustomerMetadataServiceInterface Attribute metadata.
      */
     protected $_attributeMetadata;
 
     /**
-     * @var \Magento\Customer\Helper\Address
+     * @var \Magento\Customer\Helper\Address Address helper.
      */
     protected $_addressHelper;
 
     /**
-     * @param \Magento\Framework\View\Element\Template\Context $context
-     * @param \Magento\Customer\Helper\Address $addressHelper
-     * @param \Magento\Customer\Service\V1\CustomerMetadataServiceInterface $attributeMetadata
-     * @param array $data
+     * Constructs an abstract widget object.
+     *
+     * @param \Magento\Framework\View\Element\Template\Context $context Context.
+     * @param \Magento\Customer\Helper\Address $addressHelper Address helper.
+     * @param \Magento\Customer\Service\V1\CustomerMetadataServiceInterface $attributeMetadata Attribute metadata.
+     * @param array $data An array of data.
      */
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
@@ -38,8 +45,10 @@ class AbstractWidget extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * @param string $key
-     * @return null|string
+     * Gets the configuration for a specified key.
+     *
+     * @param string $key Key.
+     * @return null|string Configuration. Otherwise, null.
      */
     public function getConfig($key)
     {
@@ -47,7 +56,9 @@ class AbstractWidget extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * @return string
+     * Gets the field ID format.
+     *
+     * @return string Field ID format.
      */
     public function getFieldIdFormat()
     {
@@ -58,7 +69,8 @@ class AbstractWidget extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * @return string
+     * Gets the field name format.
+     * @return string Field name format.
      */
     public function getFieldNameFormat()
     {
@@ -69,8 +81,9 @@ class AbstractWidget extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * @param string $field
-     * @return string
+     * Gets the field ID for a specified field.
+     * @param string $field Field.
+     * @return string Field ID.
      */
     public function getFieldId($field)
     {
@@ -78,8 +91,9 @@ class AbstractWidget extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * @param string $field
-     * @return string
+     * Gets the field name for a specified field.
+     * @param string $field Field.
+     * @return string Field name.
      */
     public function getFieldName($field)
     {
@@ -87,10 +101,11 @@ class AbstractWidget extends \Magento\Framework\View\Element\Template
     }
 
     /**
-     * Retrieve customer attribute instance
+     * Gets a customer attribute instance for a specified attribute.
      *
-     * @param string $attributeCode
-     * @return \Magento\Customer\Service\V1\Data\Eav\AttributeMetadata|null
+     * @param string $attributeCode Attribute code.
+     * @return \Magento\Customer\Service\V1\Data\Eav\AttributeMetadata|null Customer attribute instance, if present. Otherwise, null.
+     * @throws \Magento\Framework\Exception\NoSuchEntityException Specified attribute does not exist.
      */
     protected function _getAttribute($attributeCode)
     {

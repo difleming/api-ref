@@ -1,17 +1,20 @@
 <?php
 /**
- *
+ * Validates a value-added tax (VAT).
  * {license_notice}
  *
  * @copyright   {copyright}
  * @license     {license_link}
  */
 namespace Magento\Customer\Controller\Adminhtml\System\Config\Validatevat;
-
+/**
+ * Validates a value-added tax (VAT).
+ * @package Magento\Customer\Controller\Adminhtml\System\Config\Validatevat Validatevat package.
+ */
 class Validate extends \Magento\Customer\Controller\Adminhtml\System\Config\Validatevat
 {
     /**
-     * Check whether vat is valid
+     * Validates a value-added tax (VAT).
      *
      * @return void
      */

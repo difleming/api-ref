@@ -1,6 +1,6 @@
 <?php
 /**
- *
+ * Deletes a customer group.
  * {license_notice}
  *
  * @copyright   {copyright}
@@ -10,10 +10,14 @@ namespace Magento\Customer\Controller\Adminhtml\Group;
 
 use Magento\Framework\Exception\NoSuchEntityException;
 
+/**
+ * Deletes a customer group.
+ * @package Magento\Customer\Controller\Adminhtml\Group Group package.
+ */
 class Delete extends \Magento\Customer\Controller\Adminhtml\Group
 {
     /**
-     * Delete customer group.
+     * Deletes a customer group.
      *
      * @return void
      */
